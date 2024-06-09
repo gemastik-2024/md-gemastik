@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:moca/controllers/abstraction_controller.dart';
+import 'package:synaptaid/controllers/abstraction_controller.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class AbstractionScreen extends StatefulWidget {
@@ -39,8 +39,8 @@ class _AbstractionScreenState extends State<AbstractionScreen> {
               children: [
                 const Text(
                   'What do each of the following pair of words have in common?'
-                      ' For example, what do “banana” and “orange” have in common?'
-                      ' They are both fruits.',
+                  ' For example, what do “banana” and “orange” have in common?'
+                  ' They are both fruits.',
                   style: TextStyle(
                     fontSize: 18.0,
                     color: Colors.deepPurple,
@@ -73,7 +73,12 @@ class _AbstractionScreenState extends State<AbstractionScreen> {
                       ),
                       TaskItem(
                         statement: 'Watch-Ruler',
-                        options: const ['Fruit', 'Color', 'Measuring Tool', 'Animal'],
+                        options: const [
+                          'Fruit',
+                          'Color',
+                          'Measuring Tool',
+                          'Animal'
+                        ],
                         result: 'Measuring Tool',
                         onChanged: (result) {
                           setState(() {

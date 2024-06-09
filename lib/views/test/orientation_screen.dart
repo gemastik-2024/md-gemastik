@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:moca/controllers/orientation_controller.dart';
+import 'package:synaptaid/controllers/orientation_controller.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class OrientationScreen extends StatefulWidget {

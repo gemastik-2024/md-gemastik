@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:moca/controllers/clock_test_controller.dart';
+import 'package:synaptaid/controllers/clock_test_controller.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../animal_name_screen.dart';

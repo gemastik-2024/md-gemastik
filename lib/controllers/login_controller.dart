@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get/get.dart';
-import 'package:moca/controllers/firebase_const.dart';
+import 'package:synaptaid/controllers/firebase_const.dart';
 
 class LogInController extends GetxController {
   String email = '';

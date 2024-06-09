@@ -1,8 +1,8 @@
 import 'package:avatar_glow/avatar_glow.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:moca/controllers/digitspan_controller.dart';
-import 'package:moca/views/test/backward_test_screen.dart';
+import 'package:synaptaid/controllers/digitspan_controller.dart';
+import 'package:synaptaid/views/test/backward_test_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:speech_to_text/speech_to_text.dart';
 import 'package:flutter_tts/flutter_tts.dart';
@@ -64,7 +64,7 @@ class _ForwardDigitState extends State<ForwardDigitSpan> {
     sf.setInt('nextGame', 7);
     innNextScreen = true;
     _controller.remainingSeconds.value = 0;
-    Get.offAll(() =>  BackwardDigitSpan(ForwardScore: score));
+    Get.offAll(() => BackwardDigitSpan(ForwardScore: score));
   }
 
   void _speakNumbers() async {

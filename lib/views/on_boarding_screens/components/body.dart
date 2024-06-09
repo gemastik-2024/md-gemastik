@@ -1,6 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:moca/views/home_screen.dart';
+import 'package:synaptaid/views/home_screen.dart';
 import '../../signup_screen.dart';
 import 'onboard_content.dart';
 
@@ -147,7 +147,8 @@ class _BodyState extends State<Body> {
                                     );
                                   } else {
                                     _controller.nextPage(
-                                      duration: const Duration(milliseconds: 200),
+                                      duration:
+                                          const Duration(milliseconds: 200),
                                       curve: Curves.easeInOut,
                                     );
                                   }

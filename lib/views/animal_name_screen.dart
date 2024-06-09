@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:moca/views/test/memory_test_screen.dart';
+import 'package:synaptaid/views/test/memory_test_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../constants/list.dart';
 import '../controllers/animal_name_controller.dart';

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:moca/views/covidexperience_sceen.dart';
+import 'package:synaptaid/views/covidexperience_sceen.dart';
 import '../controllers/medicalhistory_controller.dart';
 
 class MedicalHistoryScreen extends StatefulWidget {

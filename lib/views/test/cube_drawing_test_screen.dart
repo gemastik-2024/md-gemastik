@@ -3,7 +3,7 @@ import 'dart:io';
 import 'dart:typed_data';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:moca/views/test/visuospatial_clock_test_screen.dart';
+import 'package:synaptaid/views/test/visuospatial_clock_test_screen.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:flutter/foundation.dart';
 import 'package:image/image.dart' as img;
@@ -222,7 +222,7 @@ class _DrawingScreenState extends State<DrawingScreen> {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-           Padding(
+          Padding(
             padding: EdgeInsets.only(top: 5, right: 16, left: 16, bottom: 16),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -231,7 +231,10 @@ class _DrawingScreenState extends State<DrawingScreen> {
                   width: MediaQuery.of(context).size.width * 0.8,
                   child: const Text(
                     "Draw a Cube Below, and Don't lift your Finger while Drawing",
-                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, overflow: TextOverflow.visible),
+                    style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                        overflow: TextOverflow.visible),
                   ),
                 ),
                 // Text(

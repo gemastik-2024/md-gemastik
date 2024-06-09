@@ -1,12 +1,11 @@
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:moca/controllers/firebase_const.dart';
+import 'package:synaptaid/controllers/firebase_const.dart';
 
 class CubeController extends GetxController {
   final CollectionReference _collection =
-  FirebaseFirestore.instance.collection('users');
-
+      FirebaseFirestore.instance.collection('users');
 
   Future<void> saveScore(int scoreValue) async {
     try {

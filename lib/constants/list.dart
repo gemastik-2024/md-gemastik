@@ -1,4 +1,4 @@
-import 'package:moca/constants/image.dart';
+import 'package:synaptaid/constants/image.dart';
 
 import 'strings.dart';
 

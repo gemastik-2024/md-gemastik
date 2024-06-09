@@ -2,7 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:moca/views/test/delayRecall_test_screen.dart';
+import 'package:synaptaid/views/test/delayRecall_test_screen.dart';
 
 class AbstractionController extends GetxController {
   Future<void> submitTaskResults(
@@ -16,23 +16,21 @@ class AbstractionController extends GetxController {
       final DocumentReference userDoc = userCollection.doc(currentUser.uid);
       // final CollectionReference resultsCollection =
       // userDoc.collection('abstraction_results');
- int numberOfTrues = 0;
- int result = 0;
-       for (int i = 0; i < taskResults.length; i++) {
-          if (taskResults[i] == true) {
-            numberOfTrues++;
-          }
+      int numberOfTrues = 0;
+      int result = 0;
+      for (int i = 0; i < taskResults.length; i++) {
+        if (taskResults[i] == true) {
+          numberOfTrues++;
         }
+      }
 
-       if(numberOfTrues>=2) {
-         result = 2;
-       }
-        else if(numberOfTrues==1) {
-          result = 1;
-        }
-        else {
-          result = 0;
-        }
+      if (numberOfTrues >= 2) {
+        result = 2;
+      } else if (numberOfTrues == 1) {
+        result = 1;
+      } else {
+        result = 0;
+      }
       await userDoc.update({
         'abstraction_results': {'taskResults': result}
       }).then((value) {

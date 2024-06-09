@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:get/get.dart';
-import 'package:moca/controllers/firebase_const.dart';
+import 'package:synaptaid/controllers/firebase_const.dart';
 
 class CovidExperienceController extends GetxController {
   String pcrTest = '';

@@ -1,12 +1,11 @@
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:moca/controllers/firebase_const.dart';
+import 'package:synaptaid/controllers/firebase_const.dart';
 
 class FluencyTestController extends GetxController {
   final CollectionReference _scoresCollection =
-  FirebaseFirestore.instance.collection('users');
+      FirebaseFirestore.instance.collection('users');
 
   RxInt score = 0.obs;
   RxBool isListening = false.obs;

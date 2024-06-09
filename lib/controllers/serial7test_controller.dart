@@ -1,11 +1,11 @@
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:moca/controllers/firebase_const.dart';
+import 'package:synaptaid/controllers/firebase_const.dart';
 
 class Serial7Controller extends GetxController {
   final CollectionReference _collection =
-  FirebaseFirestore.instance.collection('users');
+      FirebaseFirestore.instance.collection('users');
   RxBool isListening = false.obs;
   RxBool starttest = false.obs;
   RxString text = "Hold the button and start speaking".obs;
@@ -23,7 +23,6 @@ class Serial7Controller extends GetxController {
   void decrementSeconds() {
     remainingSeconds.value--;
   }
-
 
   Future<void> saveScore(int scoreValue) async {
     try {

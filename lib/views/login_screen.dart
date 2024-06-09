@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:moca/views/home_screen.dart';
-import 'package:moca/views/signup_screen.dart';
+import 'package:synaptaid/views/home_screen.dart';
+import 'package:synaptaid/views/signup_screen.dart';
 import '../controllers/login_controller.dart';
 
 class LogInScreen extends StatefulWidget {

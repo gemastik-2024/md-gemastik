@@ -1,13 +1,13 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:moca/controllers/homescreen_controller%20.dart';
-import 'package:moca/views/covidexperience_sceen.dart';
-import 'package:moca/views/medicalhistory_sceen.dart';
-import 'package:moca/views/sociodemographic_sceen.dart';
-import 'package:moca/views/symptoms_initial_illness_screen.dart';
-// import 'package:moca/views/symptoms_ongoing_illness_screen.dart';
-import 'package:moca/views/test_main_screens.dart';
+import 'package:synaptaid/controllers/homescreen_controller%20.dart';
+import 'package:synaptaid/views/covidexperience_sceen.dart';
+import 'package:synaptaid/views/medicalhistory_sceen.dart';
+import 'package:synaptaid/views/sociodemographic_sceen.dart';
+import 'package:synaptaid/views/symptoms_initial_illness_screen.dart';
+// import 'package:synaptaid/views/symptoms_ongoing_illness_screen.dart';
+import 'package:synaptaid/views/test_main_screens.dart';
 
 import 'cognitive_failure_screen.dart';
 import 'on_boarding_screens/on_boarding_screen.dart';
@@ -103,7 +103,6 @@ class _HomeScreenState extends State<HomeScreen> {
                       right: 16.0,
                     ),
                     child: ElevatedButton(
-
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.white,
                         shape: RoundedRectangleBorder(

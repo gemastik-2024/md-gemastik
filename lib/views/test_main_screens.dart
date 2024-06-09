@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:moca/constants/list.dart';
-import 'package:moca/views/animal_name_screen.dart';
-import 'package:moca/views/test/backward_test_screen.dart';
-import 'package:moca/views/test/connecting_dot_screen.dart';
-import 'package:moca/views/test/cube_drawing_test_screen.dart';
-import 'package:moca/views/test/delayRecall_test_screen.dart';
-import 'package:moca/views/test/forward_test_screen.dart';
-import 'package:moca/views/test/abstraction_screen.dart';
-import 'package:moca/views/test/memory_test_screen.dart';
-import 'package:moca/views/test/orientation_screen.dart';
-import 'package:moca/views/test/sentence_repetition_screen.dart';
-import 'package:moca/views/test/serial7_test_screen.dart';
-import 'package:moca/views/test/verbalfluency_test_screen.dart';
-import 'package:moca/views/test/vigilance_test_screen.dart';
-import 'package:moca/views/test/visuospatial_clock_test_screen.dart';
+import 'package:synaptaid/constants/list.dart';
+import 'package:synaptaid/views/animal_name_screen.dart';
+import 'package:synaptaid/views/test/backward_test_screen.dart';
+import 'package:synaptaid/views/test/connecting_dot_screen.dart';
+import 'package:synaptaid/views/test/cube_drawing_test_screen.dart';
+import 'package:synaptaid/views/test/delayRecall_test_screen.dart';
+import 'package:synaptaid/views/test/forward_test_screen.dart';
+import 'package:synaptaid/views/test/abstraction_screen.dart';
+import 'package:synaptaid/views/test/memory_test_screen.dart';
+import 'package:synaptaid/views/test/orientation_screen.dart';
+import 'package:synaptaid/views/test/sentence_repetition_screen.dart';
+import 'package:synaptaid/views/test/serial7_test_screen.dart';
+import 'package:synaptaid/views/test/verbalfluency_test_screen.dart';
+import 'package:synaptaid/views/test/vigilance_test_screen.dart';
+import 'package:synaptaid/views/test/visuospatial_clock_test_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class MainTestScreen extends StatefulWidget {
@@ -61,7 +61,7 @@ class _MainTestScreenState extends State<MainTestScreen> {
           Get.offAll(() => const ForwardDigitSpan());
           break;
         case 7:
-          Get.offAll(() =>  BackwardDigitSpan());
+          Get.offAll(() => BackwardDigitSpan());
           break;
         case 8:
           Get.offAll(() => const VigilanceScreen());

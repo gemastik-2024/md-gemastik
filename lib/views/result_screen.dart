@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:moca/controllers/result_controller.dart';
-import 'package:moca/views/home_screen.dart';
+import 'package:synaptaid/controllers/result_controller.dart';
+import 'package:synaptaid/views/home_screen.dart';
 
 class ResultScreen extends StatefulWidget {
   const ResultScreen({super.key});

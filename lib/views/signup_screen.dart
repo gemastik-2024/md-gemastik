@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:moca/views/home_screen.dart';
-import 'package:moca/views/on_boarding_screens/on_boarding_screen.dart';
+import 'package:synaptaid/views/home_screen.dart';
+import 'package:synaptaid/views/on_boarding_screens/on_boarding_screen.dart';
 import '../controllers/signup_controller.dart';
 import 'login_screen.dart';
 
