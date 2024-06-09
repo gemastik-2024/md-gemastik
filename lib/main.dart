@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'firebase_options.dart';
 import 'views/animal_name_screen.dart';
+import 'views/on_boarding_screens/on_boarding_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -25,8 +26,8 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      //home: const OnBoardingPage(),
-      home: const AnimalNameGuessScreen(),
+      home: const OnBoardingPage(),
+      // home: const AnimalNameGuessScreen(),
     );
   }
 }
