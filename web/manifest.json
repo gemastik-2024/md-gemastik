@@ -1,6 +1,6 @@
 {
-    "name": "moca",
-    "short_name": "moca",
+    "name": "synaptaid",
+    "short_name": "synaptaid",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
