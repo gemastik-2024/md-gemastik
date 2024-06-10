@@ -1,8 +1,8 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:synaptaid/app/routes/app_pages.dart';
 import 'firebase_options.dart';
-import 'views/animal_name_screen.dart';
 import 'views/on_boarding_screens/on_boarding_screen.dart';
 
 void main() async {
@@ -19,6 +19,17 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     //
+    // return GetMaterialApp(
+    //   debugShowCheckedModeBanner: false,
+    //   title: 'CogQuest',
+    //   theme: ThemeData(
+    //     colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+    //     useMaterial3: true,
+    //   ),
+    //   home: const OnBoardingPage(),
+    //   // home: const AnimalNameGuessScreen(),
+    // );
+
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'CogQuest',
@@ -26,8 +37,8 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const OnBoardingPage(),
-      // home: const AnimalNameGuessScreen(),
+      initialRoute: AppPages.INITIAL,
+      getPages: AppPages.routes,
     );
   }
 }

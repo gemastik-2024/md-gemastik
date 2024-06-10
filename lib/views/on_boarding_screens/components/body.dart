@@ -1,8 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:synaptaid/views/home_screen.dart';
+import '../../../app/modules/on_boarding/views/widgets/on_boarding_content.dart';
 import '../../signup_screen.dart';
-import 'onboard_content.dart';
 
 const List<Map<String, String>> onboardData = [
   {
@@ -34,17 +34,17 @@ class Body extends StatefulWidget {
 class _BodyState extends State<Body> {
   User? user = FirebaseAuth.instance.currentUser;
   int _currentPage = 0;
-  late PageController _controller;
+  late PageController pageController;
 
   @override
   void initState() {
-    _controller = PageController(initialPage: 0);
+    pageController = PageController(initialPage: 0);
     super.initState();
   }
 
   @override
   void dispose() {
-    _controller.dispose();
+    pageController.dispose();
     super.dispose();
   }
 
@@ -99,7 +99,7 @@ class _BodyState extends State<Body> {
               Expanded(
                 flex: 5,
                 child: PageView.builder(
-                  controller: _controller,
+                  controller: pageController,
                   onPageChanged: (value) {
                     setState(() {
                       _currentPage = value;
@@ -107,9 +107,9 @@ class _BodyState extends State<Body> {
                   },
                   itemCount: onboardData.length,
                   itemBuilder: (context, index) => OnBoardingContent(
-                    image: onboardData[index]['image'],
-                    text: onboardData[index]['text'],
-                    heading: onboardData[index]['heading'],
+                    image: onboardData[index]['image'] ?? '',
+                    text: onboardData[index]['text'] ?? '',
+                    heading: onboardData[index]['heading'] ?? '',
                   ),
                 ),
               ),
@@ -146,7 +146,7 @@ class _BodyState extends State<Body> {
                                       ),
                                     );
                                   } else {
-                                    _controller.nextPage(
+                                    pageController.nextPage(
                                       duration:
                                           const Duration(milliseconds: 200),
                                       curve: Curves.easeInOut,

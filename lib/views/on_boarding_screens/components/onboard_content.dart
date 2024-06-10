@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class OnBoardingContent extends StatelessWidget {
-  const OnBoardingContent({
+class OnBoardingContents extends StatelessWidget {
+  const OnBoardingContents({
     Key? key,
     this.text,
     this.image,
@@ -37,10 +37,12 @@ class OnBoardingContent extends StatelessWidget {
         SizedBox(
           height: height * 0.05,
         ),
-        Text(text!,
-            style:
-                Theme.of(context).textTheme.titleMedium!.copyWith(fontSize: 15),
-            textAlign: TextAlign.justify,),
+        Text(
+          text!,
+          style:
+              Theme.of(context).textTheme.titleMedium!.copyWith(fontSize: 15),
+          textAlign: TextAlign.justify,
+        ),
       ],
     );
   }
