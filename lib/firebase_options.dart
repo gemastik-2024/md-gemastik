@@ -25,15 +25,9 @@ class DefaultFirebaseOptions {
       case TargetPlatform.iOS:
         return ios;
       case TargetPlatform.macOS:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for macos - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return macos;
       case TargetPlatform.windows:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for windows - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return windows;
       case TargetPlatform.linux:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for linux - '
@@ -47,30 +41,49 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyAJtJt4YYo5DFB6bC0PLG8b-U6EfbaBANI',
-    appId: '1:1084451587591:web:505128573d6a676b948ca2',
-    messagingSenderId: '1084451587591',
-    projectId: 'moca-fmc',
-    authDomain: 'moca-fmc.firebaseapp.com',
-    storageBucket: 'moca-fmc.appspot.com',
-    measurementId: 'G-VQX7P2CEEL',
+    apiKey: 'AIzaSyDieocwqlo8-QizaxG4RRSY-kr7FEUJIKs',
+    appId: '1:790637758280:web:1bde360f8631386f72557d',
+    messagingSenderId: '790637758280',
+    projectId: 'md-gemastik',
+    authDomain: 'md-gemastik.firebaseapp.com',
+    storageBucket: 'md-gemastik.appspot.com',
+    measurementId: 'G-X3C727NSJE',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyA2fesJZPwNO5IXaRAXUsK0tre_jD861DY',
-    appId: '1:1084451587591:android:ea4a3908cc7e3167948ca2',
-    messagingSenderId: '1084451587591',
-    projectId: 'moca-fmc',
-    storageBucket: 'moca-fmc.appspot.com',
+    apiKey: 'AIzaSyBANVJkqaWIziYBtP1G-6Nqn12NwjfmCdI',
+    appId: '1:790637758280:android:cb0b8d601db91b2472557d',
+    messagingSenderId: '790637758280',
+    projectId: 'md-gemastik',
+    storageBucket: 'md-gemastik.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyAq2f-092pM0ohSBRA-5D7YgJg5FfpexcU',
-    appId: '1:1084451587591:ios:cc1cbc0c05469405948ca2',
-    messagingSenderId: '1084451587591',
-    projectId: 'moca-fmc',
-    storageBucket: 'moca-fmc.appspot.com',
-    iosClientId: '1084451587591-ckopofntb2te7ug0nqlas0n8e8mdel5q.apps.googleusercontent.com',
-    iosBundleId: 'com.atinty.moca',
+    apiKey: 'AIzaSyDuHEDlNV7ks_WtR8tssvn26y2-8N2Ep98',
+    appId: '1:790637758280:ios:57dd1133a20df62d72557d',
+    messagingSenderId: '790637758280',
+    projectId: 'md-gemastik',
+    storageBucket: 'md-gemastik.appspot.com',
+    iosBundleId: 'com.gemastik.synaptaid.synaptaid',
   );
+
+  static const FirebaseOptions macos = FirebaseOptions(
+    apiKey: 'AIzaSyDuHEDlNV7ks_WtR8tssvn26y2-8N2Ep98',
+    appId: '1:790637758280:ios:57dd1133a20df62d72557d',
+    messagingSenderId: '790637758280',
+    projectId: 'md-gemastik',
+    storageBucket: 'md-gemastik.appspot.com',
+    iosBundleId: 'com.gemastik.synaptaid.synaptaid',
+  );
+
+  static const FirebaseOptions windows = FirebaseOptions(
+    apiKey: 'AIzaSyDieocwqlo8-QizaxG4RRSY-kr7FEUJIKs',
+    appId: '1:790637758280:web:4f112a42ee22205c72557d',
+    messagingSenderId: '790637758280',
+    projectId: 'md-gemastik',
+    authDomain: 'md-gemastik.firebaseapp.com',
+    storageBucket: 'md-gemastik.appspot.com',
+    measurementId: 'G-QZMM5EEHZ9',
+  );
+
 }
