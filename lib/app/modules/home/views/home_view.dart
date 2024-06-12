@@ -1,20 +1,125 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
 import 'package:get/get.dart';
-
-import '../../../../views/cognitive_failure_screen.dart';
-import '../../../../views/covidexperience_sceen.dart';
-import '../../../../views/medicalhistory_sceen.dart';
-import '../../../../views/on_boarding_screens/on_boarding_screen.dart';
-import '../../../../views/sociodemographic_sceen.dart';
-import '../../../../views/symptoms_initial_illness_screen.dart';
-import '../../../../views/test_main_screens.dart';
+import '../../../../constants/constans.dart';
 import '../controllers/home_controller.dart';
 
 class HomeView extends GetView<HomeController> {
   const HomeView({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
+    final orientation = MediaQuery.of(context).orientation;
+    return Scaffold(
+      extendBody: true,
+      backgroundColor: lightGreyColor,
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: controller.selectedIndex.value == 2
+            ? primaryColor
+            : Color.fromARGB(255, 56, 107, 208),
+        onPressed: () {
+          controller.selectedIndex.value = 2;
+          controller.pages[2] = Container(); // here must be the widget as page
+        },
+        child: Icon(Icons.call),
+        elevation: 2.0,
+      ),
+      body: Obx(
+        () => controller.pages.elementAt(controller.selectedIndex.value),
+      ),
+      bottomNavigationBar: BottomAppBar(
+        color: Colors.white,
+        child: Container(
+          height: 55,
+          //  color: Colors.white,
+          child: SizedBox(
+            height: 70,
+            child: CupertinoTabBar(
+              activeColor: darkBlueColor,
+              currentIndex: controller.selectedIndex.value,
+              backgroundColor: Colors.white,
+              iconSize: 40,
+              onTap: controller.onItemTapped,
+              items: [
+                BottomNavigationBarItem(
+                  icon: Padding(
+                    padding: EdgeInsets.only(bottom: 4),
+                    child: InkWell(
+                      onTap: () {
+                        controller.selectedIndex.value = 0;
+                        controller.pages[0] =
+                            Container(); // here must be the widget as page (Home)
+                      },
+                      child: Icon(Icons.home),
+                      //color: Color(0xFF3A5A98),
+                    ),
+                  ),
+                  label: 'Home',
+                ),
+                BottomNavigationBarItem(
+                  icon: Padding(
+                    padding: EdgeInsets.only(bottom: 4),
+                    child: InkWell(
+                      onTap: () {
+                        controller.selectedIndex.value = 1;
+                        controller.pages[1] =
+                            Container(); // here must be the widget as page (Home)
+                      },
+                      child: Icon(Icons.call),
+                      //color: Color(0xFF3A5A98),
+                    ),
+                  ),
+                  label: 'Konsultasi',
+                ),
+                BottomNavigationBarItem(
+                  icon: Padding(
+                    padding: EdgeInsets.only(bottom: 4),
+                    child: InkWell(
+                      onTap: () {
+                        controller.selectedIndex.value = 2;
+                        controller.pages[1] =
+                            Container(); // here must be the widget as page (Home)
+                      },
+                    ),
+                  ),
+                  label: 'Tanya AI',
+                ),
+                BottomNavigationBarItem(
+                  icon: Padding(
+                    padding: EdgeInsets.only(bottom: 4),
+                    child: InkWell(
+                      onTap: () {
+                        controller.selectedIndex.value = 3;
+                        controller.pages[3] = Container();
+                      },
+                      child: Icon(Icons.call),
+                    ),
+                  ),
+                  label: 'Artikel',
+                ),
+                BottomNavigationBarItem(
+                  icon: Padding(
+                    padding: EdgeInsets.only(bottom: 4),
+                    child: InkWell(
+                      onTap: () {
+                        controller.selectedIndex.value = 4;
+                        controller.pages[4] = Container();
+                      },
+                      child: Icon(Icons.call),
+                    ),
+                  ),
+                  label: 'Pengaturan',
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+ /*
     final height = MediaQuery.sizeOf(context).height;
     final width = MediaQuery.sizeOf(context).width;
     void _showAlert() {
@@ -43,8 +148,11 @@ class HomeView extends GetView<HomeController> {
         confirmTextColor: Colors.white,
         onConfirm: () => Get.back(),
       );
+   
     }
+  */
 
+/*
     return Scaffold(
         appBar: AppBar(
           title: const Text(
@@ -64,17 +172,6 @@ class HomeView extends GetView<HomeController> {
                   _showAlert();
                 },
                 icon: const Icon(Icons.info_outlined),
-                color: Colors.deepPurple,
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.fromLTRB(1.0, 0.0, 2.0, 0.0),
-              child: IconButton(
-                onPressed: () async {
-                  await controller.auth.signOut();
-                  Get.offAll(() => const OnBoardingPage());
-                },
-                icon: const Icon(Icons.exit_to_app),
                 color: Colors.deepPurple,
               ),
             ),
@@ -595,5 +692,5 @@ class HomeView extends GetView<HomeController> {
             ),
           ),
         ));
-  }
-}
+ */
+  

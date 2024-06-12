@@ -2,44 +2,41 @@ name: synaptaid
 version: 1.0.0+1
 publish_to: none
 description: A new Flutter project.
-environment: 
+environment:
   sdk: '>=3.3.1 <4.0.0'
 
-dependencies: 
-  get: 4.6.6
-  cupertino_icons: ^1.0.2
-  firebase_core: ^2.13.1
-  device_preview: ^1.1.0
-  google_fonts: ^5.0.0
+dependencies:
+  avatar_glow: ^2.0.2
   cloud_firestore: ^4.8.0
+  cupertino_icons: ^1.0.2
+  device_preview: ^1.1.0
   firebase_auth: ^4.6.2
+  firebase_core: ^2.13.1
+  flutter:
+    sdk: flutter
+  flutter_riverpod: ^2.5.1
+  flutter_signature_pad: ^3.0.1
+  flutter_tts: ^3.7.0
+  get: 4.6.6
+  google_fonts: ^5.0.0
   image: ^3.2.1
+  image_gallery_saver: ^2.0.3
+  language_tool: ^2.2.0
+  permission_handler: ^10.4.3
+  shared_preferences: ^2.2.0
+  speech_to_text: ^6.2.0
   tflite_flutter: ^0.10.1
 
-    #voice dependencies
-  speech_to_text: ^6.2.0
-  flutter_tts: ^3.7.0
-  avatar_glow: ^2.0.2
-  language_tool: ^2.2.0
-  shared_preferences: ^2.2.0
-  flutter_signature_pad: ^3.0.1
-  image_gallery_saver: ^2.0.3
-  permission_handler: ^10.4.3
-  flutter: 
-    sdk: flutter
-
-
-
-
-dev_dependencies: 
+dev_dependencies:
   flutter_lints: 4.0.0
-  flutter_test: 
+  flutter_test:
     sdk: flutter
 
-flutter: 
+flutter:
   uses-material-design: true
 
   assets:
     - assets/illustrations/
     - assets/images/
+    - assets/icons/
     - assets/model_unquant.tflite

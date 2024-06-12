@@ -2,13 +2,33 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:synaptaid/app/modules/dashboard/views/dashboard_view.dart';
+import 'package:synaptaid/app/modules/home/views/home_view.dart';
 import 'package:synaptaid/controllers/firebase_const.dart';
 
 class HomeController extends GetxController {
   //TODO: Implement HomeController
   final FirebaseAuth auth = FirebaseAuth.instance;
 
+  final selectedIndex = 0.obs;
+
+  List<Widget> pages = [
+    DashboardView(),
+    HomeView(),
+
+    //HomeScreen(),
+    //ConsultScreen(),
+    //ChatScreenBot(),
+    //BehaviorDictionaryPage(),
+    // ProfileScreen(),
+  ];
+
+  void onItemTapped(int index) {
+    selectedIndex.value = index;
+  }
+
   Future<bool> checkIfSocioDemoGraphExists() async {
+// BATAS SUCI
     DocumentSnapshot userDoc = await FirebaseFirestore.instance
         .collection('users')
         .doc(currentUser!.uid)

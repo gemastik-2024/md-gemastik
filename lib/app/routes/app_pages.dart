@@ -2,6 +2,8 @@ import 'package:get/get.dart';
 
 import '../modules/cognitive_failure/bindings/cognitive_failure_binding.dart';
 import '../modules/cognitive_failure/views/cognitive_failure_view.dart';
+import '../modules/dashboard/bindings/dashboard_binding.dart';
+import '../modules/dashboard/views/dashboard_view.dart';
 import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
 import '../modules/on_boarding/bindings/on_boarding_binding.dart';
@@ -43,6 +45,11 @@ class AppPages {
       name: _Paths.SIGN_IN,
       page: () => const SignInView(),
       binding: SignInBinding(),
+    ),
+    GetPage(
+      name: _Paths.DASHBOARD,
+      page: () => const DashboardView(),
+      binding: DashboardBinding(),
     ),
   ];
 }
