@@ -21,7 +21,6 @@ class SignUpController extends GetxController {
       )
           .then((value) {
         debugPrint('auth.createUserWithEmailAndPassword() called');
-        currentUser = value.user;
         debugPrint('currentUser: $currentUser');
         return value;
       });
@@ -79,14 +78,6 @@ class SignUpController extends GetxController {
           .set({
         'user_info': {'name': name, 'email': email}
       });
-      //     .collection('user_info')
-      //     .doc('data')
-      //     .set(
-      //   {
-      //     'name': name,
-      //     'email': email,
-      //   },
-      // );
     } catch (e) {
       debugPrint('Error: $e');
       Get.snackbar(

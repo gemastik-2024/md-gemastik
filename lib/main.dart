@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:synaptaid/app/routes/app_pages.dart';
 import 'firebase_options.dart';
-import 'views/on_boarding_screens/on_boarding_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

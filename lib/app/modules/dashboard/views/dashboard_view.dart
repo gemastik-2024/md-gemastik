@@ -1,10 +1,9 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-
 import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
 import 'package:google_fonts/google_fonts.dart';
-
-import '../../../models/course.dart';
+import 'package:synaptaid/app/routes/app_pages.dart';
 import '../controllers/dashboard_controller.dart';
 import 'widgets/campaign_banner.dart';
 import 'widgets/category_list.dart';
@@ -70,6 +69,14 @@ class DashboardView extends GetView<DashboardController> {
             ExpandingAppBar(
               mainAxisAlignment: MainAxisAlignment.start,
               children: <Widget>[
+                ElevatedButton(
+                  onPressed: () {
+                    FirebaseAuth.instance.signOut();
+                    controller.removeUser();
+                    Get.offAllNamed(Routes.SIGN_IN);
+                  },
+                  child: Text("Logout"),
+                ),
                 Text(
                   "Hi ${controller.name}, bagaimana harimu",
                   style: GoogleFonts.nunito(
@@ -92,7 +99,8 @@ class DashboardView extends GetView<DashboardController> {
                                   EdgeInsets.only(left: index == 0 ? 20.0 : 0),
                               child: GestureDetector(
                                 onTap: () {
-                                  debugPrint("HERE");
+                                  debugPrint(controller.userId);
+                                  var x = GetStorage().read('phone');
                                 },
                                 child: Padding(
                                   padding: const EdgeInsets.only(right: 10),

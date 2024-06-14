@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:synaptaid/app/modules/dashboard/views/widgets/category_card.dart';
 
 import '../../../../../utils/size_config.dart';
+import '../../../../../views/sociodemographic_sceen.dart';
+import '../../controllers/dashboard_controller.dart';
 
-class Menu extends StatelessWidget {
+class Menu extends GetView<DashboardController> {
   @override
   Widget build(BuildContext context) {
     List<Map<String, dynamic>> categories = [
@@ -31,11 +34,52 @@ class Menu extends StatelessWidget {
               (index) => CategoryCard(
                 icon: categories[index]["icon"],
                 text: categories[index]["text"],
-                press: () {},
+                press: () async {
+                  try {
+                    if (await controller.checkIfSocioDemoGraphExists() !=
+                        false) {
+                      Get.offAll(() => const SocioDemographicScreen());
+                    } else {
+                      Get.snackbar(
+                        'Attention!',
+                        'The Form is already Filled!',
+                        titleText: const Text(
+                          'Attention!',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 20,
+                          ),
+                        ),
+                        snackPosition: SnackPosition.TOP,
+                        backgroundColor: Colors.green.shade500,
+                        colorText: Colors.white,
+                        snackStyle: SnackStyle.FLOATING,
+                      );
+                    }
+                  } catch (e) {
+                    Get.snackbar(
+                      'Attention!',
+                      '$e',
+                      titleText: const Text(
+                        'Attention!',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 20,
+                        ),
+                      ),
+                      snackPosition: SnackPosition.TOP,
+                      backgroundColor: Colors.red.shade500,
+                      colorText: Colors.white,
+                      snackStyle: SnackStyle.FLOATING,
+                    );
+                  }
+                },
               ),
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
           Row(

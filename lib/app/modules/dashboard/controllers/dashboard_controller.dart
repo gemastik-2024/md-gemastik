@@ -2,14 +2,14 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:get_storage/get_storage.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-
-import '../../../../constants/constans.dart';
+import 'package:synaptaid/utils/cache_manager.dart';
 import '../../../models/course.dart';
 
-class DashboardController extends GetxController {
+class DashboardController extends GetxController with CacheManager {
   String name = '', email = '', uid = '', userType = '';
+
   final FirebaseAuth _auth = FirebaseAuth.instance;
   final status = false.obs;
   late Course course;
@@ -34,35 +34,6 @@ class DashboardController extends GetxController {
       driverEmail = value.docs[0]['email'];
       driverUid = _auth.currentUser!.uid;
     });
-  }
-
-  Future<bool> showExitPopup(BuildContext context) async {
-    return await showDialog(
-          context: context,
-          builder: (context) => AlertDialog(
-            title: Text('Keluar Aplikasi'),
-            content: Text('Kamu ingin keluar aplikasi?'),
-            actions: [
-              ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                    backgroundColor: primaryColor,
-                    textStyle: GoogleFonts.nunito(
-                        fontSize: 16, fontWeight: FontWeight.bold)),
-                onPressed: () => Navigator.of(context).pop(false),
-                child: const Text('Tidak'),
-              ),
-              ElevatedButton(
-                onPressed: () => Navigator.of(context).pop(true),
-                style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.red,
-                    textStyle: GoogleFonts.nunito(
-                        fontSize: 16, fontWeight: FontWeight.bold)),
-                child: const Text('Ya'),
-              ),
-            ],
-          ),
-        ) ??
-        false;
   }
 
   final exploreCourses = <Course>[
@@ -101,6 +72,88 @@ class DashboardController extends GetxController {
     'assets/images/campaign.png',
     'assets/images/syndrom.png',
   ];
+
+  // BATAS SUCI
+
+  // final String userId = GetStorage().read('uid');
+  final userId = GetStorage().read('uid');
+  final userPhone = GetStorage().read('phone').toString();
+
+  Future<bool> checkIfSocioDemoGraphExists() async {
+    DocumentSnapshot userDoc =
+        await FirebaseFirestore.instance.collection('users').doc(userId).get();
+    Map<String, dynamic>? userData = userDoc.data() as Map<String, dynamic>?;
+    if (userDoc.exists && userData != null) {
+      List<dynamic> pagesArray = userData['pages'] ?? [];
+      if (pagesArray.contains('socio_demographic') == false) {
+        return false;
+      } else {
+        return true;
+      }
+    }
+    debugPrint('Error');
+    return false;
+  }
+
+  Future<bool> checkIfMedicalHistoryExists() async {
+    DocumentSnapshot userDoc =
+        await FirebaseFirestore.instance.collection('users').doc(userId).get();
+    Map<String, dynamic>? userData = userDoc.data() as Map<String, dynamic>?;
+    if (userDoc.exists && userData != null) {
+      List<dynamic> pagesArray = userData['pages'] ?? [];
+      if (pagesArray.contains('medical_history') == false) {
+        return false;
+      } else {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  Future<bool> checkIfCovidExperienceExists() async {
+    DocumentSnapshot userDoc =
+        await FirebaseFirestore.instance.collection('users').doc(userId).get();
+    Map<String, dynamic>? userData = userDoc.data() as Map<String, dynamic>?;
+    if (userDoc.exists && userData != null) {
+      List<dynamic> pagesArray = userData['pages'] ?? [];
+      if (pagesArray.contains('covid_experience') == false) {
+        return false;
+      } else {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  Future<bool> checkIfInitialIllnessExists() async {
+    DocumentSnapshot userDoc =
+        await FirebaseFirestore.instance.collection('users').doc(userId).get();
+    Map<String, dynamic>? userData = userDoc.data() as Map<String, dynamic>?;
+    if (userDoc.exists && userData != null) {
+      List<dynamic> pagesArray = userData['pages'] ?? [];
+      if (pagesArray.contains('symptoms_initial_illness') == false) {
+        return false;
+      } else {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  Future<bool> checkIfCognitiveExists() async {
+    DocumentSnapshot userDoc =
+        await FirebaseFirestore.instance.collection('users').doc(userId).get();
+    Map<String, dynamic>? userData = userDoc.data() as Map<String, dynamic>?;
+    if (userDoc.exists && userData != null) {
+      List<dynamic> pagesArray = userData['pages'] ?? [];
+      if (pagesArray.contains('survey_results') == false) {
+        return false;
+      } else {
+        return true;
+      }
+    }
+    return false;
+  }
 
   @override
   void onInit() {

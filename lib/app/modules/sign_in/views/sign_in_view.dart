@@ -39,6 +39,8 @@ class SignInView extends GetView<SignInController> {
                     children: [
                       SizedBox(height: Get.height * 0.02),
                       TextFormField(
+                        controller:
+                            TextEditingController(text: 'synaptaid@gmail.com'),
                         decoration: const InputDecoration(
                           prefixIcon: Icon(
                             Icons.email,
@@ -78,6 +80,7 @@ class SignInView extends GetView<SignInController> {
                       ),
                       SizedBox(height: Get.height * 0.02),
                       Obx(() => TextFormField(
+                            controller: TextEditingController(text: '123456'),
                             obscureText: !controller.isPasswordVisible.value,
                             decoration: InputDecoration(
                               prefixIcon: const Icon(
@@ -141,7 +144,7 @@ class SignInView extends GetView<SignInController> {
 
                               if (controller.formKey.currentState!.validate()) {
                                 controller
-                                    .logIn(
+                                    .logInMethod(
                                   password: controller.password.trim(),
                                   email: controller.email.trim(),
                                 )

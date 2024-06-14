@@ -13,7 +13,7 @@ class CategoriesList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     SizeConfig.init(context);
-    return Container(
+    return SizedBox(
         height: getRelativeHeight(0.085),
         child: ListView.builder(
           itemCount: Data.categoriesList.length,

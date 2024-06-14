@@ -231,7 +231,7 @@ class SignUpView extends GetView<SignUpControllerz> {
                                           if (value == true) {
                                             controller.isloading.value = false;
                                             Get.offAllNamed(
-                                              Routes.HOME,
+                                              Routes.SIGN_IN,
                                             );
                                           }
                                         });

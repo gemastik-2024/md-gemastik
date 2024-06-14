@@ -43,7 +43,7 @@ class OnBoardingView extends GetView<OnBoardingController> {
                                         }
                                       ],
                                     )
-                                  : Get.offAllNamed(Routes.SIGN_UP);
+                                  : Get.offAllNamed(Routes.SIGN_IN);
                             },
                             child: const Text(
                               'Skip',
@@ -102,7 +102,7 @@ class OnBoardingView extends GetView<OnBoardingController> {
                                         controller.onboardData.length - 1) {
                                       controller.user != null
                                           ? Get.offAllNamed(Routes.HOME)
-                                          : Get.offAllNamed(Routes.SIGN_UP);
+                                          : Get.offAllNamed(Routes.SIGN_IN);
                                     } else {
                                       controller.pageController.nextPage(
                                         duration:
