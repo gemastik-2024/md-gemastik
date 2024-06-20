@@ -90,119 +90,111 @@ class DashboardView extends GetView<DashboardController> {
                   child: SizedBox(
                     height: 120,
                     child: ListView.builder(
-                        itemCount: controller.exploreCourses.length,
-                        scrollDirection: Axis.horizontal,
-                        shrinkWrap: true,
-                        itemBuilder: (context, index) {
-                          return Padding(
-                              padding:
-                                  EdgeInsets.only(left: index == 0 ? 20.0 : 0),
-                              child: GestureDetector(
-                                onTap: () {
-                                  debugPrint(controller.userId);
-                                  var x = GetStorage().read('phone');
-                                },
-                                child: Padding(
-                                  padding: const EdgeInsets.only(right: 10),
-                                  child: ClipRRect(
-                                    borderRadius: BorderRadius.circular(20),
-                                    child: Container(
-                                      height: 330.0,
-                                      width: 350,
-                                      decoration: BoxDecoration(
-                                        gradient: controller
-                                            .exploreCourses[index].background,
-                                      ),
-                                      child: Padding(
-                                        padding:
-                                            const EdgeInsets.only(left: 32),
-                                        child: Row(
-                                          children: [
-                                            Expanded(
-                                              child: Stack(
+                      itemCount: controller.exploreCourses.length,
+                      scrollDirection: Axis.horizontal,
+                      shrinkWrap: true,
+                      itemBuilder: (context, index) {
+                        return Padding(
+                          padding: EdgeInsets.only(left: index == 0 ? 20.0 : 0),
+                          child: GestureDetector(
+                            onTap: () {
+                              debugPrint(controller.userId);
+                              var x = GetStorage().read('phone');
+                            },
+                            child: Padding(
+                              padding: const EdgeInsets.only(right: 10),
+                              child: ClipRRect(
+                                borderRadius: BorderRadius.circular(20),
+                                child: Container(
+                                  height: 330.0,
+                                  width: 350,
+                                  decoration: BoxDecoration(
+                                    gradient: controller
+                                        .exploreCourses[index].background,
+                                  ),
+                                  child: Padding(
+                                    padding: const EdgeInsets.only(left: 32),
+                                    child: Row(
+                                      children: [
+                                        Expanded(
+                                          child: Stack(
+                                            children: [
+                                              Column(
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.center,
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.start,
                                                 children: [
-                                                  Column(
-                                                    mainAxisAlignment:
-                                                        MainAxisAlignment
-                                                            .center,
-                                                    crossAxisAlignment:
-                                                        CrossAxisAlignment
-                                                            .start,
-                                                    children: [
-                                                      Text(
-                                                        controller
-                                                            .exploreCourses[
-                                                                index]
-                                                            .courseSubtitle,
-                                                        style:
-                                                            GoogleFonts.nunito(
-                                                          fontSize: 16.0,
-                                                          color:
-                                                              Color(0xFF797F8A),
-                                                          decoration:
-                                                              TextDecoration
-                                                                  .none,
-                                                        ),
-                                                      ),
-                                                      const SizedBox(
-                                                        height: 6,
-                                                      ),
-                                                      Text(
-                                                        controller
-                                                            .exploreCourses[
-                                                                index]
-                                                            .courseTitle,
-                                                        style:
-                                                            GoogleFonts.nunito(
-                                                          fontWeight:
-                                                              FontWeight.bold,
-                                                          color: const Color
-                                                              .fromARGB(
-                                                              255, 0, 0, 0),
-                                                          fontSize: 22.0,
-                                                          decoration:
-                                                              TextDecoration
-                                                                  .none,
-                                                        ),
-                                                      )
-                                                    ],
+                                                  Text(
+                                                    controller
+                                                        .exploreCourses[index]
+                                                        .courseSubtitle,
+                                                    style: GoogleFonts.nunito(
+                                                      fontSize: 16.0,
+                                                      color: const Color(
+                                                          0xFF797F8A),
+                                                      decoration:
+                                                          TextDecoration.none,
+                                                    ),
                                                   ),
-                                                  Positioned(
-                                                    right: 0,
-                                                    bottom: 0,
-                                                    child: Image.asset(
-                                                      "assets/illustrations/${controller.exploreCourses[index].illustration}",
-                                                      fit: BoxFit.cover,
-                                                      height: 100,
+                                                  const SizedBox(
+                                                    height: 6,
+                                                  ),
+                                                  Text(
+                                                    controller
+                                                        .exploreCourses[index]
+                                                        .courseTitle,
+                                                    style: GoogleFonts.nunito(
+                                                      fontWeight:
+                                                          FontWeight.bold,
+                                                      color:
+                                                          const Color.fromARGB(
+                                                              255, 0, 0, 0),
+                                                      fontSize: 22.0,
+                                                      decoration:
+                                                          TextDecoration.none,
                                                     ),
                                                   )
                                                 ],
                                               ),
-                                            ),
-                                          ],
+                                              Positioned(
+                                                right: 0,
+                                                bottom: 0,
+                                                child: Image.asset(
+                                                  "assets/illustrations/${controller.exploreCourses[index].illustration}",
+                                                  fit: BoxFit.cover,
+                                                  height: 100,
+                                                ),
+                                              )
+                                            ],
+                                          ),
                                         ),
-                                      ),
+                                      ],
                                     ),
                                   ),
                                 ),
-                              ));
-                        }),
+                              ),
+                            ),
+                          ),
+                        );
+                      },
+                    ),
                   ),
                 )
               ],
             )
           ];
         },
-        body: SingleChildScrollView(
+        body: const SingleChildScrollView(
           child: Column(
             children: [
-              const SizedBox(height: 10),
-              const CategoriesList(),
+              SizedBox(height: 10),
+              CategoriesList(),
               Menu(),
-              const SizedBox(height: 5),
-              const FeaturesAppBar(),
-              const SizedBox(height: 20),
-              const CampaignBanner(),
+              SizedBox(height: 5),
+              FeaturesAppBar(),
+              SizedBox(height: 20),
+              CampaignBanner(),
             ],
           ),
         ),

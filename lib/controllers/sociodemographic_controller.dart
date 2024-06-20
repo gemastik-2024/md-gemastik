@@ -24,18 +24,6 @@ class DemographicController extends GetxController {
       email}) async {
     debugPrint('submitForm() called');
     try {
-      ///storing page info if page has been used of user in firestore
-
-      // FirebaseFirestore.instance
-      //     .collection('users')
-      //     .doc(currentUser!.uid)
-      //     .update(
-      //   {
-      //     'pages': [
-      //       'socio_demographic',
-      //     ]
-      //   },
-      // );
       await FirebaseFirestore.instance
           .collection('users')
           .doc(currentUser!.uid)
@@ -57,17 +45,6 @@ class DemographicController extends GetxController {
           'id': currentUser!.uid,
         }
       }).then((value) => Get.offAll(() => const MedicalHistoryScreen()));
-      //.collection('socio_demographic')
-      //.doc('data')
-      //     .set({
-      //   'name': name,
-      //   'gender': gender,
-      //   'age': age,
-      //   'residence': residence,
-      //   'education': education,
-      //   'profession': profession,
-      //   'id': currentUser!.uid,
-      // }).then((value) => Get.offAll(() => const MedicalHistoryScreen()));
     } catch (e) {
       debugPrint('LoginCalled() called Error "$e"');
       Get.snackbar(

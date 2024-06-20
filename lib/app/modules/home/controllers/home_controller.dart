@@ -15,7 +15,6 @@ class HomeController extends GetxController {
   List<Widget> pages = [
     DashboardView(),
     HomeView(),
-
     //HomeScreen(),
     //ConsultScreen(),
     //ChatScreenBot(),

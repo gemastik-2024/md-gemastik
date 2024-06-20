@@ -5,7 +5,7 @@ import '../../../../constants/constans.dart';
 import '../controllers/home_controller.dart';
 
 class HomeView extends GetView<HomeController> {
-  const HomeView({Key? key}) : super(key: key);
+  const HomeView({super.key});
   @override
   Widget build(BuildContext context) {
     final orientation = MediaQuery.of(context).orientation;
@@ -16,12 +16,12 @@ class HomeView extends GetView<HomeController> {
       floatingActionButton: FloatingActionButton(
         backgroundColor: controller.selectedIndex.value == 2
             ? primaryColor
-            : Color.fromARGB(255, 56, 107, 208),
+            : const Color.fromARGB(255, 56, 107, 208),
         onPressed: () {
           controller.selectedIndex.value = 2;
           controller.pages[2] = Container(); // here must be the widget as page
         },
-        child: Icon(Icons.call),
+        child: Icon(Icons.sick),
         elevation: 2.0,
       ),
       body: Obx(
@@ -29,7 +29,7 @@ class HomeView extends GetView<HomeController> {
       ),
       bottomNavigationBar: BottomAppBar(
         color: Colors.white,
-        child: Container(
+        child: SizedBox(
           height: 55,
           //  color: Colors.white,
           child: SizedBox(
@@ -43,14 +43,15 @@ class HomeView extends GetView<HomeController> {
               items: [
                 BottomNavigationBarItem(
                   icon: Padding(
-                    padding: EdgeInsets.only(bottom: 4),
+                    padding: const EdgeInsets.only(bottom: 4),
                     child: InkWell(
                       onTap: () {
+                        debugPrint('0');
                         controller.selectedIndex.value = 0;
-                        controller.pages[0] =
-                            Container(); // here must be the widget as page (Home)
+                        controller
+                            .pages[0]; // here must be the widget as page (Home)
                       },
-                      child: Icon(Icons.home),
+                      child: Icon(Icons.abc),
                       //color: Color(0xFF3A5A98),
                     ),
                   ),
@@ -61,9 +62,11 @@ class HomeView extends GetView<HomeController> {
                     padding: EdgeInsets.only(bottom: 4),
                     child: InkWell(
                       onTap: () {
+                        debugPrint('1');
                         controller.selectedIndex.value = 1;
-                        controller.pages[1] =
-                            Container(); // here must be the widget as page (Home)
+                        controller.pages[1] = Center(
+                          child: Text("HAHA"),
+                        ); // here must be the widget as page (Home)
                       },
                       child: Icon(Icons.call),
                       //color: Color(0xFF3A5A98),

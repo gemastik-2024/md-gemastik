@@ -1,7 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get_storage/get_storage.dart';
 import 'package:synaptaid/utils/cache_manager.dart';
 
 import '../../../../controllers/firebase_const.dart';
@@ -26,12 +25,8 @@ class SignInController extends GetxController with CacheManager {
       )
           .then((value) {
         debugPrint('auth.signInWithEmailAndPassword() called');
-        debugPrint('auth uid ${value.user!.uid}');
-        debugPrint('auth uid ${value.user!.phoneNumber}');
 
-        debugPrint('currentUser on sign_in controller: $currentUser');
-        debugPrint(
-            'currentUser on sign_in controller: ${GetStorage().read('uid')}');
+        debugPrint('currentUser: $currentUser');
         return value;
       });
     } on FirebaseAuthException catch (e) {
@@ -91,18 +86,10 @@ class SignInController extends GetxController with CacheManager {
       debugPrint('LogIn() called');
       UserCredential? userCredential =
           await logInMethod(email: email, password: password);
-
       if (userCredential == null) {
         debugPrint('userCredential is null');
         return false;
       }
-      debugPrint("execute");
-      saveUser(
-        uid: userCredential.user!.uid,
-        phone: userCredential.user!.phoneNumber,
-        image: '',
-      );
-      return true;
     } catch (e) {
       debugPrint('Error: $e');
       Get.snackbar(

@@ -12,7 +12,12 @@
           "package_name": "com.gemastik.synaptaid.synaptaid"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "790637758280-2mcq0igdvnd79apkvhs4sg6to4fnqgav.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyBANVJkqaWIziYBtP1G-6Nqn12NwjfmCdI"
@@ -20,7 +25,19 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "790637758280-2mcq0igdvnd79apkvhs4sg6to4fnqgav.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "790637758280-4hkr5m1utk62ktq9lcidk69fji2unc6r.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.gemastik.synaptaid.synaptaid"
+              }
+            }
+          ]
         }
       }
     }

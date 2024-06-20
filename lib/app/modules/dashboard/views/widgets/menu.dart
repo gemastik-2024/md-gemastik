@@ -1,27 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:synaptaid/app/modules/dashboard/views/widgets/category_card.dart';
-
 import '../../../../../utils/size_config.dart';
-import '../../../../../views/sociodemographic_sceen.dart';
 import '../../controllers/dashboard_controller.dart';
 
 class Menu extends GetView<DashboardController> {
+  const Menu({super.key});
+
   @override
   Widget build(BuildContext context) {
-    List<Map<String, dynamic>> categories = [
-      {"icon": "assets/icons/clinic.png", "text": "Klinik"},
-      {"icon": "assets/icons/school.png", "text": "Sekolah"},
-      {"icon": "assets/icons/playground.png", "text": "Permainan"},
-      {"icon": "assets/icons/parenting.png", "text": "Parenting"},
-    ];
-
-    List<Map<String, dynamic>> categorize = [
-      {"icon": "assets/icons/training.png", "text": "Pelatihan"},
-      {"icon": "assets/icons/event.png", "text": "Event"},
-      {"icon": "assets/icons/forum.png", "text": "Forum"},
-      {"icon": "assets/icons/charity.png", "text": "Donasi"},
-    ];
     return Padding(
       padding: EdgeInsets.all(getScreenWidth(20)),
       child: Column(
@@ -30,51 +17,16 @@ class Menu extends GetView<DashboardController> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: List.generate(
-              categories.length,
+              controller.categories.length,
               (index) => CategoryCard(
-                icon: categories[index]["icon"],
-                text: categories[index]["text"],
-                press: () async {
-                  try {
-                    if (await controller.checkIfSocioDemoGraphExists() !=
-                        false) {
-                      Get.offAll(() => const SocioDemographicScreen());
-                    } else {
-                      Get.snackbar(
-                        'Attention!',
-                        'The Form is already Filled!',
-                        titleText: const Text(
-                          'Attention!',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 20,
-                          ),
-                        ),
-                        snackPosition: SnackPosition.TOP,
-                        backgroundColor: Colors.green.shade500,
-                        colorText: Colors.white,
-                        snackStyle: SnackStyle.FLOATING,
-                      );
-                    }
-                  } catch (e) {
-                    Get.snackbar(
-                      'Attention!',
-                      '$e',
-                      titleText: const Text(
-                        'Attention!',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 20,
-                        ),
-                      ),
-                      snackPosition: SnackPosition.TOP,
-                      backgroundColor: Colors.red.shade500,
-                      colorText: Colors.white,
-                      snackStyle: SnackStyle.FLOATING,
-                    );
-                  }
+                icon: controller.categories[index]["icon"],
+                text: controller.categories[index]["text"],
+                press: () {
+                  final String route = controller.categories[index]["text"]
+                      .toString()
+                      .toLowerCase();
+                  debugPrint("/$route");
+                  // Get.toNamed('/$route');
                 },
               ),
             ),
@@ -86,11 +38,16 @@ class Menu extends GetView<DashboardController> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: List.generate(
-              categorize.length,
+              controller.categorize.length,
               (index) => CategoryCard(
-                icon: categorize[index]["icon"],
-                text: categorize[index]["text"],
-                press: () {},
+                icon: controller.categorize[index]["icon"],
+                text: controller.categorize[index]["text"],
+                press: () {
+                  final String route = controller.categorize[index]["text"]
+                      .toString()
+                      .toLowerCase();
+                  debugPrint("/$route");
+                },
               ),
             ),
           ),

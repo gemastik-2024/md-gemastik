@@ -5,11 +5,11 @@ import '../../../../../utils/size_config.dart';
 
 class CategoryCard extends StatelessWidget {
   const CategoryCard({
-    Key? key,
+    super.key,
     required this.icon,
     required this.text,
     required this.press,
-  }) : super(key: key);
+  });
 
   final String? icon, text;
   final GestureTapCallback press;
@@ -27,11 +27,11 @@ class CategoryCard extends StatelessWidget {
               height: getScreenWidth(70),
               width: getScreenWidth(70),
               decoration: BoxDecoration(
-                  color: Color.fromARGB(255, 234, 234, 234),
+                  color: const Color.fromARGB(255, 234, 234, 234),
                   borderRadius: BorderRadius.circular(10),
                   border: Border.all(
                     style: BorderStyle.solid,
-                    color: Color.fromARGB(255, 226, 233, 239),
+                    color: const Color.fromARGB(255, 226, 233, 239),
                     width: 1,
                   )),
               child: Image.asset(
@@ -39,11 +39,11 @@ class CategoryCard extends StatelessWidget {
                 height: 100,
               ),
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             Text(
               text!,
               style: GoogleFonts.nunito(
-                color: Color.fromARGB(255, 113, 113, 113),
+                color: const Color.fromARGB(255, 113, 113, 113),
                 fontSize: 13,
                 fontWeight: FontWeight.bold,
               ),

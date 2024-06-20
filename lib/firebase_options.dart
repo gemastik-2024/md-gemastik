@@ -64,6 +64,7 @@ class DefaultFirebaseOptions {
     messagingSenderId: '790637758280',
     projectId: 'md-gemastik',
     storageBucket: 'md-gemastik.appspot.com',
+    iosClientId: '790637758280-4hkr5m1utk62ktq9lcidk69fji2unc6r.apps.googleusercontent.com',
     iosBundleId: 'com.gemastik.synaptaid.synaptaid',
   );
 

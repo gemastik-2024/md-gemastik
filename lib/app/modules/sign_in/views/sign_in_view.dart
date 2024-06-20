@@ -40,7 +40,7 @@ class SignInView extends GetView<SignInController> {
                       SizedBox(height: Get.height * 0.02),
                       TextFormField(
                         controller:
-                            TextEditingController(text: 'synaptaid@gmail.com'),
+                            TextEditingController(text: 'synaptaid@gmail.co'),
                         decoration: const InputDecoration(
                           prefixIcon: Icon(
                             Icons.email,
@@ -144,7 +144,7 @@ class SignInView extends GetView<SignInController> {
 
                               if (controller.formKey.currentState!.validate()) {
                                 controller
-                                    .logInMethod(
+                                    .logIn(
                                   password: controller.password.trim(),
                                   email: controller.email.trim(),
                                 )

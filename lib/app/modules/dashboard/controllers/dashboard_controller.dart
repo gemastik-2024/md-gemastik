@@ -91,7 +91,6 @@ class DashboardController extends GetxController with CacheManager {
         return true;
       }
     }
-    debugPrint('Error');
     return false;
   }
 
