@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
+import '../../../../../constants/constans.dart';
 import '../../controllers/on_boarding_controller.dart';
 
 class OnBoardingContent extends GetWidget<OnBoardingController> {
-  OnBoardingContent({
+  const OnBoardingContent({
     super.key,
     required this.image,
     required this.text,
@@ -23,6 +23,7 @@ class OnBoardingContent extends GetWidget<OnBoardingController> {
           heading,
           style: Theme.of(context).textTheme.titleLarge!.copyWith(
                 fontSize: 32,
+                color: darkBlueColor,
               ),
         ),
         Container(
@@ -31,7 +32,7 @@ class OnBoardingContent extends GetWidget<OnBoardingController> {
           margin: const EdgeInsets.only(bottom: 25),
           decoration: const BoxDecoration(
             borderRadius: BorderRadius.all(Radius.circular(3)),
-            color: Colors.deepPurple,
+            color: darkBlueColor,
           ),
         ),
         Image.asset(
@@ -44,8 +45,10 @@ class OnBoardingContent extends GetWidget<OnBoardingController> {
         ),
         Text(
           text,
-          style:
-              Theme.of(context).textTheme.titleMedium!.copyWith(fontSize: 15),
+          style: Theme.of(context)
+              .textTheme
+              .titleMedium!
+              .copyWith(fontSize: 15, color: darkBlueColor),
           textAlign: TextAlign.justify,
         ),
       ],

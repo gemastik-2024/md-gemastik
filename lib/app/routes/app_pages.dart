@@ -2,6 +2,8 @@ import 'package:get/get.dart';
 
 import '../modules/cognitive_failure/bindings/cognitive_failure_binding.dart';
 import '../modules/cognitive_failure/views/cognitive_failure_view.dart';
+import '../modules/community/bindings/community_binding.dart';
+import '../modules/community/views/community_view.dart';
 import '../modules/dashboard/bindings/dashboard_binding.dart';
 import '../modules/dashboard/views/dashboard_view.dart';
 import '../modules/home/bindings/home_binding.dart';
@@ -50,13 +52,18 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.DASHBOARD,
-      page: () => const DashboardView(),
+      page: () => DashboardView(),
       binding: DashboardBinding(),
     ),
     GetPage(
       name: _Paths.SETTINGS,
       page: () => const SettingsView(),
       binding: SettingsBinding(),
+    ),
+    GetPage(
+      name: _Paths.COMMUNITY,
+      page: () => const CommunityView(),
+      binding: CommunityBinding(),
     ),
   ];
 }

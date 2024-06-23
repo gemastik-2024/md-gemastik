@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:synaptaid/app/modules/dashboard/views/widgets/category_card.dart';
+import 'package:synaptaid/app/modules/dashboard/views/widgets/menu_item.dart';
 import '../../../../../utils/size_config.dart';
 import '../../controllers/dashboard_controller.dart';
 
@@ -18,7 +18,7 @@ class Menu extends GetView<DashboardController> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: List.generate(
               controller.categories.length,
-              (index) => CategoryCard(
+              (index) => MenuItem(
                 icon: controller.categories[index]["icon"],
                 text: controller.categories[index]["text"],
                 press: () {
@@ -39,7 +39,7 @@ class Menu extends GetView<DashboardController> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: List.generate(
               controller.categorize.length,
-              (index) => CategoryCard(
+              (index) => MenuItem(
                 icon: controller.categorize[index]["icon"],
                 text: controller.categorize[index]["text"],
                 press: () {

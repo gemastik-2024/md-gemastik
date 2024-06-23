@@ -7,21 +7,9 @@ class OnBoardingController extends GetxController {
   final currentPage = 0.obs;
   late PageController pageController;
 
-  @override
-  void onInit() {
-    pageController = PageController(initialPage: 0);
-    super.onInit();
-  }
-
-  @override
-  void dispose() {
-    pageController.dispose();
-    super.dispose();
-  }
-
   final List<Map<String, String>> onboardData = [
     {
-      'text': "Welcome to CogQuest.",
+      'text': "Welcome to Synaptaid.",
       'image': 'assets/illustrations/onboarding1.png',
       'heading': 'Welcome'
     },
@@ -38,4 +26,16 @@ class OnBoardingController extends GetxController {
       'heading': 'Jump In'
     },
   ];
+
+  @override
+  void onInit() {
+    pageController = PageController(initialPage: 0);
+    super.onInit();
+  }
+
+  @override
+  void dispose() {
+    pageController.dispose();
+    super.dispose();
+  }
 }

@@ -154,6 +154,8 @@ class DashboardController extends GetxController with CacheManager {
     return false;
   }
 
+  final sliderIndex = 0.obs;
+
   @override
   void onInit() {
     driverEmail = '';

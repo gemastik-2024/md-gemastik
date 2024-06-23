@@ -1,6 +1,7 @@
 import 'package:get/get.dart';
+import 'package:synaptaid/utils/cache_manager.dart';
 
-class SettingsController extends GetxController {
+class SettingsController extends GetxController with CacheManager {
   //TODO: Implement SettingsController
 
   final count = 0.obs;

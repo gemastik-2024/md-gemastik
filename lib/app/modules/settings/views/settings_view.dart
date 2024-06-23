@@ -1,11 +1,15 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 
+import '../../../routes/app_pages.dart';
 import '../controllers/settings_controller.dart';
 
 class SettingsView extends GetView<SettingsController> {
-  const SettingsView({Key? key}) : super(key: key);
+  const SettingsView({super.key, this.scrollController});
+  final ScrollController? scrollController;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -13,10 +17,18 @@ class SettingsView extends GetView<SettingsController> {
         title: const Text('SettingsView'),
         centerTitle: true,
       ),
-      body: const Center(
-        child: Text(
-          'SettingsView is working',
-          style: TextStyle(fontSize: 20),
+      body: Center(
+        child: Column(
+          children: [
+            ElevatedButton(
+              onPressed: () {
+                FirebaseAuth.instance.signOut();
+                controller.removeUser();
+                Get.offAllNamed(Routes.SIGN_IN);
+              },
+              child: const Text('SignOut'),
+            ),
+          ],
         ),
       ),
     );

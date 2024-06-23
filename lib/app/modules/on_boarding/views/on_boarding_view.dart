@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:synaptaid/app/modules/on_boarding/controllers/on_boarding_controller.dart';
 import 'package:synaptaid/app/modules/on_boarding/views/widgets/animated_container.dart';
+import 'package:synaptaid/constants/constans.dart';
 
 import '../../../routes/app_pages.dart';
 import 'widgets/on_boarding_content.dart';
@@ -48,7 +49,7 @@ class OnBoardingView extends GetView<OnBoardingController> {
                             child: const Text(
                               'Skip',
                               style: TextStyle(
-                                color: Colors.deepPurple,
+                                color: darkBlueColor,
                                 fontWeight: FontWeight.w700,
                                 fontSize: 22,
                               ),
@@ -88,46 +89,7 @@ class OnBoardingView extends GetView<OnBoardingController> {
                             (index) => AnimatedContainerWidget(index: index),
                           ),
                         ),
-                        Padding(
-                          padding:
-                              EdgeInsets.symmetric(vertical: height * 0.01),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.end,
-                            children: [
-                              Align(
-                                alignment: Alignment.bottomRight,
-                                child: GestureDetector(
-                                  onTap: () {
-                                    if (controller.currentPage.value ==
-                                        controller.onboardData.length - 1) {
-                                      controller.user != null
-                                          ? Get.offAllNamed(Routes.HOME)
-                                          : Get.offAllNamed(Routes.SIGN_IN);
-                                    } else {
-                                      controller.pageController.nextPage(
-                                        duration:
-                                            const Duration(milliseconds: 200),
-                                        curve: Curves.easeInOut,
-                                      );
-                                    }
-                                  },
-                                  child: Container(
-                                    padding: const EdgeInsets.all(15),
-                                    decoration: BoxDecoration(
-                                      color: Colors.deepPurple,
-                                      borderRadius: BorderRadius.circular(50),
-                                    ),
-                                    child: const Icon(
-                                      Icons.arrow_forward_ios,
-                                      color: Colors.white,
-                                    ),
-                                  ),
-                                ),
-                              )
-                            ],
-                          ),
-                        ),
-                        // Spacer(),
+                        const SizedBox(height: 50),
                       ],
                     ),
                   ),
@@ -135,6 +97,43 @@ class OnBoardingView extends GetView<OnBoardingController> {
               ],
             ),
           ),
+        ),
+      ),
+      floatingActionButton: Padding(
+        padding: EdgeInsets.symmetric(vertical: height * 0.01),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.end,
+          children: [
+            Align(
+              alignment: Alignment.bottomRight,
+              child: GestureDetector(
+                onTap: () {
+                  if (controller.currentPage.value ==
+                      controller.onboardData.length - 1) {
+                    controller.user != null
+                        ? Get.offAllNamed(Routes.HOME)
+                        : Get.offAllNamed(Routes.SIGN_IN);
+                  } else {
+                    controller.pageController.nextPage(
+                      duration: const Duration(milliseconds: 200),
+                      curve: Curves.easeInOut,
+                    );
+                  }
+                },
+                child: Container(
+                  padding: const EdgeInsets.all(15),
+                  decoration: BoxDecoration(
+                    color: darkBlueColor,
+                    borderRadius: BorderRadius.circular(50),
+                  ),
+                  child: const Icon(
+                    Icons.arrow_forward_ios,
+                    color: Colors.white,
+                  ),
+                ),
+              ),
+            )
+          ],
         ),
       ),
     );
