@@ -31,33 +31,6 @@ class OnBoardingView extends GetView<OnBoardingController> {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.end,
-                      children: [
-                        Align(
-                          alignment: Alignment.topRight,
-                          child: GestureDetector(
-                            onTap: () {
-                              controller.user != null
-                                  ? Get.offAllNamed(
-                                      Routes.HOME,
-                                      arguments: [
-                                        {
-                                          'user': controller.user,
-                                        }
-                                      ],
-                                    )
-                                  : Get.offAllNamed(Routes.SIGN_IN);
-                            },
-                            child: const Text(
-                              'Skip',
-                              style: TextStyle(
-                                color: darkBlueColor,
-                                fontWeight: FontWeight.w700,
-                                fontSize: 22,
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
                     ),
                   ),
                 ),
