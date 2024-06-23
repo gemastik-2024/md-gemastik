@@ -26,7 +26,7 @@ class SignUpView extends GetView<SignUpControllerz> {
                 ),
               ),
               Image(
-                image: const AssetImage('assets/illustrations/onboarding.png'),
+                image: const AssetImage('assets/illustrations/onboarding1.png'),
                 height: Get.height * 0.3,
                 width: Get.width * 0.6,
                 fit: BoxFit.cover,
