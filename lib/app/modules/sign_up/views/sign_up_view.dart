@@ -1,12 +1,9 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:synaptaid/app/modules/sign_up/controllers/sign_up_controller.dart';
 import 'package:synaptaid/app/routes/app_pages.dart';
-
-import '../../../../views/home_screen.dart';
-import '../../../../views/login_screen.dart';
-import '../../../../views/on_boarding_screens/on_boarding_screen.dart';
 
 class SignUpView extends GetView<SignUpControllerz> {
   const SignUpView({Key? key}) : super(key: key);
@@ -20,16 +17,16 @@ class SignUpView extends GetView<SignUpControllerz> {
           physics: const BouncingScrollPhysics(),
           child: Column(
             children: [
-              const Text(
-                'Sign Up',
-                style: TextStyle(
+             Text(
+                'Daftar',
+                style: GoogleFonts.nunito(
                   fontSize: 35,
                   fontWeight: FontWeight.bold,
-                  color: Colors.deepPurple,
+                  color: Colors.blue,
                 ),
               ),
               Image(
-                image: const AssetImage('assets/illustrations/Signup.png'),
+                image: const AssetImage('assets/illustrations/onboarding.png'),
                 height: Get.height * 0.3,
                 width: Get.width * 0.6,
                 fit: BoxFit.cover,
@@ -41,13 +38,14 @@ class SignUpView extends GetView<SignUpControllerz> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       TextFormField(
-                        decoration: const InputDecoration(
+                        decoration: InputDecoration(
                           // hintText: 'Enter Your Name',
                           prefixIcon: Icon(
                             Icons.person,
-                            color: Colors.deepPurple,
+                            color: Colors.blue,
                           ),
-                          labelText: 'Enter Your Name',
+                          labelText: 'Masukan Nama',
+                          labelStyle: GoogleFonts.nunito(),
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.all(
                               Radius.circular(12),
@@ -59,19 +57,20 @@ class SignUpView extends GetView<SignUpControllerz> {
                         },
                         validator: (value) {
                           if (value == null || value.isEmpty) {
-                            return 'Please Enter Your Name';
+                            return 'Masukan Nama Anda';
                           }
                           return null;
                         },
                       ),
                       SizedBox(height: Get.height * 0.02),
                       TextFormField(
-                        decoration: const InputDecoration(
+                        decoration: InputDecoration(
                           prefixIcon: Icon(
                             Icons.email,
-                            color: Colors.deepPurple,
+                            color: Colors.blue,
                           ),
-                          labelText: 'Enter Your Email',
+                          labelText: 'Masukan Email',
+                          labelStyle: GoogleFonts.nunito(),
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.all(
                               Radius.circular(12),
@@ -102,21 +101,22 @@ class SignUpView extends GetView<SignUpControllerz> {
                             decoration: InputDecoration(
                               prefixIcon: const Icon(
                                 Icons.fingerprint_outlined,
-                                color: Colors.deepPurple,
+                                color: Colors.blue,
                               ),
                               suffixIcon: IconButton(
                                 icon: Icon(
                                   controller.isPasswordVisible.value
                                       ? Icons.visibility
                                       : Icons.visibility_off,
-                                  color: Colors.deepPurple,
+                                  color: Colors.blue,
                                 ),
                                 onPressed: () {
                                   controller.isPasswordVisible.value =
                                       !controller.isPasswordVisible.value;
                                 },
                               ),
-                              labelText: 'Enter Your Password',
+                              labelText: 'Masukan Kata Sandi',
+                              labelStyle: GoogleFonts.nunito(),
                               border: const OutlineInputBorder(
                                 borderRadius: BorderRadius.all(
                                   Radius.circular(12),
@@ -143,21 +143,22 @@ class SignUpView extends GetView<SignUpControllerz> {
                             decoration: InputDecoration(
                               prefixIcon: const Icon(
                                 Icons.fingerprint_outlined,
-                                color: Colors.deepPurple,
+                                color: Colors.blue,
                               ),
                               suffixIcon: IconButton(
                                 icon: Icon(
                                   controller.isRepasswordVisible.value
                                       ? Icons.visibility
                                       : Icons.visibility_off,
-                                  color: Colors.deepPurple,
+                                  color: Colors.blue,
                                 ),
                                 onPressed: () {
                                   controller.isRepasswordVisible.value =
                                       !controller.isRepasswordVisible.value;
                                 },
                               ),
-                              labelText: 'Re-Enter Your Password',
+                              labelText: 'Masukan Ulang Kata Sandi',
+                              labelStyle: GoogleFonts.nunito(),
                               border: const OutlineInputBorder(
                                 borderRadius: BorderRadius.all(
                                   Radius.circular(12),
@@ -195,7 +196,7 @@ class SignUpView extends GetView<SignUpControllerz> {
                         height: Get.height * 0.06,
                         child: ElevatedButton(
                           style: ElevatedButton.styleFrom(
-                            backgroundColor: Colors.deepPurple,
+                            backgroundColor: Colors.blue,
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(12),
                             ),
@@ -210,13 +211,13 @@ class SignUpView extends GetView<SignUpControllerz> {
                                   child: ListBody(
                                     children: <Widget>[
                                       Text(
-                                          'This self-assessment tool consists of a set of 25 short questions (Cognitive Failures Questionnaire) followed by a series of interactive brain games (Montreal Cognitive Assessment). You will also be asked to provide your name, age, gender, residence, education, profession as well as your personal health information and experience with COVID-19 illness. The whole study should run in under 20 minutes. For accurate results, you are encouraged to complete it in one sitting. On completion, you will receive feedback on your performance, and personalised tips to strengthen your brain. Please note: Your participation in this study is entirely voluntary. You may refuse to take part, or discontinue at any time without any consequences. However, by participating, you are consenting to your data being used to assist in the latest research into neurocognitive science. The information we collect will be analysed anonymously. Personally identifiable information will be kept confidential and will not be shared with any third party. You will not benefit directly from participating in this study, but your contribution will help us gain a better understanding of post-COVID cognitive impairment, ultimately leading to improved prevention, screening, and treatment strategies. Taking part in this study has no anticipated risks. If you agree to these terms, click \'I Agree\' to continue. DISCLAIMER: CogQuest results are only indicative. They, in no case, can legally replace or question the diagnosis made by a physician.'),
+                                          'Sebagai pendaftaran ini akan mengizinkan anda untuk mengakses semua fitur aplikasi. Dengan ini anda setuju dengan semua syarat dan ketentuan yang berlaku.'),
                                     ],
                                   ),
                                 ),
                                 actions: <Widget>[
                                   TextButton(
-                                    child: const Text('I Agree'),
+                                    child: const Text('Setuju'),
                                     onPressed: () {
                                       Get.back();
                                       if (controller.formKey.currentState!
@@ -241,7 +242,7 @@ class SignUpView extends GetView<SignUpControllerz> {
                                     },
                                   ),
                                   TextButton(
-                                    child: const Text('Don\'t Agree'),
+                                    child: const Text('Tidak Setuju'),
                                     onPressed: () {
                                       debugPrint("Email : ${controller.email}");
                                       debugPrint(
@@ -257,12 +258,12 @@ class SignUpView extends GetView<SignUpControllerz> {
                             );
                           },
                           child: controller.isloading.value == true
-                              ? const Row(
+                              ? Row(
                                   mainAxisSize: MainAxisSize.min,
                                   children: [
                                     Text(
                                       "Loading",
-                                      style: TextStyle(
+                                      style: GoogleFonts.sora(
                                         fontSize: 20,
                                         fontWeight: FontWeight.bold,
                                         color: Colors.white,
@@ -283,9 +284,9 @@ class SignUpView extends GetView<SignUpControllerz> {
                                     )
                                   ],
                                 )
-                              : const Text(
-                                  'Sign Up',
-                                  style: TextStyle(
+                              : Text(
+                                  'Daftar',
+                                  style: GoogleFonts.sora(
                                     fontSize: 20,
                                     fontWeight: FontWeight.bold,
                                     color: Colors.white,
@@ -296,8 +297,13 @@ class SignUpView extends GetView<SignUpControllerz> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          const Text(
-                            "Already have an account?",
+                          Text(
+                            "Sudah punya akun?",
+                            style: GoogleFonts.nunito(
+                                fontSize: 16,
+                                color: Colors.black,
+                                fontWeight: FontWeight.bold,
+                              ),
                           ),
                           TextButton(
                             onPressed: () {
@@ -305,11 +311,11 @@ class SignUpView extends GetView<SignUpControllerz> {
                                 Routes.SIGN_IN,
                               );
                             },
-                            child: const Text(
-                              "Log in",
-                              style: TextStyle(
+                            child: Text(
+                              "Masuk",
+                              style: GoogleFonts.sora(
                                 fontSize: 18,
-                                color: Colors.deepPurple,
+                                color: Colors.blue,
                                 fontWeight: FontWeight.bold,
                               ),
                             ),

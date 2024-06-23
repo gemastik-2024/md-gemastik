@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:synaptaid/app/routes/app_pages.dart';
 
 import '../controllers/sign_in_controller.dart';
@@ -17,16 +18,16 @@ class SignInView extends GetView<SignInController> {
           physics: const BouncingScrollPhysics(),
           child: Column(
             children: [
-              const Text(
-                'Log In',
-                style: TextStyle(
+              Text(
+                'Masuk',
+                style: GoogleFonts.nunito(
                   fontSize: 35,
                   fontWeight: FontWeight.bold,
-                  color: Colors.deepPurple,
+                  color: Colors.blue,
                 ),
               ),
               Image(
-                image: const AssetImage('assets/illustrations/Signup.png'),
+                image: const AssetImage('assets/illustrations/onboarding1.png'),
                 height: Get.height * 0.3,
                 width: Get.width * 0.6,
                 fit: BoxFit.cover,
@@ -40,13 +41,14 @@ class SignInView extends GetView<SignInController> {
                       SizedBox(height: Get.height * 0.02),
                       TextFormField(
                         controller:
-                            TextEditingController(text: 'synaptaid@gmail.co'),
-                        decoration: const InputDecoration(
+                            TextEditingController(text: 'synaptaid@gmail.com',),
+                        decoration: InputDecoration(
                           prefixIcon: Icon(
                             Icons.email,
-                            color: Colors.deepPurple,
+                            color: Colors.blue,
                           ),
-                          labelText: 'Enter Your Email',
+                          labelText: 'Masukan Email',
+                          labelStyle: GoogleFonts.nunito(),
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.all(
                               Radius.circular(12),
@@ -85,21 +87,22 @@ class SignInView extends GetView<SignInController> {
                             decoration: InputDecoration(
                               prefixIcon: const Icon(
                                 Icons.fingerprint_outlined,
-                                color: Colors.deepPurple,
+                                color: Colors.blue,
                               ),
                               suffixIcon: IconButton(
                                 icon: Icon(
                                   controller.isPasswordVisible.value
                                       ? Icons.visibility
                                       : Icons.visibility_off,
-                                  color: Colors.deepPurple,
+                                  color: Colors.blue,
                                 ),
                                 onPressed: () {
                                   controller.isPasswordVisible.value =
                                       !controller.isPasswordVisible.value;
                                 },
                               ),
-                              labelText: 'Enter Your Password',
+                              labelText: 'Masukan Kata Sandi',
+                              labelStyle: GoogleFonts.nunito(),
                               border: const OutlineInputBorder(
                                 borderRadius: BorderRadius.all(
                                   Radius.circular(12),
@@ -133,7 +136,7 @@ class SignInView extends GetView<SignInController> {
                         height: Get.height * 0.06,
                         child: ElevatedButton(
                           style: ElevatedButton.styleFrom(
-                            backgroundColor: Colors.deepPurple,
+                            backgroundColor: Colors.blue,
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(12),
                             ),
@@ -170,12 +173,12 @@ class SignInView extends GetView<SignInController> {
                             }
                           },
                           child: controller.isloading.value == true
-                              ? const Row(
+                              ? Row(
                                   mainAxisSize: MainAxisSize.min,
                                   children: [
                                     Text(
                                       "Loading",
-                                      style: TextStyle(
+                                      style: GoogleFonts.sora(
                                         fontSize: 20,
                                         fontWeight: FontWeight.bold,
                                         color: Colors.white,
@@ -196,9 +199,9 @@ class SignInView extends GetView<SignInController> {
                                     )
                                   ],
                                 )
-                              : const Text(
-                                  'Log In',
-                                  style: TextStyle(
+                              : Text(
+                                  'Masuk',
+                                  style: GoogleFonts.sora(
                                     fontSize: 20,
                                     fontWeight: FontWeight.bold,
                                     color: Colors.white,
@@ -209,16 +212,20 @@ class SignInView extends GetView<SignInController> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          const Text(
-                            "Don't have an account?",
+                          Text(
+                            "Belum punya akun?",
+                            style: GoogleFonts.nunito(
+                                fontSize: 16,
+                                color: Colors.black,
+                              ), 
                           ),
                           TextButton(
                             onPressed: () => Get.offAllNamed(Routes.SIGN_UP),
-                            child: const Text(
-                              "Sign Up",
-                              style: TextStyle(
+                            child: Text(
+                              "Daftar",
+                              style: GoogleFonts.sora(
                                 fontSize: 18,
-                                color: Colors.deepPurple,
+                                color: Colors.blue,
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
