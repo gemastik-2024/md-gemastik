@@ -11,6 +11,7 @@ abstract class Routes {
   static const DASHBOARD = _Paths.DASHBOARD;
   static const SETTINGS = _Paths.SETTINGS;
   static const COMMUNITY = _Paths.COMMUNITY;
+  static const MENU_ITEM_ONE = _Paths.MENU_ITEM_ONE;
 }
 
 abstract class _Paths {
@@ -23,4 +24,5 @@ abstract class _Paths {
   static const DASHBOARD = '/dashboard';
   static const SETTINGS = '/settings';
   static const COMMUNITY = '/community';
+  static const MENU_ITEM_ONE = '/menu-item-one';
 }

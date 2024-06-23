@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:synaptaid/app/modules/dashboard/views/widgets/menu_item.dart';
+import 'package:synaptaid/app/routes/app_pages.dart';
 import '../../../../../utils/size_config.dart';
 import '../../controllers/dashboard_controller.dart';
 
@@ -26,6 +27,9 @@ class Menu extends GetView<DashboardController> {
                       .toString()
                       .toLowerCase();
                   debugPrint("/$route");
+                  Get.toNamed(Routes.MENU_ITEM_ONE, arguments: [
+                    {'text': route}
+                  ]);
                   // Get.toNamed('/$route');
                 },
               ),
@@ -43,10 +47,14 @@ class Menu extends GetView<DashboardController> {
                 icon: controller.categorize[index]["icon"],
                 text: controller.categorize[index]["text"],
                 press: () {
-                  final String route = controller.categorize[index]["text"]
+                  final String route = controller.categories[index]["text"]
                       .toString()
                       .toLowerCase();
                   debugPrint("/$route");
+                  Get.toNamed(Routes.MENU_ITEM_ONE, arguments: [
+                    {'text': route}
+                  ]);
+                  // Get.toNamed('/$route');
                 },
               ),
             ),

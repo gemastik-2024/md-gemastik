@@ -8,6 +8,8 @@ import '../modules/dashboard/bindings/dashboard_binding.dart';
 import '../modules/dashboard/views/dashboard_view.dart';
 import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
+import '../modules/menus/menu_item_one/bindings/menu_item_one_binding.dart';
+import '../modules/menus/menu_item_one/views/menu_item_one_view.dart';
 import '../modules/on_boarding/bindings/on_boarding_binding.dart';
 import '../modules/on_boarding/views/on_boarding_view.dart';
 import '../modules/settings/bindings/settings_binding.dart';
@@ -64,6 +66,11 @@ class AppPages {
       name: _Paths.COMMUNITY,
       page: () => const CommunityView(),
       binding: CommunityBinding(),
+    ),
+    GetPage(
+      name: _Paths.MENU_ITEM_ONE,
+      page: () => MenuItemOneView(),
+      binding: MenuItemOneBinding(),
     ),
   ];
 }
