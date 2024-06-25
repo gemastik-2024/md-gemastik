@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class ReportsController extends GetxController {
-  final isDone = false.obs;
-
   final chartData = <ChartData>[
     ChartData('Mon. Kandang', 35, const Color(0XFFEC6B56)),
     ChartData('Mon. Ternak', 35, const Color(0XFFFFC154)),
@@ -29,35 +27,36 @@ class ReportsController extends GetxController {
   final kondisiCuaca = <String, dynamic>{}.obs;
   final kondisiKesehatan = <String, dynamic>{}.obs;
 
-  // Future<void> initDashboard([DateTimeRange? dateRange]) async {
-  //   final data = dummyData['data'];
-  //   dateFrom = DateTime.parse(data['dari']!['tanggal']);
-  //   dateFromText.value = data['dari']['waktu'];
-  //   dateTo = DateTime.parse(data['sampai']['tanggal']);
-  //   dateToText.value = data['sampai']['waktu'];
-  //   totalPetugas.value = data['total_petugas'].toString();
+  Future<void> initDashboard([DateTimeRange? dateRange]) async {
+    final data = dummyData['data'] as Map<String, dynamic>;
+    dateFrom = DateTime.parse(data['dari']!['tanggal']);
+    dateFromText.value = data['dari']['waktu'];
+    dateTo = DateTime.parse(data['sampai']['tanggal']);
+    dateToText.value = data['sampai']['waktu'];
+    totalPetugas.value = data['total_petugas'].toString();
 
-  //   monitoringKandang.value = data['monitoring_kandang'];
-  //   monitoringTernak.value = data['monitoring_ternak'];
-  //   treatment.value = data['treatment'];
+    monitoringKandang.value = data['monitoring_kandang'];
+    monitoringTernak.value = data['monitoring_ternak'];
+    treatment.value = data['treatment'];
 
-  //   chartData.value = [
-  //     ChartData(
-  //         'Mon. Kandang', monitoringKandang['persen'], const Color(0XFFEC6B56)),
-  //     ChartData(
-  //         'Mon. Ternak', monitoringTernak['persen'], const Color(0XFFFFC154)),
-  //     ChartData('Treatment', treatment['persen'], const Color(0XFF47B39C)),
-  //   ];
+    chartData.value = [
+      ChartData('Mon. Kandang', int.parse(monitoringKandang['persen']),
+          const Color(0XFFEC6B56)),
+      ChartData('Mon. Ternak', int.parse(monitoringTernak['persen']),
+          const Color(0XFFFFC154)),
+      ChartData(
+          'Treatment', int.parse(treatment['persen']), const Color(0XFF47B39C)),
+    ];
 
-  //   totalKandang.value = data['total_kandang'].toString();
-  //   totalTernak.value = data['total_ternak'].toString();
-  //   kondisiLantai.value = data['kondisi_lantai'];
-  //   kondisiPakan.value = data['kondisi_pakan'];
-  //   kondisiCuaca.value = data['kondisi_cuaca'];
-  //   kondisiKesehatan.value = data['kondisi_kesehatan'];
+    totalKandang.value = data['total_kandang'].toString();
+    totalTernak.value = data['total_ternak'].toString();
+    kondisiLantai.value = data['kondisi_lantai'];
+    kondisiPakan.value = data['kondisi_pakan'];
+    kondisiCuaca.value = data['kondisi_cuaca'];
+    kondisiKesehatan.value = data['kondisi_kesehatan'];
 
-  //   isDone.value = true;
-  // }
+    // isDone.value = true;
+  }
 
   void pickDateRange([DateTimeRange? initialDateRange]) async {
     final dateRange = initialDateRange ??
@@ -73,7 +72,7 @@ class ReportsController extends GetxController {
     );
 
     dateTimeRange = newDateRange;
-    // await initDashboard(newDateRange);
+    await initDashboard(newDateRange);
   }
 
   void changeSort() {
@@ -89,7 +88,7 @@ class ReportsController extends GetxController {
   @override
   void onInit() {
     super.onInit();
-    // initDashboard();
+    initDashboard();
   }
 }
 

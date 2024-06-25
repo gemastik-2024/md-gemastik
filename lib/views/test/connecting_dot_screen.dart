@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'dart:math';
 
 import '../../controllers/connecting_dots_controller.dart';
 import 'cube_drawing_test_screen.dart';
