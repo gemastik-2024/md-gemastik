@@ -2,6 +2,8 @@ import 'package:get/get.dart';
 
 import '../modules/cognitive_failure/bindings/cognitive_failure_binding.dart';
 import '../modules/cognitive_failure/views/cognitive_failure_view.dart';
+import '../modules/cognitive_games/bindings/cognitive_games_binding.dart';
+import '../modules/cognitive_games/views/cognitive_games_view.dart';
 import '../modules/community/bindings/community_binding.dart';
 import '../modules/community/views/community_view.dart';
 import '../modules/dashboard/bindings/dashboard_binding.dart';
@@ -85,6 +87,11 @@ class AppPages {
       name: _Paths.MEDICAL_HISTORY,
       page: () => const MedicalHistoryView(),
       binding: MedicalHistoryBinding(),
+    ),
+    GetPage(
+      name: _Paths.COGNITIVE_GAMES,
+      page: () => const CognitiveGamesView(),
+      binding: CognitiveGamesBinding(),
     ),
   ];
 }

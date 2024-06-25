@@ -14,6 +14,7 @@ abstract class Routes {
   static const MENU_ITEM_ONE = _Paths.MENU_ITEM_ONE;
   static const SOCIO_DEMOGRAPHIC = _Paths.SOCIO_DEMOGRAPHIC;
   static const MEDICAL_HISTORY = _Paths.MEDICAL_HISTORY;
+  static const COGNITIVE_GAMES = _Paths.COGNITIVE_GAMES;
 }
 
 abstract class _Paths {
@@ -29,4 +30,5 @@ abstract class _Paths {
   static const MENU_ITEM_ONE = '/menu-item-one';
   static const SOCIO_DEMOGRAPHIC = '/socio-demographic';
   static const MEDICAL_HISTORY = '/medical-history';
+  static const COGNITIVE_GAMES = '/cognitive-games';
 }

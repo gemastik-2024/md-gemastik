@@ -60,8 +60,8 @@ class DashboardController extends GetxController {
     },
     {
       "icon": "assets/icons/school.png",
-      "text": "Sekolah",
-      "route": "school",
+      "text": "Cog-Games",
+      "route": Routes.COGNITIVE_GAMES,
     },
     {
       "icon": "assets/icons/playground.png",
