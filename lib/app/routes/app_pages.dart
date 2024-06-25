@@ -16,6 +16,8 @@ import '../modules/menus/menu_item_one/bindings/menu_item_one_binding.dart';
 import '../modules/menus/menu_item_one/views/menu_item_one_view.dart';
 import '../modules/on_boarding/bindings/on_boarding_binding.dart';
 import '../modules/on_boarding/views/on_boarding_view.dart';
+import '../modules/reports/bindings/reports_binding.dart';
+import '../modules/reports/views/reports_view.dart';
 import '../modules/settings/bindings/settings_binding.dart';
 import '../modules/settings/views/settings_view.dart';
 import '../modules/sign_in/bindings/sign_in_binding.dart';
@@ -92,6 +94,11 @@ class AppPages {
       name: _Paths.COGNITIVE_GAMES,
       page: () => const CognitiveGamesView(),
       binding: CognitiveGamesBinding(),
+    ),
+    GetPage(
+      name: _Paths.REPORTS,
+      page: () => const ReportsView(),
+      binding: ReportsBinding(),
     ),
   ];
 }

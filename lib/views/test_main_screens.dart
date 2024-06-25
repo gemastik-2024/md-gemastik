@@ -39,6 +39,7 @@ class _MainTestScreenState extends State<MainTestScreen> {
 
   late int _unlockedGames = 1;
 
+  @override
   void _playGame(gameNumber) {
     if (gameNumber == _unlockedGames) {
       switch (gameNumber) {
@@ -104,7 +105,6 @@ class _MainTestScreenState extends State<MainTestScreen> {
     }
   }
 
-  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(

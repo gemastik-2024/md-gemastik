@@ -24,9 +24,7 @@ class Menu extends GetView<DashboardController> {
                 text: controller.categories[index]["text"],
                 route: controller.categories[index]["route"],
                 press: () {
-                  final String route = controller.categories[index]["route"]
-                      .toString()
-                      .toLowerCase();
+                  final route = controller.categories[index]["route"];
                   controller.functionMenuItem(route);
                   // Get.toNamed('/$route');
                 },

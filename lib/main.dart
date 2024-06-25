@@ -21,17 +21,6 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     //
-    return GetMaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'CogQuest',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      home: const HomeScreen(),
-      // home: const AnimalNameGuessScreen(),
-    );
-
     // return GetMaterialApp(
     //   debugShowCheckedModeBanner: false,
     //   title: 'CogQuest',
@@ -39,8 +28,19 @@ class MyApp extends StatelessWidget {
     //     colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
     //     useMaterial3: true,
     //   ),
-    //   initialRoute: Routes.ON_BOARDING,
-    //   getPages: AppPages.routes,
+    //   home: const HomeScreen(),
+    //   // home: const AnimalNameGuessScreen(),
     // );
+
+    return GetMaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'CogQuest',
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        useMaterial3: true,
+      ),
+      initialRoute: Routes.ON_BOARDING,
+      getPages: AppPages.routes,
+    );
   }
 }

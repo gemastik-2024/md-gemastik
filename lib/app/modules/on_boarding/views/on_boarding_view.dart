@@ -14,6 +14,26 @@ class OnBoardingView extends GetView<OnBoardingController> {
     final double height = MediaQuery.of(context).size.height;
     final double width = MediaQuery.of(context).size.width;
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        actions: [
+          TextButton(
+            onPressed: () {
+              controller.user != null
+                  ? Get.offAllNamed(Routes.HOME)
+                  : Get.offAllNamed(Routes.SIGN_IN);
+            },
+            child: Text(
+              'Skip',
+              style: TextStyle(
+                color: darkBlueColor,
+                fontSize: 18,
+              ),
+            ),
+          ),
+        ],
+      ),
       body: SingleChildScrollView(
         child: SizedBox(
           width: double.infinity,

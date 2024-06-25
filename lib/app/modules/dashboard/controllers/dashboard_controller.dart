@@ -60,16 +60,18 @@ class DashboardController extends GetxController {
     },
     {
       "icon": "assets/icons/school.png",
-      "text": "Cog-Games",
-      "route": Routes.COGNITIVE_GAMES,
+      "text": "Riwayat Medis",
+      "route": Routes.REPORTS,
     },
     {
+      "text": "Games",
       "icon": "assets/icons/playground.png",
-      "text": "Permainan",
+      "route": Routes.COGNITIVE_GAMES,
     },
     {
       "icon": "assets/icons/parenting.png",
       "text": "Parenting",
+      "route": 'unknown',
     },
   ];
 
@@ -188,10 +190,15 @@ class DashboardController extends GetxController {
       case 'socio-demographic':
         socioDemographiCase();
         break;
-      case 'school':
-        debugPrint("SIUU");
+      case Routes.COGNITIVE_GAMES:
+        Get.toNamed(route);
+        debugPrint("School");
         break;
-      case 'playground':
+      case Routes.REPORTS:
+        Get.toNamed(route);
+        break;
+      default:
+        debugPrint('Unknown Route');
         break;
     }
   }
