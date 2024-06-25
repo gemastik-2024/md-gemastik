@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:synaptaid/app/routes/app_pages.dart';
 
@@ -40,8 +41,9 @@ class SignInView extends GetView<SignInController> {
                     children: [
                       SizedBox(height: Get.height * 0.02),
                       TextFormField(
-                        controller:
-                            TextEditingController(text: 'synaptaid@gmail.com',),
+                        controller: TextEditingController(
+                          text: 'synaptaid@gmail.com',
+                        ),
                         decoration: InputDecoration(
                           prefixIcon: Icon(
                             Icons.email,
@@ -151,15 +153,20 @@ class SignInView extends GetView<SignInController> {
                                   password: controller.password.trim(),
                                   email: controller.email.trim(),
                                 )
-                                    .then((value) {
-                                  if (value == true) {
-                                    controller.isloading.value = false;
+                                    .then(
+                                  (value) async {
+                                    if (value == true &&
+                                        controller.uid.isNotEmpty) {
+                                      controller.isloading.value = false;
+                                      await controller.box
+                                          .write('uid', controller.uid);
 
-                                    Get.offAllNamed(Routes.HOME);
-                                  } else {
-                                    controller.isloading.value = false;
-                                  }
-                                });
+                                      Get.offAllNamed(Routes.HOME);
+                                    } else {
+                                      controller.isloading.value = false;
+                                    }
+                                  },
+                                );
                               }
                             } catch (e) {
                               controller.isloading.value = false;
@@ -184,10 +191,10 @@ class SignInView extends GetView<SignInController> {
                                         color: Colors.white,
                                       ),
                                     ),
-                                    SizedBox(
+                                    const SizedBox(
                                       width: 5,
                                     ),
-                                    SizedBox(
+                                    const SizedBox(
                                       height: 20,
                                       width: 20,
                                       child: CircularProgressIndicator(
@@ -215,9 +222,9 @@ class SignInView extends GetView<SignInController> {
                           Text(
                             "Belum punya akun?",
                             style: GoogleFonts.nunito(
-                                fontSize: 16,
-                                color: Colors.black,
-                              ), 
+                              fontSize: 16,
+                              color: Colors.black,
+                            ),
                           ),
                           TextButton(
                             onPressed: () => Get.offAllNamed(Routes.SIGN_UP),

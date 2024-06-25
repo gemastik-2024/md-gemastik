@@ -12,6 +12,8 @@ abstract class Routes {
   static const SETTINGS = _Paths.SETTINGS;
   static const COMMUNITY = _Paths.COMMUNITY;
   static const MENU_ITEM_ONE = _Paths.MENU_ITEM_ONE;
+  static const SOCIO_DEMOGRAPHIC = _Paths.SOCIO_DEMOGRAPHIC;
+  static const MEDICAL_HISTORY = _Paths.MEDICAL_HISTORY;
 }
 
 abstract class _Paths {
@@ -25,4 +27,6 @@ abstract class _Paths {
   static const SETTINGS = '/settings';
   static const COMMUNITY = '/community';
   static const MENU_ITEM_ONE = '/menu-item-one';
+  static const SOCIO_DEMOGRAPHIC = '/socio-demographic';
+  static const MEDICAL_HISTORY = '/medical-history';
 }

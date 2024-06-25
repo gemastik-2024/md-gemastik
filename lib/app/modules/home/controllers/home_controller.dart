@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:get_storage/get_storage.dart';
 import 'package:synaptaid/controllers/firebase_const.dart';
 
 class HomeController extends GetxController
@@ -14,8 +15,11 @@ class HomeController extends GetxController
     selectedIndex.value = index;
   }
 
+  final box = GetStorage();
+
   Future<bool> checkIfSocioDemoGraphExists() async {
 // BATAS SUCI
+//uid belum benar
     DocumentSnapshot userDoc = await FirebaseFirestore.instance
         .collection('users')
         .doc(currentUser!.uid)
@@ -104,13 +108,14 @@ class HomeController extends GetxController
 
   final currentPage = 0.obs;
   late TabController tabController;
+  //temporary, will be replaced with real data
   final List<Color> colors = [
     Colors.yellow,
-    Colors.red,
-    Colors.green,
-    Colors.blue,
-    Colors.pink,
-  ];
+    Colors.yellow,
+    Colors.yellow,
+    Colors.yellow,
+    Colors.yellow,
+  ].obs;
 
   @override
   void onInit() {

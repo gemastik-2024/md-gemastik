@@ -113,7 +113,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         try {
                           if (await _controller.checkIfSocioDemoGraphExists() !=
                               true) {
-                            Get.offAll(() => const SocioDemographicScreen());
+                            // Get.offAll(() => const SocioDemographicScreen());
                           } else {
                             Get.snackbar(
                               'Attention!',

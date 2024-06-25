@@ -8,6 +8,8 @@ import '../modules/dashboard/bindings/dashboard_binding.dart';
 import '../modules/dashboard/views/dashboard_view.dart';
 import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
+import '../modules/medical_history/bindings/medical_history_binding.dart';
+import '../modules/medical_history/views/medical_history_view.dart';
 import '../modules/menus/menu_item_one/bindings/menu_item_one_binding.dart';
 import '../modules/menus/menu_item_one/views/menu_item_one_view.dart';
 import '../modules/on_boarding/bindings/on_boarding_binding.dart';
@@ -18,6 +20,8 @@ import '../modules/sign_in/bindings/sign_in_binding.dart';
 import '../modules/sign_in/views/sign_in_view.dart';
 import '../modules/sign_up/bindings/sign_up_binding.dart';
 import '../modules/sign_up/views/sign_up_view.dart';
+import '../modules/socio_demographic/bindings/socio_demographic_binding.dart';
+import '../modules/socio_demographic/views/socio_demographic_view.dart';
 
 part 'app_routes.dart';
 
@@ -71,6 +75,16 @@ class AppPages {
       name: _Paths.MENU_ITEM_ONE,
       page: () => MenuItemOneView(),
       binding: MenuItemOneBinding(),
+    ),
+    GetPage(
+      name: _Paths.SOCIO_DEMOGRAPHIC,
+      page: () => const SocioDemographicView(),
+      binding: SocioDemographicBinding(),
+    ),
+    GetPage(
+      name: _Paths.MEDICAL_HISTORY,
+      page: () => const MedicalHistoryView(),
+      binding: MedicalHistoryBinding(),
     ),
   ];
 }

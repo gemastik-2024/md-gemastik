@@ -4,10 +4,10 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:synaptaid/utils/cache_manager.dart';
 import '../../../models/course.dart';
+import '../../../routes/app_pages.dart';
 
-class DashboardController extends GetxController with CacheManager {
+class DashboardController extends GetxController {
   String name = '', email = '', uid = '', userType = '';
 
   final FirebaseAuth _auth = FirebaseAuth.instance;
@@ -53,10 +53,24 @@ class DashboardController extends GetxController with CacheManager {
     ),
   ];
   List<Map<String, dynamic>> categories = [
-    {"icon": "assets/icons/clinic.png", "text": "Klinik"},
-    {"icon": "assets/icons/school.png", "text": "Sekolah"},
-    {"icon": "assets/icons/playground.png", "text": "Permainan"},
-    {"icon": "assets/icons/parenting.png", "text": "Parenting"},
+    {
+      "icon": "assets/icons/socio-demographi-data.png",
+      "text": "Demografi Sosial",
+      "route": "socio-demographic",
+    },
+    {
+      "icon": "assets/icons/school.png",
+      "text": "Sekolah",
+      "route": "school",
+    },
+    {
+      "icon": "assets/icons/playground.png",
+      "text": "Permainan",
+    },
+    {
+      "icon": "assets/icons/parenting.png",
+      "text": "Parenting",
+    },
   ];
 
   List<Map<String, dynamic>> categorize = [
@@ -76,10 +90,15 @@ class DashboardController extends GetxController with CacheManager {
   // BATAS SUCI
 
   // final String userId = GetStorage().read('uid');
-  final userId = GetStorage().read('uid');
+
+  final box = GetStorage();
+  late String userId;
+
   final userPhone = GetStorage().read('phone').toString();
 
   Future<bool> checkIfSocioDemoGraphExists() async {
+// BATAS SUCI
+//uid belum benar
     DocumentSnapshot userDoc =
         await FirebaseFirestore.instance.collection('users').doc(userId).get();
     Map<String, dynamic>? userData = userDoc.data() as Map<String, dynamic>?;
@@ -158,8 +177,64 @@ class DashboardController extends GetxController with CacheManager {
 
   @override
   void onInit() {
+    userId = box.read('uid') ?? 'nulls';
     driverEmail = '';
     driverName = '';
     super.onInit();
+  }
+
+  void functionMenuItem(String route) {
+    switch (route) {
+      case 'socio-demographic':
+        socioDemographiCase();
+        break;
+      case 'school':
+        debugPrint("SIUU");
+        break;
+      case 'playground':
+        break;
+    }
+  }
+
+  void socioDemographiCase() async {
+    try {
+      if (await checkIfSocioDemoGraphExists() != true) {
+        Get.offAllNamed(Routes.SOCIO_DEMOGRAPHIC);
+      } else {
+        Get.snackbar(
+          'Perhatian!',
+          'Anda sudah mengisi form ini!',
+          titleText: const Text(
+            'Perhatian!',
+            style: TextStyle(
+              color: Colors.white,
+              fontWeight: FontWeight.bold,
+              fontSize: 20,
+            ),
+          ),
+          snackPosition: SnackPosition.TOP,
+          backgroundColor: Colors.green.shade500,
+          colorText: Colors.white,
+          snackStyle: SnackStyle.FLOATING,
+        );
+      }
+    } catch (e) {
+      Get.snackbar(
+        'Error',
+        'Terjadi kesalahan, silahkan coba lagi!',
+        titleText: const Text(
+          'Attention!',
+          style: TextStyle(
+            color: Colors.white,
+            fontWeight: FontWeight.bold,
+            fontSize: 20,
+          ),
+        ),
+        snackPosition: SnackPosition.TOP,
+        backgroundColor: Colors.red.shade500,
+        colorText: Colors.white,
+        snackStyle: SnackStyle.FLOATING,
+      );
+    }
   }
 }

@@ -18,6 +18,31 @@ class DashboardView extends GetView<DashboardController> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: darkBlueColor,
+        title: const Text(
+          'Synaptaid',
+          style: TextStyle(color: Colors.white, fontSize: 20),
+        ),
+        actions: [
+          CircleAvatar(
+            radius: 20,
+            backgroundColor: Colors.white,
+            child: IconButton(
+              icon: const Icon(
+                Icons.person,
+                color: darkBlueColor,
+              ),
+              onPressed: () {
+                // Get.toNamed(Routes.SETTINGS);
+              },
+            ),
+          ),
+          const SizedBox(width: 20),
+        ],
+        // shape: const RoundedRectangleBorder(
+        //   borderRadius: BorderRadius.vertical(
+        //     bottom: Radius.circular(30),
+        //   ),
+        // ),
       ),
       backgroundColor: Colors.white,
       body: ListView(

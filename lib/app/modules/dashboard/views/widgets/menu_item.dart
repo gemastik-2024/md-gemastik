@@ -9,9 +9,10 @@ class MenuItem extends StatelessWidget {
     required this.icon,
     required this.text,
     required this.press,
+    required this.route,
   });
 
-  final String? icon, text;
+  final String? icon, text, route;
   final GestureTapCallback press;
 
   @override

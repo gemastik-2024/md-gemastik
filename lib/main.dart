@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:get/get.dart';
 import 'package:synaptaid/app/routes/app_pages.dart';
+import 'package:synaptaid/views/home_screen.dart';
 
 import 'firebase_options.dart';
 
@@ -20,17 +21,6 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     //
-    // return GetMaterialApp(
-    //   debugShowCheckedModeBanner: false,
-    //   title: 'CogQuest',
-    //   theme: ThemeData(
-    //     colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-    //     useMaterial3: true,
-    //   ),
-    //   home: const OnBoardingPage(),
-    //   // home: const AnimalNameGuessScreen(),
-    // );
-
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'CogQuest',
@@ -38,8 +28,19 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      initialRoute: Routes.ON_BOARDING,
-      getPages: AppPages.routes,
+      home: const HomeScreen(),
+      // home: const AnimalNameGuessScreen(),
     );
+
+    // return GetMaterialApp(
+    //   debugShowCheckedModeBanner: false,
+    //   title: 'CogQuest',
+    //   theme: ThemeData(
+    //     colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+    //     useMaterial3: true,
+    //   ),
+    //   initialRoute: Routes.ON_BOARDING,
+    //   getPages: AppPages.routes,
+    // );
   }
 }

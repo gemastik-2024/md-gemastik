@@ -69,68 +69,71 @@ class HomeView extends GetView<HomeController> {
               SettingsView(scrollController: ctrl),
             ],
           ),
-          child: TabBar(
-            tabAlignment: TabAlignment.fill,
-            indicatorPadding: const EdgeInsets.fromLTRB(6, 0, 6, 0),
-            controller: controller.tabController,
-            indicator: UnderlineTabIndicator(
-                borderSide: BorderSide(
-                  color: controller.currentPage <= 4
-                      ? controller.colors[controller.currentPage.value]
-                      : unselectedColor,
-                  width: 4,
-                ),
-                insets: const EdgeInsets.fromLTRB(16, 0, 16, 8)),
-            tabs: [
-              SizedBox(
-                height: 55,
-                width: 40,
-                child: Center(
-                  child: Icon(
-                    Icons.home,
-                    color: controller.currentPage.value == 0
-                        ? controller.colors[0]
-                        : unselectedColor,
-                  ),
-                ),
-              ),
-              SizedBox(
-                  height: 55,
-                  width: 40,
-                  child: Center(
-                    child: Icon(
-                      Icons.favorite,
-                      color: controller.currentPage.value == 1
-                          ? controller.colors[3]
+          child: Obx(() => TabBar(
+                onTap: (index) {
+                  controller.currentPage.value = index;
+                },
+                tabAlignment: TabAlignment.fill,
+                indicatorPadding: const EdgeInsets.fromLTRB(6, 0, 6, 0),
+                controller: controller.tabController,
+                indicator: UnderlineTabIndicator(
+                    borderSide: BorderSide(
+                      color: controller.currentPage <= 4
+                          ? controller.colors[controller.currentPage.value]
                           : unselectedColor,
+                      width: 4,
                     ),
-                  )),
-              SizedBox(
-                height: 55,
-                width: 40,
-                child: Center(
-                  child: Icon(
-                    Icons.search,
-                    color: controller.currentPage.value == 2
-                        ? controller.colors[1]
-                        : unselectedColor,
+                    insets: const EdgeInsets.fromLTRB(16, 0, 16, 8)),
+                tabs: [
+                  SizedBox(
+                    height: 55,
+                    width: 40,
+                    child: Center(
+                      child: Icon(
+                        Icons.home,
+                        color: controller.currentPage.value == 0
+                            ? controller.colors[0]
+                            : unselectedColor,
+                      ),
+                    ),
                   ),
-                ),
-              ),
-              SizedBox(
-                height: 55,
-                width: 40,
-                child: Center(
-                  child: Icon(
-                    Icons.settings,
-                    color: controller.currentPage.value == 3
-                        ? controller.colors[4]
-                        : unselectedColor,
+                  SizedBox(
+                      height: 55,
+                      width: 40,
+                      child: Center(
+                        child: Icon(
+                          Icons.favorite,
+                          color: controller.currentPage.value == 1
+                              ? controller.colors[3]
+                              : unselectedColor,
+                        ),
+                      )),
+                  SizedBox(
+                    height: 55,
+                    width: 40,
+                    child: Center(
+                      child: Icon(
+                        Icons.search,
+                        color: controller.currentPage.value == 2
+                            ? controller.colors[1]
+                            : unselectedColor,
+                      ),
+                    ),
                   ),
-                ),
-              ),
-            ],
-          ),
+                  SizedBox(
+                    height: 55,
+                    width: 40,
+                    child: Center(
+                      child: Icon(
+                        Icons.settings,
+                        color: controller.currentPage.value == 3
+                            ? controller.colors[4]
+                            : unselectedColor,
+                      ),
+                    ),
+                  ),
+                ],
+              )),
         ),
       ),
     );

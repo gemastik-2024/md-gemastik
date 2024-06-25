@@ -98,8 +98,18 @@ class CommunityView extends GetView<CommunityController> {
                             const Spacer(),
                             ElevatedButton(
                               onPressed: () {},
-                              child: const Text("Response"),
-                              style: ButtonStyle(),
+                              style: ButtonStyle(
+                                backgroundColor:
+                                    MaterialStateProperty.all<Color>(
+                                        Colors.white),
+                                shape: MaterialStateProperty.all<
+                                    RoundedRectangleBorder>(
+                                  RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(8.0),
+                                  ),
+                                ),
+                              ),
+                              child: const Text('Response'),
                             ),
                           ],
                         ),

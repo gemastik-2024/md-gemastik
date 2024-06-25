@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-
 import '../../../../../constants/constans.dart';
 import '../../../../../utils/resource/data_x.dart';
 import '../../../../../utils/size_config.dart';
@@ -29,7 +28,7 @@ class FastFeature extends StatelessWidget {
                   width: getRelativeWidth(1),
                   constraints: BoxConstraints(minWidth: getRelativeWidth(0.41)),
                   decoration: BoxDecoration(
-                    color: Color.fromARGB(255, 234, 234, 234),
+                    color: const Color.fromARGB(255, 234, 234, 234),
                     borderRadius: BorderRadius.circular(10),
                   ),
                   child: Padding(

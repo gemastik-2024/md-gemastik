@@ -1,17 +1,19 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:synaptaid/utils/cache_manager.dart';
+import 'package:get_storage/get_storage.dart';
 
 import '../../../../controllers/firebase_const.dart';
 
-class SignInController extends GetxController with CacheManager {
+class SignInController extends GetxController {
   final formKey = GlobalKey<FormState>();
   final isPasswordVisible = false.obs;
   final isloading = false.obs;
 
   String email = '';
   String password = '';
+  String uid = '';
+  final box = GetStorage();
 
   //////login
   Future<UserCredential?> logInMethod({email, password}) async {
@@ -24,9 +26,6 @@ class SignInController extends GetxController with CacheManager {
         password: password,
       )
           .then((value) {
-        debugPrint('auth.signInWithEmailAndPassword() called');
-
-        debugPrint('currentUser: $currentUser');
         return value;
       });
     } on FirebaseAuthException catch (e) {
@@ -90,6 +89,8 @@ class SignInController extends GetxController with CacheManager {
         debugPrint('userCredential is null');
         return false;
       }
+      uid = userCredential.user!.uid.toString();
+      debugPrint('currentUserLast: ${userCredential.user!.uid.toString()}');
     } catch (e) {
       debugPrint('Error: $e');
       Get.snackbar(

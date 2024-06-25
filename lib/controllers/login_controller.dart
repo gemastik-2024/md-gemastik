@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 import 'package:synaptaid/controllers/firebase_const.dart';
 import 'package:synaptaid/utils/cache_manager.dart';
 
-class LogInController extends GetxController with CacheManager {
+class LogInController extends GetxController {
   String email = '';
   String password = '';
 

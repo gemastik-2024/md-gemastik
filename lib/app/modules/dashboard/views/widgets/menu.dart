@@ -22,14 +22,12 @@ class Menu extends GetView<DashboardController> {
               (index) => MenuItem(
                 icon: controller.categories[index]["icon"],
                 text: controller.categories[index]["text"],
+                route: controller.categories[index]["route"],
                 press: () {
-                  final String route = controller.categories[index]["text"]
+                  final String route = controller.categories[index]["route"]
                       .toString()
                       .toLowerCase();
-                  debugPrint("/$route");
-                  Get.toNamed(Routes.MENU_ITEM_ONE, arguments: [
-                    {'text': route}
-                  ]);
+                  controller.functionMenuItem(route);
                   // Get.toNamed('/$route');
                 },
               ),
@@ -46,6 +44,7 @@ class Menu extends GetView<DashboardController> {
               (index) => MenuItem(
                 icon: controller.categorize[index]["icon"],
                 text: controller.categorize[index]["text"],
+                route: controller.categorize[index]["route"],
                 press: () {
                   final String route = controller.categories[index]["text"]
                       .toString()

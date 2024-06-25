@@ -23,7 +23,7 @@ class SettingsView extends GetView<SettingsController> {
             ElevatedButton(
               onPressed: () {
                 FirebaseAuth.instance.signOut();
-                controller.removeUser();
+
                 Get.offAllNamed(Routes.SIGN_IN);
               },
               child: const Text('SignOut'),
