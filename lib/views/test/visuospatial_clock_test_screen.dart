@@ -1,5 +1,7 @@
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:synaptaid/controllers/clock_test_controller.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -28,7 +30,7 @@ class _ClockTestScreenState extends State<ClockTestScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Please Select Time "10 past 11"'),
+        title: const Text('Silakan Pilih Waktu "10 lewat 11"'),
       ),
       body: Center(
         child: Column(
@@ -36,9 +38,9 @@ class _ClockTestScreenState extends State<ClockTestScreen> {
           children: [
             Text(
               _controller.selectedTime != null
-                  ? 'Selected Time: ${_controller.selectedTime!.hour}:${_controller.selectedTime!.minute}'
-                  : 'Please select time 10 past 11',
-              style: const TextStyle(fontSize: 20),
+                  ? 'Waktu Terpilih: ${_controller.selectedTime!.hour}:${_controller.selectedTime!.minute}'
+                  : 'Silakan pilih waktu 10 lewat 11',
+              style: GoogleFonts.nunito(fontSize: 20),
             ),
             const SizedBox(height: 20),
             GestureDetector(
@@ -50,12 +52,12 @@ class _ClockTestScreenState extends State<ClockTestScreen> {
                 height: 200,
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
-                  color: Colors.deepPurple[400],
+                  color: Colors.blue[400],
                 ),
-                child: const Center(
+                child:  Center(
                   child: Text(
-                    'Select Time',
-                    style: TextStyle(fontSize: 20, color: Colors.white),
+                    'Pilih Waktu',
+                    style: GoogleFonts.nunito(fontSize: 20, color: Colors.white),
                   ),
                 ),
               ),
@@ -64,20 +66,19 @@ class _ClockTestScreenState extends State<ClockTestScreen> {
             Obx(
               () => _controller.isLoading.value
                   ? const CircularProgressIndicator(
-                      valueColor:
-                          AlwaysStoppedAnimation<Color>(Colors.deepPurple),
+                      valueColor: AlwaysStoppedAnimation<Color>(Colors.blue),
                     )
                   : DecoratedBox(
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(12),
-                        color: Colors.deepPurple,
+                        color: Colors.blue,
                       ),
                       child: SizedBox(
                         width: 200,
                         height: 46,
                         child: ElevatedButton(
                           style: ElevatedButton.styleFrom(
-                            backgroundColor: Colors.deepPurple,
+                            backgroundColor: Colors.blue,
                           ),
                           onPressed: () async {
                             if (_controller.selectedTime != null) {
@@ -96,9 +97,9 @@ class _ClockTestScreenState extends State<ClockTestScreen> {
                             await _controller.saveScoreToFirestore();
                             Get.offAll(() => const AnimalNameGuessScreen());
                           },
-                          child: const Text(
-                            'Submit',
-                            style: TextStyle(color: Colors.white),
+                          child: Text(
+                            'Kirim',
+                            style: GoogleFonts.nunito(color: Colors.white),
                           ),
                         ),
                       ),

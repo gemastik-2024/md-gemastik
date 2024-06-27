@@ -34,7 +34,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 style: TextStyle(
                   fontSize: 35,
                   fontWeight: FontWeight.bold,
-                  color: Colors.deepPurple,
+                  color: Colors.blue,
                 ),
               ),
               Image(
@@ -54,7 +54,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           // hintText: 'Enter Your Name',
                           prefixIcon: Icon(
                             Icons.person,
-                            color: Colors.deepPurple,
+                            color: Colors.blue,
                           ),
                           labelText: 'Enter Your Name',
                           border: OutlineInputBorder(
@@ -82,7 +82,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         decoration: const InputDecoration(
                           prefixIcon: Icon(
                             Icons.email,
-                            color: Colors.deepPurple,
+                            color: Colors.blue,
                           ),
                           labelText: 'Enter Your Email',
                           border: OutlineInputBorder(
@@ -117,14 +117,14 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         decoration: InputDecoration(
                           prefixIcon: const Icon(
                             Icons.fingerprint_outlined,
-                            color: Colors.deepPurple,
+                            color: Colors.blue,
                           ),
                           suffixIcon: IconButton(
                             icon: Icon(
                               _isPasswordVisible
                                   ? Icons.visibility
                                   : Icons.visibility_off,
-                              color: Colors.deepPurple,
+                              color: Colors.blue,
                             ),
                             onPressed: () {
                               setState(
@@ -163,14 +163,14 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         decoration: InputDecoration(
                           prefixIcon: const Icon(
                             Icons.fingerprint_outlined,
-                            color: Colors.deepPurple,
+                            color: Colors.blue,
                           ),
                           suffixIcon: IconButton(
                             icon: Icon(
                               _isRepasswordVisible
                                   ? Icons.visibility
                                   : Icons.visibility_off,
-                              color: Colors.deepPurple,
+                              color: Colors.blue,
                             ),
                             onPressed: () {
                               setState(() {
@@ -222,7 +222,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         height: Get.height * 0.06,
                         child: ElevatedButton(
                           style: ElevatedButton.styleFrom(
-                            backgroundColor: Colors.deepPurple,
+                            backgroundColor: Colors.blue,
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(12),
                             ),
@@ -336,7 +336,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                               "Log in",
                               style: TextStyle(
                                 fontSize: 18,
-                                color: Colors.deepPurple,
+                                color: Colors.blue,
                                 fontWeight: FontWeight.bold,
                               ),
                             ),

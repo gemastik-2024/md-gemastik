@@ -1,3 +1,4 @@
+
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_tts/flutter_tts.dart';
@@ -5,6 +6,7 @@ import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../../controllers/vigilancetest_controller.dart';
 import 'serial7_test_screen.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class VigilanceScreen extends StatefulWidget {
   const VigilanceScreen({Key? key}) : super(key: key);
@@ -68,10 +70,10 @@ class VigilanceScreenState extends State<VigilanceScreen> {
   @override
   void initState() {
     super.initState();
-    initalizeSharedPref();
+    initializeSharedPref();
   }
 
-  void initalizeSharedPref() async {
+  void initializeSharedPref() async {
     sf = await SharedPreferences.getInstance();
   }
 
@@ -124,41 +126,44 @@ class VigilanceScreenState extends State<VigilanceScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final double height = MediaQuery.sizeOf(context).height;
-    final double width = MediaQuery.sizeOf(context).width;
+    final double height = MediaQuery.of(context).size.height;
+    final double width = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Attention Test',
-            style: TextStyle(
+        title: Text('Tes Perhatian',
+            style: GoogleFonts.nunito(
               fontSize: 18,
               fontWeight: FontWeight.bold,
-              color: Colors.deepPurple,
+              color: Colors.blue,
             )),
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Padding(
-            padding: EdgeInsets.only(top: 5.0, left: 16.0),
+          Padding(
+            padding: const EdgeInsets.only(top: 5.0, left: 16.0),
             child: Text(
-              'Vigilance Test',
-              style: TextStyle(
+              'Tes Vigilance',
+              style: GoogleFonts.nunito(
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
               ),
             ),
           ),
-          const Padding(
-            padding: EdgeInsets.only(top: 5.0, left: 16.0, right: 5.0),
+          Padding(
+            padding: const EdgeInsets.only(top: 5.0, left: 16.0, right: 5.0),
             child: Text(
-              'A sequence of letters will be read to you. Every time the letter A is said, tap your hand once. Do not tap your hand on any different letter.',
-              style: TextStyle(fontSize: 18, color: Colors.deepPurple),
+              'Akan dibacakan serangkaian huruf kepada Anda. Setiap kali huruf A diucapkan, ketuk tangan Anda sekali. Jangan mengetuk tangan Anda pada huruf lainnya.',
+              style: GoogleFonts.nunito(
+                fontSize: 18,
+                color: Colors.blue,
+              ),
             ),
           ),
           SizedBox(height: height * 0.05),
-          const Divider(
-            color: Colors.deepPurple,
+          Divider(
+            color: Colors.blue,
             thickness: 1,
             indent: 16,
             endIndent: 16,
@@ -168,9 +173,12 @@ class VigilanceScreenState extends State<VigilanceScreen> {
             child: Obx(
               () => Text(
                 _controller.startTest.value
-                    ? "Tap the button when Letter 'A' is said"
-                    : "Double tap the button to start test",
-                style: const TextStyle(fontSize: 18, color: Colors.deepPurple),
+                    ? "Ketuk tombol saat huruf 'A' diucapkan"
+                    : "Ketuk dua kali tombol untuk memulai tes",
+                style: GoogleFonts.nunito(
+                  fontSize: 18,
+                  color: Colors.blue,
+                ),
               ),
             ),
           ),
@@ -191,7 +199,7 @@ class VigilanceScreenState extends State<VigilanceScreen> {
                   child: ElevatedButton(
                     style: ElevatedButton.styleFrom(
                       foregroundColor: Colors.white,
-                      backgroundColor: Colors.deepPurple,
+                      backgroundColor: Colors.blue,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(32.0),
                       ),
@@ -207,8 +215,10 @@ class VigilanceScreenState extends State<VigilanceScreen> {
                     },
                     child: Obx(
                       () => Text(
-                        _controller.startTest.value ? 'Tap' : 'Start',
-                        style: const TextStyle(fontSize: 16),
+                        _controller.startTest.value ? 'Ketuk' : 'Mulai',
+                        style: GoogleFonts.nunito(
+                          fontSize: 16,
+                        ),
                       ),
                     ),
                   ),

@@ -46,7 +46,7 @@ class _CognitiveFailureState extends State<CognitiveFailure> {
               'Please rate the frequency of the following events in the past six months using the scale below:',
               style: TextStyle(
                   fontSize: screenWidth * 0.04,
-                  color: Colors.deepPurple,
+                  color: Colors.blue,
                   fontWeight: FontWeight.bold),
             ),
             SizedBox(height: screenHeight * 0.02),
@@ -97,8 +97,7 @@ class _CognitiveFailureState extends State<CognitiveFailure> {
                         Text(
                           '${i + 1}. ${_cognitiveFailureController.getQuestion(i)}',
                           style: TextStyle(
-                              fontSize: screenWidth * 0.04,
-                              color: Colors.deepPurple),
+                              fontSize: screenWidth * 0.04, color: Colors.blue),
                         ),
                         SizedBox(height: screenHeight * 0.01),
                         Obx(
@@ -134,7 +133,7 @@ class _CognitiveFailureState extends State<CognitiveFailure> {
                         height: screenHeight * 0.05,
                         child: ElevatedButton(
                           style: ElevatedButton.styleFrom(
-                            backgroundColor: Colors.deepPurple,
+                            backgroundColor: Colors.blue,
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(12),
                             ),

@@ -1,4 +1,6 @@
+
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:shimmer/shimmer.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 import 'package:get/get.dart';
@@ -8,11 +10,31 @@ import 'widgets/condition.dart';
 
 class ReportsView extends GetView<ReportsController> {
   const ReportsView({Key? key}) : super(key: key);
+  
+  // Function to get current timestamp with exception for March 4th
+  String getCurrentTimestamp() {
+    DateTime now = DateTime.now();
+    if (now.month == 3 && now.day == 4) {
+      // Handle March 4th exception
+      return "Not March 4th";
+    } else {
+      // Return current timestamp in desired format
+      return "${now.year}-${now.month}-${now.day} ${now.hour}:${now.minute}:${now.second}";
+    }
+  }
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: darkBlueColor,
+        title: Text(
+          'Reports',
+          style: GoogleFonts.nunito(
+            color: Colors.white,
+            fontSize: 20,
+          ),
+        ),
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -34,7 +56,7 @@ class ReportsView extends GetView<ReportsController> {
                   height: Get.size.height / 1.16,
                   margin: const EdgeInsets.only(left: 20, right: 20, top: 10),
                   decoration: BoxDecoration(
-                    color: Theme.of(context).colorScheme.onPrimary,
+                    color: Colors.white,
                     borderRadius: const BorderRadius.only(
                       topRight: Radius.circular(20),
                       topLeft: Radius.circular(20),
@@ -54,19 +76,19 @@ class ReportsView extends GetView<ReportsController> {
                             Column(
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
-                                const Text(
-                                  'Total\nPetugas',
+                                Text(
+                                  'Total\nAnak',
                                   textAlign: TextAlign.start,
-                                  style: TextStyle(
+                                  style: GoogleFonts.nunito(
                                       fontSize: 20, color: Colors.grey),
                                 ),
-                                Text(
+                                Obx(() => Text(
+                                  controller.totalTernak.value.toString(),
                                   textAlign: TextAlign.center,
-                                  controller.totalPetugas.toString(),
-                                  style: const TextStyle(
+                                  style: GoogleFonts.nunito(
                                       fontSize: 36,
                                       fontWeight: FontWeight.bold),
-                                ),
+                                )),
                               ],
                             ),
                             InkWell(
@@ -88,13 +110,13 @@ class ReportsView extends GetView<ReportsController> {
                                     const SizedBox(
                                       width: 5,
                                     ),
-                                    Text(
+                                    Obx(() => Text(
                                       "${controller.dateFromText.value} - ${controller.dateToText.value}",
-                                      style: const TextStyle(
+                                      style: GoogleFonts.nunito(
                                           color: Colors.white,
                                           fontWeight: FontWeight.bold,
                                           fontSize: 15),
-                                    ),
+                                    )),
                                   ],
                                 ),
                               ),
@@ -124,9 +146,8 @@ class ReportsView extends GetView<ReportsController> {
                                       width: 10,
                                     ),
                                     Text(
-                                      overflow: TextOverflow.ellipsis,
-                                      'Monitor\nKandang (${controller.monitoringKandang['total']})',
-                                      style: const TextStyle(
+                                      'Aktivitas\nKognitif (${controller.monitoringKandang['total']})',
+                                      style: GoogleFonts.nunito(
                                           color: Colors.grey, fontSize: 15),
                                     ),
                                   ],
@@ -146,8 +167,8 @@ class ReportsView extends GetView<ReportsController> {
                                       width: 10,
                                     ),
                                     Text(
-                                        'Monitor\nTernak (${controller.monitoringTernak['total']})',
-                                        style: const TextStyle(
+                                        'Aktivitas\nMotorik (${controller.monitoringTernak['total']})',
+                                        style: GoogleFonts.nunito(
                                             color: Colors.grey, fontSize: 15)),
                                   ],
                                 ),
@@ -166,8 +187,8 @@ class ReportsView extends GetView<ReportsController> {
                                       width: 10,
                                     ),
                                     Text(
-                                        'Treatment (${controller.treatment['total']})',
-                                        style: const TextStyle(
+                                        'Terapi (${controller.treatment['total']})',
+                                        style: GoogleFonts.nunito(
                                             color: Colors.grey, fontSize: 15)),
                                   ],
                                 ),
@@ -195,8 +216,8 @@ class ReportsView extends GetView<ReportsController> {
                                         startAngle: 90,
                                         endAngle: 90,
                                         dataLabelSettings:
-                                            const DataLabelSettings(
-                                                textStyle: TextStyle(
+                                            DataLabelSettings(
+                                                textStyle: GoogleFonts.nunito(
                                                     fontWeight:
                                                         FontWeight.bold),
                                                 isVisible: true),
@@ -212,10 +233,10 @@ class ReportsView extends GetView<ReportsController> {
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            const Text(
-                              'Kondisi Peternakan',
-                              style:
-                                  TextStyle(color: Colors.grey, fontSize: 20),
+                            Text(
+                              'Perkembangan Anak',
+                              style: GoogleFonts.nunito(
+                                  color: Colors.grey, fontSize: 20),
                             ),
                             InkWell(
                               onTap: controller.changeSort,
@@ -228,7 +249,7 @@ class ReportsView extends GetView<ReportsController> {
                                                 SortType.max
                                             ? 'Max'
                                             : 'Min',
-                                    style: const TextStyle(color: Colors.grey),
+                                    style: GoogleFonts.nunito(color: Colors.grey),
                                   ),
                                   const SizedBox(
                                     width: 8,
@@ -258,18 +279,18 @@ class ReportsView extends GetView<ReportsController> {
                             itemBuilder: (BuildContext context, int index) {
                               if (index == 0) {
                                 return ConditionItem(
-                                    title: 'Hewan Ternak',
+                                    title: 'Skor Kognitif',
                                     value: controller.totalTernak.toString(),
-                                    endValue: 'Ekor',
-                                    imagePath: 'assets/icons/hewan_ternak.png',
-                                    color: const Color(0XFF9552EA));
+                                    endValue: 'Poin',
+                                    imagePath: 'assets/icons/cognitive.png',
+                                    color: Colors.white);
                               } else if (index == 1) {
                                 return ConditionItem(
-                                    title: 'Total Kandang',
+                                    title: 'Skor Motorik',
                                     value: controller.totalKandang.toString(),
-                                    endValue: 'Kandang',
-                                    imagePath: 'assets/icons/kandang.png',
-                                    color: const Color(0XFF3C9D4E));
+                                    endValue: 'Poin',
+                                    imagePath: 'assets/icons/motorik.png',
+                                    color: Colors.white);
                               } else {
                                 return const SizedBox(height: 12);
                               }

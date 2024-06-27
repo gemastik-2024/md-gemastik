@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:synaptaid/constants/constans.dart';
 
 import '../controllers/community_controller.dart';
@@ -23,17 +24,11 @@ class CommunityView extends GetView<CommunityController> {
           children: [
             Text(
               'SynaptaidTalk',
-              style: Theme.of(context)
-                  .textTheme
-                  .titleLarge!
-                  .copyWith(color: Colors.white),
+              style: GoogleFonts.nunito(color: Colors.white),
             ),
             Text(
-              'Place for discussion',
-              style: Theme.of(context)
-                  .textTheme
-                  .titleMedium!
-                  .copyWith(color: Colors.white),
+              'Tempat untuk diskusi',
+              style: GoogleFonts.nunito(color: Colors.white, fontSize: 12),
             ),
           ],
         ),

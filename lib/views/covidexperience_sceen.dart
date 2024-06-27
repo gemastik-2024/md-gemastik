@@ -31,7 +31,7 @@ class _CovidExperienceScreenState extends State<CovidExperienceScreen> {
           style: TextStyle(
             fontSize: 28,
             fontWeight: FontWeight.bold,
-            color: Colors.deepPurple,
+            color: Colors.blue,
           ),
         )),
       ),
@@ -53,7 +53,7 @@ class _CovidExperienceScreenState extends State<CovidExperienceScreen> {
                       style: TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.bold,
-                        color: Colors.deepPurple,
+                        color: Colors.blue,
                       ),
                     ),
                     Row(
@@ -72,7 +72,7 @@ class _CovidExperienceScreenState extends State<CovidExperienceScreen> {
                           'Yes',
                           style: TextStyle(
                             fontSize: 18,
-                            color: Colors.deepPurple,
+                            color: Colors.blue,
                             fontWeight: FontWeight.w400,
                           ),
                         ),
@@ -94,7 +94,7 @@ class _CovidExperienceScreenState extends State<CovidExperienceScreen> {
                           'No',
                           style: TextStyle(
                             fontSize: 18,
-                            color: Colors.deepPurple,
+                            color: Colors.blue,
                             fontWeight: FontWeight.w400,
                           ),
                         ),
@@ -116,7 +116,7 @@ class _CovidExperienceScreenState extends State<CovidExperienceScreen> {
                             style: TextStyle(
                               fontSize: 18,
                               fontWeight: FontWeight.bold,
-                              color: Colors.deepPurple,
+                              color: Colors.blue,
                             ),
                           ),
                           Row(
@@ -134,7 +134,7 @@ class _CovidExperienceScreenState extends State<CovidExperienceScreen> {
                                 'Yes',
                                 style: TextStyle(
                                   fontSize: 18,
-                                  color: Colors.deepPurple,
+                                  color: Colors.blue,
                                   fontWeight: FontWeight.w400,
                                 ),
                               ),
@@ -151,7 +151,7 @@ class _CovidExperienceScreenState extends State<CovidExperienceScreen> {
                                 'No',
                                 style: TextStyle(
                                   fontSize: 18,
-                                  color: Colors.deepPurple,
+                                  color: Colors.blue,
                                   fontWeight: FontWeight.w400,
                                 ),
                               ),
@@ -168,7 +168,7 @@ class _CovidExperienceScreenState extends State<CovidExperienceScreen> {
                             style: TextStyle(
                               fontSize: 18,
                               fontWeight: FontWeight.bold,
-                              color: Colors.deepPurple,
+                              color: Colors.blue,
                             ),
                           ),
                           Row(
@@ -186,7 +186,7 @@ class _CovidExperienceScreenState extends State<CovidExperienceScreen> {
                                 'Positive',
                                 style: TextStyle(
                                   fontSize: 18,
-                                  color: Colors.deepPurple,
+                                  color: Colors.blue,
                                   fontWeight: FontWeight.w400,
                                 ),
                               ),
@@ -203,7 +203,7 @@ class _CovidExperienceScreenState extends State<CovidExperienceScreen> {
                                 'Negative',
                                 style: TextStyle(
                                   fontSize: 18,
-                                  color: Colors.deepPurple,
+                                  color: Colors.blue,
                                   fontWeight: FontWeight.w400,
                                 ),
                               ),
@@ -227,7 +227,7 @@ class _CovidExperienceScreenState extends State<CovidExperienceScreen> {
                               style: TextStyle(
                                 fontSize: 18,
                                 fontWeight: FontWeight.bold,
-                                color: Colors.deepPurple,
+                                color: Colors.blue,
                               ),
                             ),
                             const SizedBox(height: 16),
@@ -262,7 +262,7 @@ class _CovidExperienceScreenState extends State<CovidExperienceScreen> {
                       style: TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.bold,
-                        color: Colors.deepPurple,
+                        color: Colors.blue,
                       ),
                     ),
                     Column(
@@ -283,7 +283,7 @@ class _CovidExperienceScreenState extends State<CovidExperienceScreen> {
                               style: TextStyle(
                                 fontSize: 18,
                                 fontWeight: FontWeight.w400,
-                                color: Colors.deepPurple,
+                                color: Colors.blue,
                               ),
                             ),
                           ],
@@ -304,7 +304,7 @@ class _CovidExperienceScreenState extends State<CovidExperienceScreen> {
                               style: TextStyle(
                                 fontSize: 18,
                                 fontWeight: FontWeight.w400,
-                                color: Colors.deepPurple,
+                                color: Colors.blue,
                               ),
                             ),
                           ],
@@ -325,7 +325,7 @@ class _CovidExperienceScreenState extends State<CovidExperienceScreen> {
                               style: TextStyle(
                                 fontSize: 18,
                                 fontWeight: FontWeight.w400,
-                                color: Colors.deepPurple,
+                                color: Colors.blue,
                               ),
                             ),
                           ],
@@ -346,7 +346,7 @@ class _CovidExperienceScreenState extends State<CovidExperienceScreen> {
                               style: TextStyle(
                                 fontSize: 18,
                                 fontWeight: FontWeight.w400,
-                                color: Colors.deepPurple,
+                                color: Colors.blue,
                               ),
                             ),
                           ],
@@ -367,7 +367,7 @@ class _CovidExperienceScreenState extends State<CovidExperienceScreen> {
                               style: TextStyle(
                                 fontSize: 18,
                                 fontWeight: FontWeight.w400,
-                                color: Colors.deepPurple,
+                                color: Colors.blue,
                               ),
                             ),
                           ],
@@ -390,7 +390,7 @@ class _CovidExperienceScreenState extends State<CovidExperienceScreen> {
                                 style: TextStyle(
                                   fontSize: 18,
                                   fontWeight: FontWeight.w400,
-                                  color: Colors.deepPurple,
+                                  color: Colors.blue,
                                 ),
                               ),
                             ],
@@ -408,7 +408,7 @@ class _CovidExperienceScreenState extends State<CovidExperienceScreen> {
                       style: TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.bold,
-                        color: Colors.deepPurple,
+                        color: Colors.blue,
                       ),
                     ),
                     Column(
@@ -429,7 +429,7 @@ class _CovidExperienceScreenState extends State<CovidExperienceScreen> {
                               style: TextStyle(
                                 fontSize: 18,
                                 fontWeight: FontWeight.w400,
-                                color: Colors.deepPurple,
+                                color: Colors.blue,
                               ),
                             ),
                           ],
@@ -450,7 +450,7 @@ class _CovidExperienceScreenState extends State<CovidExperienceScreen> {
                               style: TextStyle(
                                 fontSize: 18,
                                 fontWeight: FontWeight.w400,
-                                color: Colors.deepPurple,
+                                color: Colors.blue,
                               ),
                             ),
                           ],
@@ -471,7 +471,7 @@ class _CovidExperienceScreenState extends State<CovidExperienceScreen> {
                               style: TextStyle(
                                 fontSize: 18,
                                 fontWeight: FontWeight.w400,
-                                color: Colors.deepPurple,
+                                color: Colors.blue,
                               ),
                             ),
                           ],
@@ -495,7 +495,7 @@ class _CovidExperienceScreenState extends State<CovidExperienceScreen> {
                                   style: TextStyle(
                                     fontSize: 18,
                                     fontWeight: FontWeight.w400,
-                                    color: Colors.deepPurple,
+                                    color: Colors.blue,
                                   ),
                                 ),
                                 Text(
@@ -503,7 +503,7 @@ class _CovidExperienceScreenState extends State<CovidExperienceScreen> {
                                   style: TextStyle(
                                     fontSize: 18,
                                     fontWeight: FontWeight.w400,
-                                    color: Colors.deepPurple,
+                                    color: Colors.blue,
                                   ),
                                 ),
                               ],
@@ -533,7 +533,7 @@ class _CovidExperienceScreenState extends State<CovidExperienceScreen> {
                                   style: TextStyle(
                                     fontSize: 18,
                                     fontWeight: FontWeight.w400,
-                                    color: Colors.deepPurple,
+                                    color: Colors.blue,
                                   ),
                                 ),
                                 Text(
@@ -541,7 +541,7 @@ class _CovidExperienceScreenState extends State<CovidExperienceScreen> {
                                   style: TextStyle(
                                     fontSize: 18,
                                     fontWeight: FontWeight.w400,
-                                    color: Colors.deepPurple,
+                                    color: Colors.blue,
                                   ),
                                 ),
                               ],
@@ -566,7 +566,7 @@ class _CovidExperienceScreenState extends State<CovidExperienceScreen> {
                                 style: TextStyle(
                                   fontSize: 18,
                                   fontWeight: FontWeight.w400,
-                                  color: Colors.deepPurple,
+                                  color: Colors.blue,
                                 ),
                               ),
                             ],
@@ -584,7 +584,7 @@ class _CovidExperienceScreenState extends State<CovidExperienceScreen> {
                       style: TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.bold,
-                        color: Colors.deepPurple,
+                        color: Colors.blue,
                       ),
                     ),
                     Row(
@@ -603,7 +603,7 @@ class _CovidExperienceScreenState extends State<CovidExperienceScreen> {
                           'Yes',
                           style: TextStyle(
                             fontSize: 18,
-                            color: Colors.deepPurple,
+                            color: Colors.blue,
                             fontWeight: FontWeight.w400,
                           ),
                         ),
@@ -624,7 +624,7 @@ class _CovidExperienceScreenState extends State<CovidExperienceScreen> {
                           'No',
                           style: TextStyle(
                             fontSize: 18,
-                            color: Colors.deepPurple,
+                            color: Colors.blue,
                             fontWeight: FontWeight.w400,
                           ),
                         ),
@@ -646,7 +646,7 @@ class _CovidExperienceScreenState extends State<CovidExperienceScreen> {
                             style: TextStyle(
                               fontSize: 18,
                               fontWeight: FontWeight.bold,
-                              color: Colors.deepPurple,
+                              color: Colors.blue,
                             ),
                           ),
                           Column(
@@ -668,7 +668,7 @@ class _CovidExperienceScreenState extends State<CovidExperienceScreen> {
                                       ' Before getting infected with COVID-19 ',
                                       style: TextStyle(
                                         fontSize: 18,
-                                        color: Colors.deepPurple,
+                                        color: Colors.blue,
                                         fontWeight: FontWeight.w400,
                                       ),
                                     ),
@@ -692,7 +692,7 @@ class _CovidExperienceScreenState extends State<CovidExperienceScreen> {
                                       'After getting infected with COVID-19 ',
                                       style: TextStyle(
                                         fontSize: 18,
-                                        color: Colors.deepPurple,
+                                        color: Colors.blue,
                                         fontWeight: FontWeight.w400,
                                       ),
                                     ),
@@ -719,7 +719,7 @@ class _CovidExperienceScreenState extends State<CovidExperienceScreen> {
                                           'N/A',
                                           style: TextStyle(
                                             fontSize: 18,
-                                            color: Colors.deepPurple,
+                                            color: Colors.blue,
                                             fontWeight: FontWeight.w400,
                                           ),
                                         ),
@@ -742,12 +742,12 @@ class _CovidExperienceScreenState extends State<CovidExperienceScreen> {
                         height: 50,
                         child: DecoratedBox(
                           decoration: BoxDecoration(
-                            color: Colors.deepPurple,
+                            color: Colors.blue,
                             borderRadius: BorderRadius.circular(10),
                           ),
                           child: ElevatedButton(
                             style: ElevatedButton.styleFrom(
-                              backgroundColor: Colors.deepPurple,
+                              backgroundColor: Colors.blue,
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(10),
                               ),

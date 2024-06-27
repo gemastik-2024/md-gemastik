@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import '../controllers/cognitive_games_controller.dart';
 
@@ -10,13 +11,13 @@ class CognitiveGamesView extends GetView<CognitiveGamesController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Center(
+        title: Center(
             child: Text(
-          'Main Test Screen',
-          style: TextStyle(
+          'Gamifikasi',
+          style: GoogleFonts.nunito(
             fontSize: 28,
             fontWeight: FontWeight.bold,
-            color: Colors.deepPurple,
+            color: Colors.blue,
           ),
         )),
       ),
@@ -33,20 +34,20 @@ class CognitiveGamesView extends GetView<CognitiveGamesController> {
             return ElevatedButton(
               onPressed: () => controller.playGame(gameNumber, context),
               style: ElevatedButton.styleFrom(
-                shadowColor: Colors.deepPurple,
+                shadowColor: Colors.blue,
                 elevation: 10,
                 side: const BorderSide(color: Colors.black, width: 2),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(16.0),
                 ),
-                textStyle: const TextStyle(fontSize: 20, color: Colors.white),
-                backgroundColor: isLocked ? Colors.grey : Colors.deepPurple,
+               textStyle: GoogleFonts.nunito(fontSize: 20, color: Colors.white),
+                backgroundColor: isLocked ? Colors.grey : Colors.blue,
                 minimumSize: const Size(100, 120),
               ),
               child: Text(
                 "Game ${controller.gameNameList[gameNumber - 1]}",
                 textAlign: TextAlign.center,
-                style: const TextStyle(color: Colors.white),
+                style:GoogleFonts.nunito(color: Colors.white),
               ),
             );
           }),

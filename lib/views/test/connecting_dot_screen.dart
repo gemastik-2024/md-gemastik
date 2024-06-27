@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../controllers/connecting_dots_controller.dart';
@@ -13,7 +14,8 @@ class ConnectingDotsScreen extends StatefulWidget {
 }
 
 class _DotScreenState extends State<ConnectingDotsScreen> {
-  final ConnectingDotsController _controller = Get.put(ConnectingDotsController());
+  final ConnectingDotsController _controller =
+      Get.put(ConnectingDotsController());
   List<int> selectedIndices = [];
   late SharedPreferences sf;
   @override
@@ -58,7 +60,6 @@ class _DotScreenState extends State<ConnectingDotsScreen> {
     Offset(200.0, 250.0),
     Offset(70.0, 260.0),
     Offset(270.0, 60.0),
-
   ];
 
   List<dynamic> selectedValues = [];
@@ -67,15 +68,16 @@ class _DotScreenState extends State<ConnectingDotsScreen> {
   void selectDot(int index) {
     setState(() {
       if (selectedIndices.isNotEmpty && selectedIndices.last == index) {
-        // Unselect the last dot if it is already selected
+        // Batalkan pemilihan titik terakhir jika sudah dipilih
         selectedIndices.removeLast();
         selectedValues.removeLast();
       } else {
-        // Select the dot
+        // Pilih titik
         if (selectedValues.contains(patternSequence[index])) {
         } else {
           selectedIndices.add(index);
-          selectedValues.add(patternSequence[index]); // Store the selected dot value
+          selectedValues
+              .add(patternSequence[index]); // Simpan nilai titik yang dipilih
         }
       }
       if (selectedValues.length == patternSequence.length) {
@@ -127,12 +129,12 @@ class _DotScreenState extends State<ConnectingDotsScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
-          'Visualisation Test',
-          style: TextStyle(
+        title: Text(
+          'Tes Visualisasi',
+          style: GoogleFonts.nunito(
             fontSize: 18,
             fontWeight: FontWeight.bold,
-            color: Colors.deepPurple,
+            color: Colors.blue,
           ),
         ),
       ),
@@ -143,33 +145,33 @@ class _DotScreenState extends State<ConnectingDotsScreen> {
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const Text(
-                'Connect the Dots',
-                style: TextStyle(
+              Text(
+                'Hubungkan Titik-Titik',
+                style: GoogleFonts.nunito(
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              const Text(
-                'Select Dots, going from a number to a letter in ascending order. First select a number then select a letter. Begin from 1 and then to A then to 2 and so on.',
-                style: TextStyle(
+              Text(
+                'Pilih Titik-Titik, dari angka ke huruf secara berurutan. Pertama pilih angka lalu pilih huruf. Mulai dari 1 lalu ke A lalu ke 2 dan seterusnya.',
+                style: GoogleFonts.nunito(
                   fontSize: 18,
-                  color: Colors.deepPurple,
+                  color: Colors.blue,
                 ),
               ),
               SizedBox(height: MediaQuery.sizeOf(context).height * 0.02),
               const Divider(
                 thickness: 1,
-                color: Colors.deepPurple,
+                color: Colors.blue,
                 indent: 16,
                 endIndent: 16,
               ),
               SizedBox(height: MediaQuery.sizeOf(context).height * 0.01),
               Obx(
-                    () => Text(
-                  "Remaining Time: ${_controller.remainingSeconds} sec",
-                  style: const TextStyle(
-                    color: Colors.deepPurple,
+                () => Text(
+                  "Waktu Tersisa: ${_controller.remainingSeconds} detik",
+                  style:GoogleFonts.nunito(
+                    color: Colors.blue,
                     fontWeight: FontWeight.bold,
                     fontSize: 16,
                   ),
@@ -182,12 +184,14 @@ class _DotScreenState extends State<ConnectingDotsScreen> {
                 child: LayoutBuilder(
                   builder: (context, constraints) {
                     final containerSize =
-                    Size(constraints.maxWidth, constraints.maxHeight);
+                        Size(constraints.maxWidth, constraints.maxHeight);
 
                     return Stack(
                       children: [
                         for (var i = 0; i < patternSequence.length; i++)
-                          if (i < dotPositions.length) // Check if the index is valid
+                          if (i <
+                              dotPositions
+                                  .length) // Periksa apakah indeks valid
                             Positioned(
                               left: dotPositions[i].dx - 25,
                               top: dotPositions[i].dy - 25,
@@ -227,13 +231,13 @@ class Dot extends StatelessWidget {
       width: 50,
       height: 50,
       decoration: BoxDecoration(
-        color: isSelected ? Colors.deepPurple : Colors.grey,
+        color: isSelected ? Colors.blue : Colors.grey,
         shape: BoxShape.circle,
       ),
       child: Center(
         child: Text(
           index.toString(),
-          style: const TextStyle(
+          style: GoogleFonts.nunito(
             color: Colors.white,
             fontSize: 20,
             fontWeight: FontWeight.bold,

@@ -1,6 +1,8 @@
+
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:synaptaid/app/modules/socio_demographic/controllers/socio_demographic_controller.dart';
 
 class SocioDemographicView extends GetView<SocioDemographicController> {
@@ -9,13 +11,13 @@ class SocioDemographicView extends GetView<SocioDemographicController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Center(
+        title: Center(
             child: Text(
-          'Socio-Demographic Data',
-          style: TextStyle(
+          'Biodata',
+          style: GoogleFonts.nunito(
             fontSize: 28,
             fontWeight: FontWeight.bold,
-            color: Colors.deepPurple,
+            color: Colors.blue,
           ),
         )),
       ),
@@ -37,9 +39,9 @@ class SocioDemographicView extends GetView<SocioDemographicController> {
                     // hintText: 'Enter Your Name',
                     prefixIcon: Icon(
                       Icons.person,
-                      color: Colors.deepPurple,
+                      color: Colors.blue,
                     ),
-                    labelText: 'Enter Your Name',
+                    labelText: 'Masukkan Nama Anda',
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.all(
                         Radius.circular(12),
@@ -51,7 +53,7 @@ class SocioDemographicView extends GetView<SocioDemographicController> {
                   },
                   validator: (value) {
                     if (value == null || value.isEmpty) {
-                      return 'Please enter your name';
+                      return 'Mohon masukkan nama Anda';
                     }
                     return null;
                   },
@@ -61,59 +63,59 @@ class SocioDemographicView extends GetView<SocioDemographicController> {
                   color: Colors.black12,
                 ),
                 const SizedBox(height: 16),
-                const Text(
-                  'Gender',
-                  style: TextStyle(
+                Text(
+                  'Jenis Kelamin',
+                  style: GoogleFonts.nunito(
                     fontSize: 18,
                     fontWeight: FontWeight.bold,
-                    color: Colors.deepPurple,
+                    color: Colors.blue,
                   ),
                 ),
 
                 Obx(() => Row(
                       children: [
                         Radio(
-                          value: 'Male',
+                          value: 'Laki-laki',
                           groupValue: controller.gender.value,
                           onChanged: (value) {
                             controller.gender.value = value.toString();
                           },
                         ),
-                        const Text(
-                          'Male',
-                          style: TextStyle(
+                        Text(
+                          'Laki-laki',
+                          style: GoogleFonts.nunito(
                             fontSize: 18,
-                            color: Colors.deepPurple,
+                            color: Colors.blue,
                             fontWeight: FontWeight.w500,
                           ),
                         ),
                         Radio(
-                          value: 'Female',
+                          value: 'Perempuan',
                           groupValue: controller.gender.value,
                           onChanged: (value) {
                             controller.gender.value = value.toString();
                           },
                         ),
-                        const Text(
-                          'Female',
-                          style: TextStyle(
+                        Text(
+                          'Perempuan',
+                          style: GoogleFonts.nunito(
                             fontSize: 18,
-                            color: Colors.deepPurple,
+                            color: Colors.blue,
                             fontWeight: FontWeight.w500,
                           ),
                         ),
                         Radio(
-                          value: 'Others',
+                          value: 'Lainnya',
                           groupValue: controller.gender.value,
                           onChanged: (value) {
                             controller.gender.value = value.toString();
                           },
                         ),
-                        const Text(
-                          'Others',
-                          style: TextStyle(
+                        Text(
+                          'Lainnya',
+                          style: GoogleFonts.nunito(
                             fontSize: 18,
-                            color: Colors.deepPurple,
+                            color: Colors.blue,
                             fontWeight: FontWeight.w500,
                           ),
                         ),
@@ -124,12 +126,12 @@ class SocioDemographicView extends GetView<SocioDemographicController> {
                   color: Colors.black12,
                 ),
                 const SizedBox(height: 16),
-                const Text(
-                  'Age',
-                  style: TextStyle(
+                Text(
+                  'Usia',
+                  style: GoogleFonts.nunito(
                     fontSize: 18,
                     fontWeight: FontWeight.bold,
-                    color: Colors.deepPurple,
+                    color: Colors.blue,
                   ),
                 ),
 
@@ -138,7 +140,7 @@ class SocioDemographicView extends GetView<SocioDemographicController> {
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(12),
                     border: Border.all(
-                      color: Colors.deepPurple,
+                      color: Colors.blue,
                       width: 1.5,
                     ),
                   ),
@@ -149,17 +151,17 @@ class SocioDemographicView extends GetView<SocioDemographicController> {
                         isExpanded: true,
                         underline: const SizedBox(),
                         borderRadius: BorderRadius.circular(12),
-                        disabledHint: const Text(
-                          'Select your age',
-                          style: TextStyle(
+                        disabledHint: Text(
+                          'Pilih usia Anda',
+                          style: GoogleFonts.nunito(
                             fontSize: 18,
                             fontWeight: FontWeight.w500,
-                            color: Colors.deepPurple,
+                            color: Colors.blue,
                           ),
                         ),
-                        style: const TextStyle(
+                        style: GoogleFonts.nunito(
                           fontSize: 18,
-                          color: Colors.deepPurple,
+                          color: Colors.blue,
                           fontWeight: FontWeight.w500,
                         ),
                         value: controller.age.value,
@@ -168,24 +170,24 @@ class SocioDemographicView extends GetView<SocioDemographicController> {
                         },
                         items: const [
                           DropdownMenuItem(
-                            value: '18-25 years',
-                            child: Text('18-25 years'),
+                            value: '18-25 tahun',
+                            child: Text('18-25 tahun'),
                           ),
                           DropdownMenuItem(
-                            value: '26-35 years',
-                            child: Text('26-35 years'),
+                            value: '26-35 tahun',
+                            child: Text('26-35 tahun'),
                           ),
                           DropdownMenuItem(
-                            value: '36-45 years',
-                            child: Text('36-45 years'),
+                            value: '36-45 tahun',
+                            child: Text('36-45 tahun'),
                           ),
                           DropdownMenuItem(
-                            value: '46-55 years',
-                            child: Text('46-55 years'),
+                            value: '46-55 tahun',
+                            child: Text('46-55 tahun'),
                           ),
                           DropdownMenuItem(
-                            value: '55-65 years',
-                            child: Text('55-65 years'),
+                            value: '55-65 tahun',
+                            child: Text('55-65 tahun'),
                           ),
                         ],
                       ),
@@ -197,12 +199,12 @@ class SocioDemographicView extends GetView<SocioDemographicController> {
                   color: Colors.black12,
                 ),
                 const SizedBox(height: 16),
-                const Text(
-                  'Residence',
-                  style: TextStyle(
+                Text(
+                  'Tempat Tinggal',
+                  style: GoogleFonts.nunito(
                     fontSize: 18,
                     fontWeight: FontWeight.bold,
-                    color: Colors.deepPurple,
+                    color: Colors.blue,
                   ),
                 ),
                 Obx(
@@ -210,57 +212,57 @@ class SocioDemographicView extends GetView<SocioDemographicController> {
                     children: [
                       Flexible(
                         child: Radio(
-                          value: 'Rural',
+                          value: 'Pedesaan',
                           groupValue: controller.residence.value,
                           onChanged: (value) {
                             controller.residence.value = value.toString();
                           },
                         ),
                       ),
-                      const Flexible(
+                      Flexible(
                         child: Text(
-                          'Rural',
-                          style: TextStyle(
+                          'Pedesaan',
+                          style: GoogleFonts.nunito(
                             fontSize: 18,
-                            color: Colors.deepPurple,
+                            color: Colors.blue,
                             fontWeight: FontWeight.w500,
                           ),
                         ),
                       ),
                       Flexible(
                         child: Radio(
-                          value: 'Semi-urban',
+                          value: 'Semi-perkotaan',
                           groupValue: controller.residence.value,
                           onChanged: (value) {
                             controller.residence.value = value.toString();
                           },
                         ),
                       ),
-                      const Flexible(
+                      Flexible(
                         child: Text(
-                          'Semi-urban',
-                          style: TextStyle(
+                          'Semi-perkotaan',
+                          style: GoogleFonts.nunito(
                             fontSize: 18,
-                            color: Colors.deepPurple,
+                            color: Colors.blue,
                             fontWeight: FontWeight.w500,
                           ),
                         ),
                       ),
                       Flexible(
                         child: Radio(
-                          value: 'Urban',
+                          value: 'Perkotaan',
                           groupValue: controller.residence.value,
                           onChanged: (value) {
                             controller.residence.value = value.toString();
                           },
                         ),
                       ),
-                      const Flexible(
+                      Flexible(
                         child: Text(
-                          'Urban',
-                          style: TextStyle(
+                          'Perkotaan',
+                          style: GoogleFonts.nunito(
                             fontSize: 18,
-                            color: Colors.deepPurple,
+                            color: Colors.blue,
                             fontWeight: FontWeight.w500,
                           ),
                         ),
@@ -273,12 +275,12 @@ class SocioDemographicView extends GetView<SocioDemographicController> {
                   color: Colors.black12,
                 ),
                 const SizedBox(height: 16),
-                const Text(
-                  'Education',
-                  style: TextStyle(
+                Text(
+                  'Pendidikan',
+                  style: GoogleFonts.nunito(
                     fontSize: 18,
                     fontWeight: FontWeight.bold,
-                    color: Colors.deepPurple,
+                    color: Colors.blue,
                   ),
                 ),
                 const SizedBox(height: 8),
@@ -286,7 +288,7 @@ class SocioDemographicView extends GetView<SocioDemographicController> {
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(12),
                     border: Border.all(
-                      color: Colors.deepPurple,
+                      color: Colors.blue,
                       width: 1.5,
                     ),
                   ),
@@ -297,17 +299,17 @@ class SocioDemographicView extends GetView<SocioDemographicController> {
                         isExpanded: true,
                         underline: const SizedBox(),
                         borderRadius: BorderRadius.circular(12),
-                        disabledHint: const Text(
-                          'Select your Education',
-                          style: TextStyle(
+                        disabledHint: Text(
+                          'Pilih Pendidikan Anda',
+                          style: GoogleFonts.nunito(
                             fontSize: 18,
                             fontWeight: FontWeight.w500,
-                            color: Colors.deepPurple,
+                            color: Colors.blue,
                           ),
                         ),
-                        style: const TextStyle(
+                        style: GoogleFonts.nunito(
                           fontSize: 18,
-                          color: Colors.deepPurple,
+                          color: Colors.blue,
                           fontWeight: FontWeight.w500,
                         ),
                         value: controller.education.value,
@@ -316,20 +318,20 @@ class SocioDemographicView extends GetView<SocioDemographicController> {
                         },
                         items: const [
                           DropdownMenuItem(
-                            value: 'Matriculation (grade 9 and 10)',
-                            child: Text('Matriculation (grade 9 and 10)'),
+                            value: '7',
+                            child: Text('7'),
                           ),
                           DropdownMenuItem(
-                            value: 'Intermediate (grade 11 and 12)',
-                            child: Text('Intermediate (grade 11 and 12)'),
+                            value: '10',
+                            child: Text('10'),
                           ),
                           DropdownMenuItem(
-                            value: 'Undergraduate degree (bachelor’s)',
-                            child: Text('Undergraduate degree (bachelor’s)'),
+                            value: '(S1)',
+                            child: Text('S1)'),
                           ),
                           DropdownMenuItem(
-                            value: 'Postgraduate degree',
-                            child: Text('Postgraduate degree'),
+                            value: 'S2',
+                            child: Text('S2'),
                           ),
                         ],
                       ),
@@ -341,12 +343,12 @@ class SocioDemographicView extends GetView<SocioDemographicController> {
                   color: Colors.black12,
                 ),
                 const SizedBox(height: 16),
-                const Text(
-                  'Profession',
-                  style: TextStyle(
+                Text(
+                  'Pekerjaan',
+                  style: GoogleFonts.nunito(
                     fontSize: 18,
                     fontWeight: FontWeight.bold,
-                    color: Colors.deepPurple,
+                    color: Colors.blue,
                   ),
                 ),
                 const SizedBox(height: 16),
@@ -355,9 +357,9 @@ class SocioDemographicView extends GetView<SocioDemographicController> {
                     // hintText: 'Enter Your Name',
                     prefixIcon: Icon(
                       Icons.work,
-                      color: Colors.deepPurple,
+                      color: Colors.blue,
                     ),
-                    labelText: 'Enter Your profession',
+                    labelText: 'Masukkan pekerjaan Anda',
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.all(
                         Radius.circular(12),
@@ -369,7 +371,7 @@ class SocioDemographicView extends GetView<SocioDemographicController> {
                   },
                   validator: (value) {
                     if (value == null || value.isEmpty) {
-                      return 'Please enter your profession';
+                      return 'Mohon masukkan pekerjaan Anda';
                     }
                     return null;
                   },
@@ -390,7 +392,7 @@ class SocioDemographicView extends GetView<SocioDemographicController> {
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(12),
                             ),
-                            backgroundColor: Colors.deepPurple,
+                            backgroundColor: Colors.blue,
                           ),
                           onPressed: () async {
                             try {
@@ -398,8 +400,8 @@ class SocioDemographicView extends GetView<SocioDemographicController> {
                                 if (controller.gender == '' ||
                                     controller.residence == '') {
                                   Get.snackbar(
-                                    'Error',
-                                    'Complete the form! ',
+                                    'Kesalahan',
+                                    'Lengkapi formulir!',
                                     snackPosition: SnackPosition.TOP,
                                     backgroundColor: Colors.red,
                                     colorText: Colors.white,
@@ -419,8 +421,8 @@ class SocioDemographicView extends GetView<SocioDemographicController> {
                             } catch (e) {
                               debugPrint('LoginCalled() called Error "$e"');
                               Get.snackbar(
-                                'Error',
-                                'Some Error Occured! ',
+                                'Kesalahan',
+                                'Terjadi kesalahan!',
                                 snackPosition: SnackPosition.TOP,
                                 backgroundColor: Colors.red,
                                 colorText: Colors.white,
@@ -428,12 +430,12 @@ class SocioDemographicView extends GetView<SocioDemographicController> {
                             }
                           },
                           child: controller.isloading == true
-                              ? const Row(
+                              ? Row(
                                   mainAxisSize: MainAxisSize.min,
                                   children: [
                                     Text(
-                                      "Loading",
-                                      style: TextStyle(
+                                      "Memuat",
+                                      style: GoogleFonts.nunito(
                                         fontSize: 20,
                                         fontWeight: FontWeight.bold,
                                         color: Colors.white,
@@ -454,9 +456,9 @@ class SocioDemographicView extends GetView<SocioDemographicController> {
                                     )
                                   ],
                                 )
-                              : const Text(
-                                  'Next ',
-                                  style: TextStyle(
+                              : Text(
+                                  'Selanjutnya',
+                                  style: GoogleFonts.nunito(
                                     fontSize: 20,
                                     fontWeight: FontWeight.bold,
                                     color: Colors.white,

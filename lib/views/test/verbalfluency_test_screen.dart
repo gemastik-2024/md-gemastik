@@ -6,6 +6,7 @@ import 'package:speech_to_text/speech_to_text.dart';
 import 'package:flutter_tts/flutter_tts.dart';
 import 'package:avatar_glow/avatar_glow.dart';
 import 'package:language_tool/language_tool.dart' as langTool;
+import 'package:google_fonts/google_fonts.dart';
 import '../../controllers/fluency_test_controller.dart';
 
 class VocabularyScreen extends StatefulWidget {
@@ -24,7 +25,7 @@ class _VocabularyScreenState extends State<VocabularyScreen> {
   var subjectWords = <String>[];
   String currentLetter = '';
   bool isTimerStarted = false;
-  String text = 'Hold the button and start speaking';
+  String text = 'Tekan tombol dan mulai berbicara';
   var words = <String>[];
   var word;
   bool isSpeechAvailable = false;
@@ -46,12 +47,12 @@ class _VocabularyScreenState extends State<VocabularyScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
-          'Language Test',
-          style: TextStyle(
+        title: Text(
+          'Tes Bahasa',
+          style: GoogleFonts.nunito(
             fontSize: 18,
             fontWeight: FontWeight.bold,
-            color: Colors.deepPurple,
+            color: Colors.blue,
           ),
         ),
       ),
@@ -59,26 +60,26 @@ class _VocabularyScreenState extends State<VocabularyScreen> {
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Padding(
+          Padding(
             padding: EdgeInsets.only(
               left: 16,
               right: 16,
             ),
             child: Text(
-              'Verbal Fluency',
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+              'Kefasihan Verbal',
+              style: GoogleFonts.nunito(fontSize: 18, fontWeight: FontWeight.bold),
             ),
           ),
-          const Padding(
+          Padding(
             padding: EdgeInsets.only(
               left: 16,
               right: 10,
             ),
             child: Text(
-              '''Tell as many words as you can think of that begin with a certain letter of the alphabet that you will be told once you click on the 60 second timer. You can say any kind of word you want, except for proper nouns, numbers, or words that begin with the same sound but have a different suffix, for example, love, lover, loving.''',
-              style: TextStyle(
+              '''Sebutkan sebanyak mungkin kata yang bisa Anda pikirkan yang dimulai dengan huruf tertentu dari alfabet yang akan diberitahukan kepada Anda setelah Anda mengklik pengatur waktu 60 detik. Anda bisa mengatakan kata apa saja yang Anda inginkan, kecuali kata benda khusus, angka, atau kata yang dimulai dengan suara yang sama tetapi memiliki akhiran yang berbeda, misalnya, cinta, pecinta, mencintai.''',
+              style: GoogleFonts.nunito(
                 fontSize: 18,
-                color: Colors.deepPurple,
+                color: Colors.blue,
               ),
             ),
           ),
@@ -88,7 +89,7 @@ class _VocabularyScreenState extends State<VocabularyScreen> {
             thickness: 1,
             indent: 16,
             endIndent: 16,
-            color: Colors.deepPurple,
+            color: Colors.blue,
           ),
           Padding(
             padding: const EdgeInsets.only(left: 16, right: 16),
@@ -96,17 +97,17 @@ class _VocabularyScreenState extends State<VocabularyScreen> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  "Letter is: $currentLetter",
-                  style: const TextStyle(
+                  "Huruf: $currentLetter",
+                  style: GoogleFonts.nunito(
                       fontSize: 18, fontWeight: FontWeight.bold),
                 ),
                 Obx(
                   () => Text(
                     '${_controller.remainingSeconds}',
-                    style: const TextStyle(
+                    style: GoogleFonts.nunito(
                       fontSize: 18,
                       fontWeight: FontWeight.bold,
-                      color: Colors.deepPurple,
+                      color: Colors.blue,
                     ),
                   ),
                 ),
@@ -119,11 +120,11 @@ class _VocabularyScreenState extends State<VocabularyScreen> {
               padding: const EdgeInsets.only(left: 16, right: 16),
               child: Text(
                 starttest
-                    ? "Double tap the button to start test"
-                    : "Hold the button and start speaking",
-                style: const TextStyle(
+                    ? "Ketuk dua kali tombol untuk memulai tes"
+                    : "Tekan tombol dan mulai berbicara",
+                style: GoogleFonts.nunito(
                   fontSize: 18,
-                  color: Colors.deepPurple,
+                  color: Colors.blue,
                 ),
               ),
             ),
@@ -134,7 +135,7 @@ class _VocabularyScreenState extends State<VocabularyScreen> {
             child: Center(
               child: Text(
                 "$words",
-                style: const TextStyle(
+                style: GoogleFonts.nunito(
                   fontSize: 18,
                 ),
               ),
@@ -147,7 +148,7 @@ class _VocabularyScreenState extends State<VocabularyScreen> {
         animate: _controller.isListening.value,
         endRadius: 75,
         duration: const Duration(milliseconds: 2000),
-        glowColor: Colors.deepPurple,
+        glowColor: Colors.blue,
         repeatPauseDuration: const Duration(milliseconds: 100),
         repeat: true,
         showTwoGlows: true,
@@ -160,11 +161,10 @@ class _VocabularyScreenState extends State<VocabularyScreen> {
               if (available) {
                 _startListening();
               } else {
-                debugPrint('Speech recognition is not available');
+                debugPrint('Pengenalan ucapan tidak tersedia');
               }
             }
           },
-          //allow double tap only once
           onDoubleTap: () {
             if (starttest) {
               setState(() {
@@ -176,9 +176,9 @@ class _VocabularyScreenState extends State<VocabularyScreen> {
           onLongPressUp: _stopListening,
           child: CircleAvatar(
             backgroundColor: starttest
-                ? Colors.deepPurple
+                ? Colors.blue
                 : isTimerStarted
-                    ? Colors.deepPurple
+                    ? Colors.blue
                     : Colors.grey,
             radius: 40,
             child: Icon(
@@ -238,19 +238,19 @@ class _VocabularyScreenState extends State<VocabularyScreen> {
       barrierDismissible: false,
       context: context,
       builder: (context) => AlertDialog(
-        title: const Text(
-          'Test Completed',
-          style: TextStyle(
+        title: Text(
+          'Tes Selesai',
+          style: GoogleFonts.nunito(
             fontSize: 18,
             fontWeight: FontWeight.bold,
-            color: Colors.deepPurple,
+            color: Colors.blue,
           ),
         ),
-        content: const Text(
-          'You have successfully completed the Language test.',
-          style: TextStyle(
+        content: Text(
+          'Anda telah berhasil menyelesaikan tes bahasa.',
+          style: GoogleFonts.nunito(
             fontSize: 18,
-            color: Colors.deepPurple,
+            color: Colors.blue,
           ),
         ),
         actions: [
@@ -259,12 +259,12 @@ class _VocabularyScreenState extends State<VocabularyScreen> {
               sf.setInt('nextGame', 12);
               Get.offAll(() => const AbstractionScreen());
             },
-            child: const Text(
-              'Next',
-              style: TextStyle(
+            child: Text(
+              'Selanjutnya',
+              style: GoogleFonts.nunito(
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
-                color: Colors.deepPurple,
+                color: Colors.blue,
               ),
             ),
           ),
@@ -274,15 +274,14 @@ class _VocabularyScreenState extends State<VocabularyScreen> {
   }
 
   void _speakRandomLetter() async {
-    // var alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-    var randomLetter = 'F';
+    var randomLetter = 'F'; // Untuk sementara gunakan huruf 'F'
     setState(() {
       currentLetter = randomLetter;
     });
-    await flutterTts.setLanguage('en-US');
+    await flutterTts.setLanguage('id-ID'); // Ubah bahasa ke Indonesia
     await flutterTts.setPitch(1.0);
     await flutterTts.setSpeechRate(0.5);
-    await flutterTts.speak('The letter is $randomLetter');
+    await flutterTts.speak('Hurufnya adalah $randomLetter');
   }
 
   void _startListening() {
@@ -302,24 +301,18 @@ class _VocabularyScreenState extends State<VocabularyScreen> {
 
   Future<void> _checkAndAddWord(String word) async {
     if (await _isvalidWord(word)) {
-      //if words already contains the word then don't add it
       if (words.contains(word)) {
         return;
       }
       setState(() {
-        // subjectWords.add(word);
         words.add(word);
       });
     }
   }
 
   Future<bool> _isvalidWord(String word) async {
-    // debugPrint('Word: ${word[0].toLowerCase() == currentLetter.toLowerCase()}');
-    // debugPrint('Word: ${word.toLowerCase()}');
-
     if (word[0].toLowerCase() == currentLetter.toLowerCase()) {
       final errors = await _languageTool.check(word);
-      // debugPrint('Errors: ${errors.isNotEmpty}}');
 
       if (errors.isEmpty) {
         return true;

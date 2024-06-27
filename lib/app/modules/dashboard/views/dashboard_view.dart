@@ -1,5 +1,7 @@
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 import '../../../../constants/constans.dart';
 import '../../../../utils/size_config.dart';
 import '../controllers/dashboard_controller.dart';
@@ -16,33 +18,22 @@ class DashboardView extends GetView<DashboardController> {
   Widget build(BuildContext context) {
     SizeConfig.init(context);
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: darkBlueColor,
-        title: const Text(
-          'Synaptaid',
-          style: TextStyle(color: Colors.white, fontSize: 20),
-        ),
-        actions: [
-          CircleAvatar(
-            radius: 20,
-            backgroundColor: Colors.white,
-            child: IconButton(
-              icon: const Icon(
-                Icons.person,
-                color: darkBlueColor,
-              ),
-              onPressed: () {
-                // Get.toNamed(Routes.SETTINGS);
-              },
+      appBar: PreferredSize(
+        preferredSize: const Size.fromHeight(100.0),  // Menentukan tinggi kustom untuk AppBar
+        child: AppBar(
+          backgroundColor: darkBlueColor,
+          title: Center(
+            child: Image.asset(
+              'assets/illustrations/login.png',  // Ganti dengan path gambar yang Anda inginkan
+              height: 500,  // Tentukan tinggi gambar
             ),
           ),
-          const SizedBox(width: 20),
-        ],
-        // shape: const RoundedRectangleBorder(
-        //   borderRadius: BorderRadius.vertical(
-        //     bottom: Radius.circular(30),
-        //   ),
-        // ),
+          shape: const RoundedRectangleBorder(
+            borderRadius: BorderRadius.vertical(
+              bottom: Radius.circular(30),
+            ),
+          ),
+        ),
       ),
       backgroundColor: Colors.white,
       body: ListView(

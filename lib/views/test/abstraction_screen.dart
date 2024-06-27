@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:synaptaid/controllers/abstraction_controller.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class AbstractionScreen extends StatefulWidget {
   const AbstractionScreen({super.key});
@@ -14,6 +15,7 @@ class _AbstractionScreenState extends State<AbstractionScreen> {
   List<bool> taskResults = List<bool>.filled(3, false);
   final controller = Get.put(AbstractionController());
   late SharedPreferences sf;
+
   @override
   initState() {
     super.initState();
@@ -28,7 +30,14 @@ class _AbstractionScreenState extends State<AbstractionScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Abstraction Task'),
+        title: const Text(
+          'Tugas Abstraksi',
+          style: TextStyle(
+            color: Colors.white,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        backgroundColor: Colors.blue,
       ),
       body: LayoutBuilder(
         builder: (context, constraints) {
@@ -37,13 +46,11 @@ class _AbstractionScreenState extends State<AbstractionScreen> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Text(
-                  'What do each of the following pair of words have in common?'
-                  ' For example, what do “banana” and “orange” have in common?'
-                  ' They are both fruits.',
-                  style: TextStyle(
+                Text(
+                  'Apa kesamaan dari setiap pasangan kata berikut? Misalnya, apa kesamaan "pisang" dan "jeruk"? Keduanya adalah buah.',
+                  style: GoogleFonts.nunito(
                     fontSize: 18.0,
-                    color: Colors.deepPurple,
+                    color: Colors.blue,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
@@ -52,9 +59,9 @@ class _AbstractionScreenState extends State<AbstractionScreen> {
                   child: ListView(
                     children: [
                       TaskItem(
-                        statement: 'Banana-Orange',
-                        options: const ['Fruit', 'Color', 'Vehicle', 'Animal'],
-                        result: 'Fruit',
+                        statement: 'Pisang-Jeruk',
+                        options: const ['Buah', 'Warna', 'Kendaraan', 'Hewan'],
+                        result: 'Buah',
                         onChanged: (result) {
                           setState(() {
                             taskResults[0] = result;
@@ -62,9 +69,9 @@ class _AbstractionScreenState extends State<AbstractionScreen> {
                         },
                       ),
                       TaskItem(
-                        statement: 'Train-Bicycle',
-                        options: const ['Fruit', 'Color', 'Vehicle', 'Animal'],
-                        result: 'Vehicle',
+                        statement: 'Kereta Sepeda',
+                        options: const ['Buah', 'Warna', 'Kendaraan', 'Hewan'],
+                        result: 'Kendaraan',
                         onChanged: (result) {
                           setState(() {
                             taskResults[1] = result;
@@ -72,14 +79,14 @@ class _AbstractionScreenState extends State<AbstractionScreen> {
                         },
                       ),
                       TaskItem(
-                        statement: 'Watch-Ruler',
+                        statement: 'Jam-Penggaris',
                         options: const [
-                          'Fruit',
-                          'Color',
-                          'Measuring Tool',
-                          'Animal'
+                          'Buah',
+                          'Warna',
+                          'Alat Ukur',
+                          'Hewan'
                         ],
-                        result: 'Measuring Tool',
+                        result: 'Alat Ukur',
                         onChanged: (result) {
                           setState(() {
                             taskResults[2] = result;
@@ -95,19 +102,20 @@ class _AbstractionScreenState extends State<AbstractionScreen> {
                   height: 50.0,
                   child: DecoratedBox(
                     decoration: BoxDecoration(
+                      color: Colors.orange,
                       borderRadius: BorderRadius.circular(12.0),
                     ),
                     child: ElevatedButton(
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.deepPurple,
+                        backgroundColor: Colors.orange,
                       ),
                       onPressed: () async {
                         controller.submitTaskResults(taskResults);
                         sf.setInt('nextGame', 13);
                       },
-                      child: const Text(
-                        'Submit',
-                        style: TextStyle(
+                      child: Text(
+                        'Kirim',
+                        style: GoogleFonts.nunito(
                           fontSize: 20.0,
                           color: Colors.white,
                           fontWeight: FontWeight.bold,
@@ -153,21 +161,22 @@ class _TaskItemState extends State<TaskItem> {
       children: [
         Text(
           widget.statement,
-          style: const TextStyle(
-              fontSize: 16.0,
-              fontWeight: FontWeight.bold,
-              color: Colors.deepPurple),
+          style: GoogleFonts.nunito(
+            fontSize: 16.0,
+            fontWeight: FontWeight.bold,
+            color: Colors.blue,
+          ),
         ),
         SizedBox(height: Get.height * 0.01),
         DecoratedBox(
           decoration: BoxDecoration(
-            border: Border.all(color: Colors.deepPurple),
+            border: Border.all(color: Colors.blue),
             borderRadius: BorderRadius.circular(8.0),
           ),
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16.0),
             child: DropdownButton<String>(
-              hint: const Text('Select an option'),
+              hint: const Text('Pilih opsi'),
               underline: const SizedBox(),
               isExpanded: true,
               value: selectedOption,
@@ -180,7 +189,13 @@ class _TaskItemState extends State<TaskItem> {
               items: widget.options.map((option) {
                 return DropdownMenuItem<String>(
                   value: option,
-                  child: Text(option),
+                  child: Text(
+                    option,
+                    style: GoogleFonts.nunito(
+                      fontSize: 16.0,
+                      color: Colors.blue,
+                    ),
+                  ),
                 );
               }).toList(),
             ),

@@ -1,5 +1,7 @@
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:synaptaid/views/test/memory_test_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../constants/list.dart';
@@ -62,11 +64,11 @@ class _AnimalNameGuessScreenState extends State<AnimalNameGuessScreen> {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: const Text('Thank You for Playing'),
-          content: const Text('Moving On to Next Game'),
+          title: const Text('Terima Kasih Telah Bermain'),
+          content: const Text('Lanjut ke Game Berikutnya'),
           actions: <Widget>[
             TextButton(
-              child: const Text('Next'),
+              child: const Text('Lanjut'),
               onPressed: () {
                 {
                   if (_controller.score != -1) {
@@ -90,8 +92,8 @@ class _AnimalNameGuessScreenState extends State<AnimalNameGuessScreen> {
                     });
                   } else {
                     Get.snackbar(
-                      'Error',
-                      'Complete the Form !',
+                      'Kesalahan',
+                      'Lengkapi Formulir!',
                       snackPosition: SnackPosition.BOTTOM,
                       backgroundColor: Colors.red,
                       colorText: Colors.white,
@@ -110,13 +112,13 @@ class _AnimalNameGuessScreenState extends State<AnimalNameGuessScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Center(
+        title: Center(
             child: Text(
-          'Guess The Picture',
-          style: TextStyle(
+          'Tebak Gambar',
+          style: GoogleFonts.nunito(
             fontSize: 28,
             fontWeight: FontWeight.bold,
-            color: Colors.deepPurple,
+            color: Colors.blue,
           ),
         )),
       ),
@@ -152,7 +154,7 @@ class _AnimalNameGuessScreenState extends State<AnimalNameGuessScreen> {
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(10),
                       ),
-                      labelText: 'Enter your guess',
+                      labelText: 'Masukkan tebakan Anda',
                       focusedBorder: const OutlineInputBorder(
                         borderSide: BorderSide(
                           color: Colors.purple,
@@ -163,7 +165,7 @@ class _AnimalNameGuessScreenState extends State<AnimalNameGuessScreen> {
               ),
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.deepPurple,
+                  backgroundColor: Colors.blue,
                 ),
                 onPressed: () {
                   setState(() {
@@ -181,8 +183,8 @@ class _AnimalNameGuessScreenState extends State<AnimalNameGuessScreen> {
                         _isloading = false;
                       });
                       Get.snackbar(
-                        'Error',
-                        'Please Enter Name of the Animal',
+                        'Kesalahan',
+                        'Harap Masukkan Nama Hewan',
                         snackPosition: SnackPosition.BOTTOM,
                         backgroundColor: Colors.red,
                         colorText: Colors.white,
@@ -193,8 +195,8 @@ class _AnimalNameGuessScreenState extends State<AnimalNameGuessScreen> {
                       _isloading = false;
                     });
                     Get.snackbar(
-                      'Error',
-                      'Some Error Occured!',
+                      'Kesalahan',
+                      'Terjadi Kesalahan!',
                       snackPosition: SnackPosition.BOTTOM,
                       backgroundColor: Colors.red,
                       colorText: Colors.white,
@@ -202,12 +204,12 @@ class _AnimalNameGuessScreenState extends State<AnimalNameGuessScreen> {
                   }
                 },
                 child: _isloading == true
-                    ? const Row(
+                    ? Row(
                         mainAxisSize: MainAxisSize.min,
                         children: [
                           Text(
-                            "Loading",
-                            style: TextStyle(
+                            "Memuat",
+                            style: GoogleFonts.nunito(
                               fontSize: 20,
                               fontWeight: FontWeight.bold,
                               color: Colors.white,
@@ -227,9 +229,9 @@ class _AnimalNameGuessScreenState extends State<AnimalNameGuessScreen> {
                           )
                         ],
                       )
-                    : const Text(
-                        'Submit',
-                        style: TextStyle(
+                    : Text(
+                        'Kirim',
+                        style: GoogleFonts.nunito(
                           fontSize: 20,
                           fontWeight: FontWeight.w500,
                           color: Colors.white,

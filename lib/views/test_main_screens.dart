@@ -92,7 +92,7 @@ class _MainTestScreenState extends State<MainTestScreen> {
       showDialog(
         context: context,
         builder: (context) => AlertDialog(
-          title: const Text('Game Locked'),
+          title: const Text('Belum bisa dibuka'),
           content: Text('You need to complete Game $_unlockedGames  first.'),
           actions: [
             TextButton(
@@ -114,7 +114,7 @@ class _MainTestScreenState extends State<MainTestScreen> {
           style: TextStyle(
             fontSize: 28,
             fontWeight: FontWeight.bold,
-            color: Colors.deepPurple,
+            color: Colors.blue,
           ),
         )),
       ),
@@ -131,18 +131,18 @@ class _MainTestScreenState extends State<MainTestScreen> {
             return ElevatedButton(
               onPressed: () => _playGame(gameNumber),
               style: ElevatedButton.styleFrom(
-                shadowColor: Colors.deepPurple,
+                shadowColor: Colors.blue,
                 elevation: 10,
                 side: const BorderSide(color: Colors.black, width: 2),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(16.0),
                 ),
                 textStyle: const TextStyle(fontSize: 20, color: Colors.white),
-                backgroundColor: isLocked ? Colors.grey : Colors.deepPurple,
+                backgroundColor: isLocked ? Colors.grey : Colors.blue,
                 minimumSize: const Size(100, 120),
               ),
               child: Text(
-                "Game ${gameNameList[gameNumber - 1]}",
+                "Permainan ${gameNameList[gameNumber - 1]}",
                 textAlign: TextAlign.center,
                 style: const TextStyle(color: Colors.white),
               ),

@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:avatar_glow/avatar_glow.dart';
@@ -5,6 +6,7 @@ import 'package:synaptaid/views/test/orientation_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:speech_to_text/speech_to_text.dart';
 import 'package:flutter_tts/flutter_tts.dart';
+import 'package:google_fonts/google_fonts.dart';
 import '../../controllers/delayRecall_controller.dart';
 
 class DelayRecallScreen extends StatefulWidget {
@@ -31,11 +33,11 @@ class DelayRecallScreenState extends State<DelayRecallScreen> {
   SpeechToText speechToText = SpeechToText();
   FlutterTts flutterTts = FlutterTts();
   List<String> wordList = [
-    'face',
-    'velvet',
-    'church',
-    'daisy',
-    'red',
+    'wajah',
+    'beludru',
+    'gereja',
+    'aisyah',
+    'merah',
   ];
 
   List<String> recognizedWordsList = [];
@@ -75,7 +77,7 @@ class DelayRecallScreenState extends State<DelayRecallScreen> {
   Future<void> initializeSpeechToText() async {
     bool isAvailable = await speechToText.initialize();
     if (!isAvailable) {
-      debugPrint('Speech recognition is not available');
+      debugPrint('Pengenalan suara tidak tersedia');
     }
   }
 
@@ -86,9 +88,9 @@ class DelayRecallScreenState extends State<DelayRecallScreen> {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: const Text('Test Complete'),
+          title: const Text('Tes Selesai'),
           content: const Text(
-              'You have Successfully completed the Delay Recall test.'),
+              'Anda telah berhasil menyelesaikan tes Delay Recall.'),
           actions: [
             TextButton(
               onPressed: () {
@@ -96,7 +98,7 @@ class DelayRecallScreenState extends State<DelayRecallScreen> {
                 Get.offAll(() => const OrientationScreen());
                 sf.setInt('nextGame', 14);
               },
-              child: const Text('Next'),
+              child: const Text('Lanjut'),
             ),
           ],
         );
@@ -119,7 +121,7 @@ class DelayRecallScreenState extends State<DelayRecallScreen> {
         animate: _controller.isListening.value,
         endRadius: 75,
         duration: const Duration(milliseconds: 2000),
-        glowColor: Colors.deepPurple,
+        glowColor: Colors.blue,
         repeatPauseDuration: const Duration(milliseconds: 100),
         repeat: true,
         showTwoGlows: true,
@@ -151,7 +153,7 @@ class DelayRecallScreenState extends State<DelayRecallScreen> {
                   },
                 );
               } else {
-                debugPrint('Speech recognition is not available');
+                debugPrint('Pengenalan suara tidak tersedia');
               }
             }
           },
@@ -167,7 +169,7 @@ class DelayRecallScreenState extends State<DelayRecallScreen> {
           },
           child: Obx(
             () => CircleAvatar(
-              backgroundColor: Colors.deepPurple,
+              backgroundColor: Colors.blue,
               radius: 40,
               child: Icon(
                 _controller.starttest.value
@@ -183,12 +185,15 @@ class DelayRecallScreenState extends State<DelayRecallScreen> {
         ),
       ),
       appBar: AppBar(
-        title: const Text('Delay Recall Test',
-            style: TextStyle(
-              fontSize: 18,
-              fontWeight: FontWeight.bold,
-              color: Colors.deepPurple,
-            )),
+        title: const Text(
+          'Tes Mengingat Tertunda',
+          style: TextStyle(
+            fontSize: 18,
+            fontWeight: FontWeight.bold,
+            color: Colors.white,
+          ),
+        ),
+        backgroundColor: Colors.blue,
       ),
       body: Padding(
         padding: const EdgeInsets.only(left: 16, right: 16),
@@ -197,13 +202,13 @@ class DelayRecallScreenState extends State<DelayRecallScreen> {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             SizedBox(height: height * 0.01),
-            const Text(
-              "Some words were read to you earlier in Memory Test, which you were asked to remember. Tell as many of those words as you can remember",
-              style: TextStyle(fontSize: 18, color: Colors.deepPurple),
+            Text(
+              "Beberapa kata telah dibacakan kepada Anda sebelumnya dalam Tes Memori, yang diminta untuk diingat. Sebutkan sebanyak mungkin kata-kata yang Anda ingat",
+              style: GoogleFonts.nunito(fontSize: 18, color: Colors.blue),
             ),
             SizedBox(height: height * 0.01),
             const Divider(
-              color: Colors.deepPurple,
+              color: Colors.blue,
               thickness: 1,
               indent: 16,
               endIndent: 16,
@@ -216,18 +221,18 @@ class DelayRecallScreenState extends State<DelayRecallScreen> {
                 children: [
                   // Obx(
                   //   () => Text(
-                  //     'Words Matched: ${_controller.wordCount.value}',
-                  //     style: const TextStyle(
+                  //     'Kata yang Cocok: ${_controller.wordCount.value}',
+                  //     style: GoogleFonts.nunito(
                   //         fontSize: 18, fontWeight: FontWeight.bold),
                   //   ),
                   // ),
                   Obx(
                     () => Text(
                       '${_controller.remainingSeconds}',
-                      style: const TextStyle(
+                      style: GoogleFonts.nunito(
                         fontSize: 18,
                         fontWeight: FontWeight.bold,
-                        color: Colors.deepPurple,
+                        color: Colors.blue,
                       ),
                     ),
                   ),
@@ -238,14 +243,14 @@ class DelayRecallScreenState extends State<DelayRecallScreen> {
             Obx(
               () => Text(
                 _controller.starttest.value
-                    ? "Double tap the button to start test"
+                    ? "Ketuk tombol dua kali untuk memulai tes"
                     : _controller.isListening.value
                         ? _controller.recognizedText.value
                         : _controller.spokenSentence.value,
-                style: TextStyle(
+                style: GoogleFonts.nunito(
                   fontSize: 20,
                   color: _controller.isListening.value
-                      ? Colors.deepPurple
+                      ? Colors.blue
                       : Colors.black54,
                 ),
                 textAlign: TextAlign.center,

@@ -24,7 +24,7 @@
 //           style: TextStyle(
 //             fontSize: 28,
 //             fontWeight: FontWeight.bold,
-//             color: Colors.deepPurple,
+//             color: Colors.blue,
 //           ),
 //         )),
 //       ),
@@ -46,7 +46,7 @@
 //                     // hintText: 'Enter Your Name',
 //                     prefixIcon: Icon(
 //                       Icons.person,
-//                       color: Colors.deepPurple,
+//                       color: Colors.blue,
 //                     ),
 //                     labelText: 'Enter Your Name',
 //                     border: OutlineInputBorder(
@@ -77,7 +77,7 @@
 //                   style: TextStyle(
 //                     fontSize: 18,
 //                     fontWeight: FontWeight.bold,
-//                     color: Colors.deepPurple,
+//                     color: Colors.blue,
 //                   ),
 //                 ),
 //                 Row(
@@ -95,7 +95,7 @@
 //                       'Male',
 //                       style: TextStyle(
 //                         fontSize: 18,
-//                         color: Colors.deepPurple,
+//                         color: Colors.blue,
 //                         fontWeight: FontWeight.w500,
 //                       ),
 //                     ),
@@ -112,7 +112,7 @@
 //                       'Female',
 //                       style: TextStyle(
 //                         fontSize: 18,
-//                         color: Colors.deepPurple,
+//                         color: Colors.blue,
 //                         fontWeight: FontWeight.w500,
 //                       ),
 //                     ),
@@ -129,7 +129,7 @@
 //                       'Others',
 //                       style: TextStyle(
 //                         fontSize: 18,
-//                         color: Colors.deepPurple,
+//                         color: Colors.blue,
 //                         fontWeight: FontWeight.w500,
 //                       ),
 //                     ),
@@ -145,7 +145,7 @@
 //                   style: TextStyle(
 //                     fontSize: 18,
 //                     fontWeight: FontWeight.bold,
-//                     color: Colors.deepPurple,
+//                     color: Colors.blue,
 //                   ),
 //                 ),
 
@@ -154,7 +154,7 @@
 //                   decoration: BoxDecoration(
 //                     borderRadius: BorderRadius.circular(12),
 //                     border: Border.all(
-//                       color: Colors.deepPurple,
+//                       color: Colors.blue,
 //                       width: 1.5,
 //                     ),
 //                   ),
@@ -169,12 +169,12 @@
 //                         style: TextStyle(
 //                           fontSize: 18,
 //                           fontWeight: FontWeight.w500,
-//                           color: Colors.deepPurple,
+//                           color: Colors.blue,
 //                         ),
 //                       ),
 //                       style: const TextStyle(
 //                         fontSize: 18,
-//                         color: Colors.deepPurple,
+//                         color: Colors.blue,
 //                         fontWeight: FontWeight.w500,
 //                       ),
 //                       value: _controller.age,
@@ -220,7 +220,7 @@
 //                   style: TextStyle(
 //                     fontSize: 18,
 //                     fontWeight: FontWeight.bold,
-//                     color: Colors.deepPurple,
+//                     color: Colors.blue,
 //                   ),
 //                 ),
 //                 Row(
@@ -241,7 +241,7 @@
 //                         'Rural',
 //                         style: TextStyle(
 //                           fontSize: 18,
-//                           color: Colors.deepPurple,
+//                           color: Colors.blue,
 //                           fontWeight: FontWeight.w500,
 //                         ),
 //                       ),
@@ -262,7 +262,7 @@
 //                         'Semi-urban',
 //                         style: TextStyle(
 //                           fontSize: 18,
-//                           color: Colors.deepPurple,
+//                           color: Colors.blue,
 //                           fontWeight: FontWeight.w500,
 //                         ),
 //                       ),
@@ -283,7 +283,7 @@
 //                         'Urban',
 //                         style: TextStyle(
 //                           fontSize: 18,
-//                           color: Colors.deepPurple,
+//                           color: Colors.blue,
 //                           fontWeight: FontWeight.w500,
 //                         ),
 //                       ),
@@ -300,7 +300,7 @@
 //                   style: TextStyle(
 //                     fontSize: 18,
 //                     fontWeight: FontWeight.bold,
-//                     color: Colors.deepPurple,
+//                     color: Colors.blue,
 //                   ),
 //                 ),
 //                 const SizedBox(height: 8),
@@ -308,7 +308,7 @@
 //                   decoration: BoxDecoration(
 //                     borderRadius: BorderRadius.circular(12),
 //                     border: Border.all(
-//                       color: Colors.deepPurple,
+//                       color: Colors.blue,
 //                       width: 1.5,
 //                     ),
 //                   ),
@@ -323,12 +323,12 @@
 //                         style: TextStyle(
 //                           fontSize: 18,
 //                           fontWeight: FontWeight.w500,
-//                           color: Colors.deepPurple,
+//                           color: Colors.blue,
 //                         ),
 //                       ),
 //                       style: const TextStyle(
 //                         fontSize: 18,
-//                         color: Colors.deepPurple,
+//                         color: Colors.blue,
 //                         fontWeight: FontWeight.w500,
 //                       ),
 //                       value: _controller.education,
@@ -370,7 +370,7 @@
 //                   style: TextStyle(
 //                     fontSize: 18,
 //                     fontWeight: FontWeight.bold,
-//                     color: Colors.deepPurple,
+//                     color: Colors.blue,
 //                   ),
 //                 ),
 //                 const SizedBox(height: 16),
@@ -379,7 +379,7 @@
 //                     // hintText: 'Enter Your Name',
 //                     prefixIcon: Icon(
 //                       Icons.work,
-//                       color: Colors.deepPurple,
+//                       color: Colors.blue,
 //                     ),
 //                     labelText: 'Enter Your profession',
 //                     border: OutlineInputBorder(
@@ -416,7 +416,7 @@
 //                             shape: RoundedRectangleBorder(
 //                               borderRadius: BorderRadius.circular(12),
 //                             ),
-//                             backgroundColor: Colors.deepPurple,
+//                             backgroundColor: Colors.blue,
 //                           ),
 //                           onPressed: () async {
 //                             try {

@@ -1,7 +1,9 @@
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:synaptaid/controllers/orientation_controller.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class OrientationScreen extends StatefulWidget {
   const OrientationScreen({super.key});
@@ -27,20 +29,24 @@ class _OrientationScreenState extends State<OrientationScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
-          'Date Verification',
-          style:
-              TextStyle(color: Colors.deepPurple, fontWeight: FontWeight.bold),
+        title: Text(
+          'Verifikasi Tanggal',
+          style: GoogleFonts.nunito(
+              color: Colors.white, fontWeight: FontWeight.bold),
         ),
+        backgroundColor: Colors.blue,
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Text(
-              'Please enter the following details:',
-              style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold),
+            Text(
+              'Silakan masukkan detail berikut:',
+              style: GoogleFonts.nunito(
+                  fontSize: 18.0,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.blue),
             ),
             const SizedBox(height: 16.0),
             InkWell(
@@ -50,9 +56,10 @@ class _OrientationScreenState extends State<OrientationScreen> {
               child: IgnorePointer(
                 child: TextField(
                   controller: controller.dayController,
-                  decoration: const InputDecoration(
-                    labelText: 'Current Date-Month-Year',
-                    border: OutlineInputBorder(
+                  decoration: InputDecoration(
+                    labelText: 'Tanggal-Bulan-Tahun Saat Ini',
+                    labelStyle: GoogleFonts.nunito(color: Colors.blue),
+                    border: const OutlineInputBorder(
                       borderRadius: BorderRadius.all(Radius.circular(12.0)),
                     ),
                   ),
@@ -62,10 +69,12 @@ class _OrientationScreenState extends State<OrientationScreen> {
             const SizedBox(height: 16.0),
             TextField(
               controller: controller.placeController,
-              decoration: const InputDecoration(
-                labelText: 'Place',
-                hintText: "Rawalpindi/Islamabad",
-                border: OutlineInputBorder(
+              decoration: InputDecoration(
+                labelText: 'Tempat',
+                hintText: "Indonesia",
+                labelStyle: GoogleFonts.nunito(color: Colors.blue),
+                hintStyle: GoogleFonts.nunito(color: Colors.orange),
+                border: const OutlineInputBorder(
                   borderRadius: BorderRadius.all(Radius.circular(12.0)),
                 ),
               ),
@@ -73,10 +82,12 @@ class _OrientationScreenState extends State<OrientationScreen> {
             const SizedBox(height: 16.0),
             TextField(
               controller: controller.cityController,
-              decoration: const InputDecoration(
-                labelText: 'City',
-                hintText: "Rawalpindi/Islamabad",
-                border: OutlineInputBorder(
+              decoration: InputDecoration(
+                labelText: 'Kota',
+                hintText: "Palembang",
+                labelStyle: GoogleFonts.nunito(color: Colors.blue),
+                hintStyle: GoogleFonts.nunito(color: Colors.orange),
+                border: const OutlineInputBorder(
                   borderRadius: BorderRadius.all(Radius.circular(12.0)),
                 ),
               ),
@@ -89,11 +100,11 @@ class _OrientationScreenState extends State<OrientationScreen> {
                 child: DecoratedBox(
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(12.0),
-                    color: Colors.deepPurple,
+                    color: Colors.blue,
                   ),
                   child: ElevatedButton(
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.deepPurple,
+                      backgroundColor: Colors.orange,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(12.0),
                       ),
@@ -102,9 +113,9 @@ class _OrientationScreenState extends State<OrientationScreen> {
                       await sf.setInt('nextGame', 1);
                       controller.verifyInputs();
                     },
-                    child: const Text(
-                      'Submit',
-                      style: TextStyle(
+                    child: Text(
+                      'Kirim',
+                      style: GoogleFonts.nunito(
                           color: Colors.white,
                           fontSize: 18.0,
                           fontWeight: FontWeight.bold),

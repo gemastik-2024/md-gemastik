@@ -28,7 +28,7 @@ class _SymptomsInitialIllnessScreenState
           style: TextStyle(
             fontSize: 28,
             fontWeight: FontWeight.bold,
-            color: Colors.deepPurple,
+            color: Colors.blue,
           ),
         )),
       ),
@@ -46,7 +46,7 @@ class _SymptomsInitialIllnessScreenState
                   style: TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.bold,
-                    color: Colors.deepPurple,
+                    color: Colors.blue,
                   ),
                 ),
                 const SizedBox(height: 28),
@@ -58,7 +58,7 @@ class _SymptomsInitialIllnessScreenState
                       style: TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.w500,
-                        color: Colors.deepPurple,
+                        color: Colors.blue,
                       ),
                     ),
                     const SizedBox(width: 20),
@@ -66,7 +66,7 @@ class _SymptomsInitialIllnessScreenState
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(12),
                         border: Border.all(
-                          color: Colors.deepPurple,
+                          color: Colors.blue,
                           width: 1.5,
                         ),
                       ),
@@ -78,7 +78,7 @@ class _SymptomsInitialIllnessScreenState
                           borderRadius: BorderRadius.circular(12),
                           style: const TextStyle(
                             fontSize: 18,
-                            color: Colors.deepPurple,
+                            color: Colors.blue,
                             fontWeight: FontWeight.w500,
                           ),
                           value: _controller.fever,
@@ -127,7 +127,7 @@ class _SymptomsInitialIllnessScreenState
                       style: TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.w500,
-                        color: Colors.deepPurple,
+                        color: Colors.blue,
                       ),
                     ),
                     const SizedBox(width: 20),
@@ -135,7 +135,7 @@ class _SymptomsInitialIllnessScreenState
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(12),
                         border: Border.all(
-                          color: Colors.deepPurple,
+                          color: Colors.blue,
                           width: 1.5,
                         ),
                       ),
@@ -147,7 +147,7 @@ class _SymptomsInitialIllnessScreenState
                           borderRadius: BorderRadius.circular(12),
                           style: const TextStyle(
                             fontSize: 18,
-                            color: Colors.deepPurple,
+                            color: Colors.blue,
                             fontWeight: FontWeight.w500,
                           ),
                           value: _controller.cough,
@@ -197,7 +197,7 @@ class _SymptomsInitialIllnessScreenState
                         style: TextStyle(
                           fontSize: 18,
                           fontWeight: FontWeight.w500,
-                          color: Colors.deepPurple,
+                          color: Colors.blue,
                         ),
                       ),
                     ),
@@ -206,7 +206,7 @@ class _SymptomsInitialIllnessScreenState
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(12),
                         border: Border.all(
-                          color: Colors.deepPurple,
+                          color: Colors.blue,
                           width: 1.5,
                         ),
                       ),
@@ -218,7 +218,7 @@ class _SymptomsInitialIllnessScreenState
                           borderRadius: BorderRadius.circular(12),
                           style: const TextStyle(
                             fontSize: 18,
-                            color: Colors.deepPurple,
+                            color: Colors.blue,
                             fontWeight: FontWeight.w500,
                           ),
                           value: _controller.runnyStuffyNose,
@@ -267,7 +267,7 @@ class _SymptomsInitialIllnessScreenState
                       style: TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.w500,
-                        color: Colors.deepPurple,
+                        color: Colors.blue,
                       ),
                     ),
                     const SizedBox(width: 20),
@@ -275,7 +275,7 @@ class _SymptomsInitialIllnessScreenState
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(12),
                         border: Border.all(
-                          color: Colors.deepPurple,
+                          color: Colors.blue,
                           width: 1.5,
                         ),
                       ),
@@ -287,7 +287,7 @@ class _SymptomsInitialIllnessScreenState
                           borderRadius: BorderRadius.circular(12),
                           style: const TextStyle(
                             fontSize: 18,
-                            color: Colors.deepPurple,
+                            color: Colors.blue,
                             fontWeight: FontWeight.w500,
                           ),
                           value: _controller.soreThroat,
@@ -336,7 +336,7 @@ class _SymptomsInitialIllnessScreenState
                       style: TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.w500,
-                        color: Colors.deepPurple,
+                        color: Colors.blue,
                       ),
                     ),
                     const SizedBox(width: 20),
@@ -344,7 +344,7 @@ class _SymptomsInitialIllnessScreenState
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(12),
                         border: Border.all(
-                          color: Colors.deepPurple,
+                          color: Colors.blue,
                           width: 1.5,
                         ),
                       ),
@@ -356,7 +356,7 @@ class _SymptomsInitialIllnessScreenState
                           borderRadius: BorderRadius.circular(12),
                           style: const TextStyle(
                             fontSize: 18,
-                            color: Colors.deepPurple,
+                            color: Colors.blue,
                             fontWeight: FontWeight.w500,
                           ),
                           value: _controller.breathingIssues,
@@ -406,7 +406,7 @@ class _SymptomsInitialIllnessScreenState
                         style: TextStyle(
                           fontSize: 18,
                           fontWeight: FontWeight.w500,
-                          color: Colors.deepPurple,
+                          color: Colors.blue,
                         ),
                       ),
                     ),
@@ -415,7 +415,7 @@ class _SymptomsInitialIllnessScreenState
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(12),
                         border: Border.all(
-                          color: Colors.deepPurple,
+                          color: Colors.blue,
                           width: 1.5,
                         ),
                       ),
@@ -427,7 +427,7 @@ class _SymptomsInitialIllnessScreenState
                           borderRadius: BorderRadius.circular(12),
                           style: const TextStyle(
                             fontSize: 16,
-                            color: Colors.deepPurple,
+                            color: Colors.blue,
                             fontWeight: FontWeight.w500,
                           ),
                           value: _controller.chestPainTightness,
@@ -476,7 +476,7 @@ class _SymptomsInitialIllnessScreenState
                       style: TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.w500,
-                        color: Colors.deepPurple,
+                        color: Colors.blue,
                       ),
                     ),
                     const SizedBox(width: 20),
@@ -484,7 +484,7 @@ class _SymptomsInitialIllnessScreenState
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(12),
                         border: Border.all(
-                          color: Colors.deepPurple,
+                          color: Colors.blue,
                           width: 1.5,
                         ),
                       ),
@@ -496,7 +496,7 @@ class _SymptomsInitialIllnessScreenState
                           borderRadius: BorderRadius.circular(12),
                           style: const TextStyle(
                             fontSize: 18,
-                            color: Colors.deepPurple,
+                            color: Colors.blue,
                             fontWeight: FontWeight.w500,
                           ),
                           value: _controller.palpitations,
@@ -546,7 +546,7 @@ class _SymptomsInitialIllnessScreenState
                         style: TextStyle(
                           fontSize: 18,
                           fontWeight: FontWeight.w500,
-                          color: Colors.deepPurple,
+                          color: Colors.blue,
                         ),
                       ),
                     ),
@@ -555,7 +555,7 @@ class _SymptomsInitialIllnessScreenState
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(12),
                         border: Border.all(
-                          color: Colors.deepPurple,
+                          color: Colors.blue,
                           width: 1.5,
                         ),
                       ),
@@ -567,7 +567,7 @@ class _SymptomsInitialIllnessScreenState
                           borderRadius: BorderRadius.circular(12),
                           style: const TextStyle(
                             fontSize: 18,
-                            color: Colors.deepPurple,
+                            color: Colors.blue,
                             fontWeight: FontWeight.w500,
                           ),
                           value: _controller.itchyRedDryEyes,
@@ -617,7 +617,7 @@ class _SymptomsInitialIllnessScreenState
                       style: TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.w500,
-                        color: Colors.deepPurple,
+                        color: Colors.blue,
                       ),
                     ),
                     const SizedBox(width: 20),
@@ -625,7 +625,7 @@ class _SymptomsInitialIllnessScreenState
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(12),
                         border: Border.all(
-                          color: Colors.deepPurple,
+                          color: Colors.blue,
                           width: 1.5,
                         ),
                       ),
@@ -637,7 +637,7 @@ class _SymptomsInitialIllnessScreenState
                           borderRadius: BorderRadius.circular(12),
                           style: const TextStyle(
                             fontSize: 18,
-                            color: Colors.deepPurple,
+                            color: Colors.blue,
                             fontWeight: FontWeight.w500,
                           ),
                           value: _controller.headAches,
@@ -686,7 +686,7 @@ class _SymptomsInitialIllnessScreenState
                       style: TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.w500,
-                        color: Colors.deepPurple,
+                        color: Colors.blue,
                       ),
                     ),
                     const SizedBox(width: 10),
@@ -694,7 +694,7 @@ class _SymptomsInitialIllnessScreenState
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(12),
                         border: Border.all(
-                          color: Colors.deepPurple,
+                          color: Colors.blue,
                           width: 1.5,
                         ),
                       ),
@@ -706,7 +706,7 @@ class _SymptomsInitialIllnessScreenState
                           borderRadius: BorderRadius.circular(12),
                           style: const TextStyle(
                             fontSize: 18,
-                            color: Colors.deepPurple,
+                            color: Colors.blue,
                             fontWeight: FontWeight.w500,
                           ),
                           value: _controller.lossOfSmelltaste,
@@ -755,7 +755,7 @@ class _SymptomsInitialIllnessScreenState
                       style: TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.w500,
-                        color: Colors.deepPurple,
+                        color: Colors.blue,
                       ),
                     ),
                     const SizedBox(width: 20),
@@ -763,7 +763,7 @@ class _SymptomsInitialIllnessScreenState
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(12),
                         border: Border.all(
-                          color: Colors.deepPurple,
+                          color: Colors.blue,
                           width: 1.5,
                         ),
                       ),
@@ -775,7 +775,7 @@ class _SymptomsInitialIllnessScreenState
                           borderRadius: BorderRadius.circular(12),
                           style: const TextStyle(
                             fontSize: 18,
-                            color: Colors.deepPurple,
+                            color: Colors.blue,
                             fontWeight: FontWeight.w500,
                           ),
                           value: _controller.forgetfulness,
@@ -824,7 +824,7 @@ class _SymptomsInitialIllnessScreenState
                       style: TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.w500,
-                        color: Colors.deepPurple,
+                        color: Colors.blue,
                       ),
                     ),
                     const SizedBox(width: 20),
@@ -832,7 +832,7 @@ class _SymptomsInitialIllnessScreenState
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(12),
                         border: Border.all(
-                          color: Colors.deepPurple,
+                          color: Colors.blue,
                           width: 1.5,
                         ),
                       ),
@@ -844,7 +844,7 @@ class _SymptomsInitialIllnessScreenState
                           borderRadius: BorderRadius.circular(12),
                           style: const TextStyle(
                             fontSize: 18,
-                            color: Colors.deepPurple,
+                            color: Colors.blue,
                             fontWeight: FontWeight.w500,
                           ),
                           value: _controller.delayedthinking,
@@ -892,7 +892,7 @@ class _SymptomsInitialIllnessScreenState
                       style: TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.w500,
-                        color: Colors.deepPurple,
+                        color: Colors.blue,
                       ),
                     ),
                     const SizedBox(width: 20),
@@ -900,7 +900,7 @@ class _SymptomsInitialIllnessScreenState
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(12),
                         border: Border.all(
-                          color: Colors.deepPurple,
+                          color: Colors.blue,
                           width: 1.5,
                         ),
                       ),
@@ -912,7 +912,7 @@ class _SymptomsInitialIllnessScreenState
                           borderRadius: BorderRadius.circular(12),
                           style: const TextStyle(
                             fontSize: 18,
-                            color: Colors.deepPurple,
+                            color: Colors.blue,
                             fontWeight: FontWeight.w500,
                           ),
                           value: _controller.confusion,
@@ -960,7 +960,7 @@ class _SymptomsInitialIllnessScreenState
                       style: TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.w500,
-                        color: Colors.deepPurple,
+                        color: Colors.blue,
                       ),
                     ),
                     const SizedBox(width: 20),
@@ -968,7 +968,7 @@ class _SymptomsInitialIllnessScreenState
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(12),
                         border: Border.all(
-                          color: Colors.deepPurple,
+                          color: Colors.blue,
                           width: 1.5,
                         ),
                       ),
@@ -980,7 +980,7 @@ class _SymptomsInitialIllnessScreenState
                           borderRadius: BorderRadius.circular(12),
                           style: const TextStyle(
                             fontSize: 18,
-                            color: Colors.deepPurple,
+                            color: Colors.blue,
                             fontWeight: FontWeight.w500,
                           ),
                           value: _controller.difficultSleepy,
@@ -1029,7 +1029,7 @@ class _SymptomsInitialIllnessScreenState
                         style: TextStyle(
                           fontSize: 18,
                           fontWeight: FontWeight.w500,
-                          color: Colors.deepPurple,
+                          color: Colors.blue,
                         ),
                       ),
                     ),
@@ -1038,7 +1038,7 @@ class _SymptomsInitialIllnessScreenState
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(12),
                         border: Border.all(
-                          color: Colors.deepPurple,
+                          color: Colors.blue,
                           width: 1.5,
                         ),
                       ),
@@ -1050,7 +1050,7 @@ class _SymptomsInitialIllnessScreenState
                           borderRadius: BorderRadius.circular(12),
                           style: const TextStyle(
                             fontSize: 18,
-                            color: Colors.deepPurple,
+                            color: Colors.blue,
                             fontWeight: FontWeight.w500,
                           ),
                           value: _controller.depressionAnxiety,
@@ -1098,7 +1098,7 @@ class _SymptomsInitialIllnessScreenState
                       style: TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.w500,
-                        color: Colors.deepPurple,
+                        color: Colors.blue,
                       ),
                     ),
                     const SizedBox(width: 10),
@@ -1106,7 +1106,7 @@ class _SymptomsInitialIllnessScreenState
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(12),
                         border: Border.all(
-                          color: Colors.deepPurple,
+                          color: Colors.blue,
                           width: 1.5,
                         ),
                       ),
@@ -1118,7 +1118,7 @@ class _SymptomsInitialIllnessScreenState
                           borderRadius: BorderRadius.circular(12),
                           style: const TextStyle(
                             fontSize: 18,
-                            color: Colors.deepPurple,
+                            color: Colors.blue,
                             fontWeight: FontWeight.w500,
                           ),
                           value: _controller.difficultySpeaking,
@@ -1166,7 +1166,7 @@ class _SymptomsInitialIllnessScreenState
                       style: TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.w500,
-                        color: Colors.deepPurple,
+                        color: Colors.blue,
                       ),
                     ),
                     const SizedBox(width: 10),
@@ -1174,7 +1174,7 @@ class _SymptomsInitialIllnessScreenState
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(12),
                         border: Border.all(
-                          color: Colors.deepPurple,
+                          color: Colors.blue,
                           width: 1.5,
                         ),
                       ),
@@ -1186,7 +1186,7 @@ class _SymptomsInitialIllnessScreenState
                           borderRadius: BorderRadius.circular(12),
                           style: const TextStyle(
                             fontSize: 18,
-                            color: Colors.deepPurple,
+                            color: Colors.blue,
                             fontWeight: FontWeight.w500,
                           ),
                           value: _controller.fatigue,
@@ -1234,7 +1234,7 @@ class _SymptomsInitialIllnessScreenState
                       style: TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.w500,
-                        color: Colors.deepPurple,
+                        color: Colors.blue,
                       ),
                     ),
                     const SizedBox(width: 10),
@@ -1242,7 +1242,7 @@ class _SymptomsInitialIllnessScreenState
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(12),
                         border: Border.all(
-                          color: Colors.deepPurple,
+                          color: Colors.blue,
                           width: 1.5,
                         ),
                       ),
@@ -1254,7 +1254,7 @@ class _SymptomsInitialIllnessScreenState
                           borderRadius: BorderRadius.circular(12),
                           style: const TextStyle(
                             fontSize: 18,
-                            color: Colors.deepPurple,
+                            color: Colors.blue,
                             fontWeight: FontWeight.w500,
                           ),
                           value: _controller.muscleBodyPain,
@@ -1302,7 +1302,7 @@ class _SymptomsInitialIllnessScreenState
                       style: TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.w500,
-                        color: Colors.deepPurple,
+                        color: Colors.blue,
                       ),
                     ),
                     const SizedBox(width: 10),
@@ -1310,7 +1310,7 @@ class _SymptomsInitialIllnessScreenState
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(12),
                         border: Border.all(
-                          color: Colors.deepPurple,
+                          color: Colors.blue,
                           width: 1.5,
                         ),
                       ),
@@ -1322,7 +1322,7 @@ class _SymptomsInitialIllnessScreenState
                           borderRadius: BorderRadius.circular(12),
                           style: const TextStyle(
                             fontSize: 18,
-                            color: Colors.deepPurple,
+                            color: Colors.blue,
                             fontWeight: FontWeight.w500,
                           ),
                           value: _controller.nauseaVomiting,
@@ -1370,7 +1370,7 @@ class _SymptomsInitialIllnessScreenState
                       style: TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.w500,
-                        color: Colors.deepPurple,
+                        color: Colors.blue,
                       ),
                     ),
                     const SizedBox(width: 10),
@@ -1378,7 +1378,7 @@ class _SymptomsInitialIllnessScreenState
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(12),
                         border: Border.all(
-                          color: Colors.deepPurple,
+                          color: Colors.blue,
                           width: 1.5,
                         ),
                       ),
@@ -1390,7 +1390,7 @@ class _SymptomsInitialIllnessScreenState
                           borderRadius: BorderRadius.circular(12),
                           style: const TextStyle(
                             fontSize: 18,
-                            color: Colors.deepPurple,
+                            color: Colors.blue,
                             fontWeight: FontWeight.w500,
                           ),
                           value: _controller.poorconcentration,
@@ -1438,7 +1438,7 @@ class _SymptomsInitialIllnessScreenState
                       style: TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.w500,
-                        color: Colors.deepPurple,
+                        color: Colors.blue,
                       ),
                     ),
                     const SizedBox(width: 10),
@@ -1446,7 +1446,7 @@ class _SymptomsInitialIllnessScreenState
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(12),
                         border: Border.all(
-                          color: Colors.deepPurple,
+                          color: Colors.blue,
                           width: 1.5,
                         ),
                       ),
@@ -1458,7 +1458,7 @@ class _SymptomsInitialIllnessScreenState
                           borderRadius: BorderRadius.circular(12),
                           style: const TextStyle(
                             fontSize: 18,
-                            color: Colors.deepPurple,
+                            color: Colors.blue,
                             fontWeight: FontWeight.w500,
                           ),
                           value: _controller.diarrhea,
@@ -1506,7 +1506,7 @@ class _SymptomsInitialIllnessScreenState
                       style: TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.w500,
-                        color: Colors.deepPurple,
+                        color: Colors.blue,
                       ),
                     ),
                     const SizedBox(width: 10),
@@ -1514,7 +1514,7 @@ class _SymptomsInitialIllnessScreenState
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(12),
                         border: Border.all(
-                          color: Colors.deepPurple,
+                          color: Colors.blue,
                           width: 1.5,
                         ),
                       ),
@@ -1526,7 +1526,7 @@ class _SymptomsInitialIllnessScreenState
                           borderRadius: BorderRadius.circular(12),
                           style: const TextStyle(
                             fontSize: 18,
-                            color: Colors.deepPurple,
+                            color: Colors.blue,
                             fontWeight: FontWeight.w500,
                           ),
                           value: _controller.blisters,
@@ -1574,7 +1574,7 @@ class _SymptomsInitialIllnessScreenState
                       style: TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.w500,
-                        color: Colors.deepPurple,
+                        color: Colors.blue,
                       ),
                     ),
                     const SizedBox(width: 10),
@@ -1582,7 +1582,7 @@ class _SymptomsInitialIllnessScreenState
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(12),
                         border: Border.all(
-                          color: Colors.deepPurple,
+                          color: Colors.blue,
                           width: 1.5,
                         ),
                       ),
@@ -1594,7 +1594,7 @@ class _SymptomsInitialIllnessScreenState
                           borderRadius: BorderRadius.circular(12),
                           style: const TextStyle(
                             fontSize: 18,
-                            color: Colors.deepPurple,
+                            color: Colors.blue,
                             fontWeight: FontWeight.w500,
                           ),
                           value: _controller.lossOfAppetite,
@@ -1642,7 +1642,7 @@ class _SymptomsInitialIllnessScreenState
                       style: TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.w500,
-                        color: Colors.deepPurple,
+                        color: Colors.blue,
                       ),
                     ),
                     const SizedBox(width: 10),
@@ -1650,7 +1650,7 @@ class _SymptomsInitialIllnessScreenState
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(12),
                         border: Border.all(
-                          color: Colors.deepPurple,
+                          color: Colors.blue,
                           width: 1.5,
                         ),
                       ),
@@ -1662,7 +1662,7 @@ class _SymptomsInitialIllnessScreenState
                           borderRadius: BorderRadius.circular(12),
                           style: const TextStyle(
                             fontSize: 18,
-                            color: Colors.deepPurple,
+                            color: Colors.blue,
                             fontWeight: FontWeight.w500,
                           ),
                           value: _controller.ucersSores,
@@ -1710,7 +1710,7 @@ class _SymptomsInitialIllnessScreenState
                       style: TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.w500,
-                        color: Colors.deepPurple,
+                        color: Colors.blue,
                       ),
                     ),
                     const SizedBox(width: 10),
@@ -1718,7 +1718,7 @@ class _SymptomsInitialIllnessScreenState
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(12),
                         border: Border.all(
-                          color: Colors.deepPurple,
+                          color: Colors.blue,
                           width: 1.5,
                         ),
                       ),
@@ -1730,7 +1730,7 @@ class _SymptomsInitialIllnessScreenState
                           borderRadius: BorderRadius.circular(12),
                           style: const TextStyle(
                             fontSize: 18,
-                            color: Colors.deepPurple,
+                            color: Colors.blue,
                             fontWeight: FontWeight.w500,
                           ),
                           value: _controller.rash,
@@ -1778,7 +1778,7 @@ class _SymptomsInitialIllnessScreenState
                       style: TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.w500,
-                        color: Colors.deepPurple,
+                        color: Colors.blue,
                       ),
                     ),
                     const SizedBox(width: 10),
@@ -1786,7 +1786,7 @@ class _SymptomsInitialIllnessScreenState
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(12),
                         border: Border.all(
-                          color: Colors.deepPurple,
+                          color: Colors.blue,
                           width: 1.5,
                         ),
                       ),
@@ -1798,7 +1798,7 @@ class _SymptomsInitialIllnessScreenState
                           borderRadius: BorderRadius.circular(12),
                           style: const TextStyle(
                             fontSize: 18,
-                            color: Colors.deepPurple,
+                            color: Colors.blue,
                             fontWeight: FontWeight.w500,
                           ),
                           value: _controller.stomachAche,
@@ -1846,7 +1846,7 @@ class _SymptomsInitialIllnessScreenState
                       style: TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.w500,
-                        color: Colors.deepPurple,
+                        color: Colors.blue,
                       ),
                     ),
                     const SizedBox(width: 10),
@@ -1854,7 +1854,7 @@ class _SymptomsInitialIllnessScreenState
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(12),
                         border: Border.all(
-                          color: Colors.deepPurple,
+                          color: Colors.blue,
                           width: 1.5,
                         ),
                       ),
@@ -1866,7 +1866,7 @@ class _SymptomsInitialIllnessScreenState
                           borderRadius: BorderRadius.circular(12),
                           style: const TextStyle(
                             fontSize: 18,
-                            color: Colors.deepPurple,
+                            color: Colors.blue,
                             fontWeight: FontWeight.w500,
                           ),
                           value: _controller.itchySwollenSkin,
@@ -1917,7 +1917,7 @@ class _SymptomsInitialIllnessScreenState
                       ),
                       child: ElevatedButton(
                         style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.deepPurple,
+                          backgroundColor: Colors.blue,
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(12),
                           ),

@@ -1,3 +1,4 @@
+
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_floating_bottom_bar/flutter_floating_bottom_bar.dart';
@@ -65,7 +66,6 @@ class HomeView extends GetView<HomeController> {
             children: [
               DashboardView(scrollController: ctrl),
               CommunityView(scrollController: ctrl),
-              DashboardView(scrollController: ctrl),
               SettingsView(scrollController: ctrl),
             ],
           ),
@@ -89,11 +89,12 @@ class HomeView extends GetView<HomeController> {
                     height: 55,
                     width: 40,
                     child: Center(
-                      child: Icon(
-                        Icons.home,
+                      child: Image.asset(
+                        'assets/icons/home.png',
                         color: controller.currentPage.value == 0
                             ? controller.colors[0]
                             : unselectedColor,
+                        height: 25,  // Sesuaikan ukuran gambar
                       ),
                     ),
                   ),
@@ -101,34 +102,24 @@ class HomeView extends GetView<HomeController> {
                       height: 55,
                       width: 40,
                       child: Center(
-                        child: Icon(
-                          Icons.favorite,
+                        child: Image.asset(
+                          'assets/icons/book.png',
                           color: controller.currentPage.value == 1
                               ? controller.colors[3]
                               : unselectedColor,
+                          height: 25,  // Sesuaikan ukuran gambar
                         ),
                       )),
                   SizedBox(
                     height: 55,
                     width: 40,
                     child: Center(
-                      child: Icon(
-                        Icons.search,
+                      child: Image.asset(
+                        'assets/icons/settings.png',
                         color: controller.currentPage.value == 2
-                            ? controller.colors[1]
-                            : unselectedColor,
-                      ),
-                    ),
-                  ),
-                  SizedBox(
-                    height: 55,
-                    width: 40,
-                    child: Center(
-                      child: Icon(
-                        Icons.settings,
-                        color: controller.currentPage.value == 3
                             ? controller.colors[4]
                             : unselectedColor,
+                        height: 25,  // Sesuaikan ukuran gambar
                       ),
                     ),
                   ),

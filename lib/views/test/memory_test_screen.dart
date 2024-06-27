@@ -1,6 +1,8 @@
+
 import 'package:avatar_glow/avatar_glow.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:synaptaid/views/test/forward_test_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:speech_to_text/speech_to_text.dart';
@@ -31,11 +33,11 @@ class MemoryTestScreenState extends State<MemoryTestScreen> {
   SpeechToText speechToText = SpeechToText();
   FlutterTts flutterTts = FlutterTts();
   List<String> wordList = [
-    'face',
-    'velvet',
-    'church',
-    'daisy',
-    'red',
+    'wajah',
+    'beludru',
+    'gereja',
+    'aisyah',
+    'merah',
   ];
 
   List<String> recognizedWordsList = [];
@@ -74,14 +76,14 @@ class MemoryTestScreenState extends State<MemoryTestScreen> {
     _controller.remainingSeconds.value = 60;
     _controller.isListening.value = false;
     _controller.recognizedText.value = '';
-    _controller.spokenSentence.value = 'Hold the button and start speaking';
+    _controller.spokenSentence.value = 'Tahan tombol dan mulai berbicara';
     _controller.disableMicButton();
   }
 
   Future<void> initializeSpeechToText() async {
     bool isAvailable = await speechToText.initialize();
     if (!isAvailable) {
-      debugPrint('Speech recognition is not available');
+      debugPrint('Pengenalan suara tidak tersedia');
     }
   }
 
@@ -101,9 +103,9 @@ class MemoryTestScreenState extends State<MemoryTestScreen> {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: const Text('Memory Test Complete'),
+          title: const Text('Tes Memori Selesai'),
           content: const Text(
-              'You will be asked to recall those words again at the end of the test.'),
+              'Anda akan diminta untuk mengingat kata-kata tersebut lagi di akhir tes.'),
           actions: [
             TextButton(
               onPressed: () {
@@ -111,7 +113,7 @@ class MemoryTestScreenState extends State<MemoryTestScreen> {
                 Navigator.of(context).pop();
                 Get.offAll(() => const ForwardDigitSpan());
               },
-              child: const Text('Next'),
+              child: const Text('Lanjut'),
             ),
           ],
         );
@@ -119,7 +121,6 @@ class MemoryTestScreenState extends State<MemoryTestScreen> {
     );
   }
 
-  //future async await function to return recognized words
   Future<String> getRecognizedWords() async {
     return _controller.recognizedText.value;
   }
@@ -127,7 +128,7 @@ class MemoryTestScreenState extends State<MemoryTestScreen> {
   var i = 0;
   @override
   Widget build(BuildContext context) {
-    debugPrint('Build method called ${++i} times');
+    debugPrint('Metode build dipanggil sebanyak ${++i} kali');
     final double height = MediaQuery.sizeOf(context).height;
 
     return Scaffold(
@@ -136,7 +137,7 @@ class MemoryTestScreenState extends State<MemoryTestScreen> {
         animate: _controller.isListening.value,
         endRadius: 75,
         duration: const Duration(milliseconds: 2000),
-        glowColor: Colors.deepPurple,
+        glowColor: Colors.blue,
         repeatPauseDuration: const Duration(milliseconds: 100),
         repeat: true,
         showTwoGlows: true,
@@ -161,12 +162,10 @@ class MemoryTestScreenState extends State<MemoryTestScreen> {
                         if (!recognizedWordsList.contains(spokenWord) &&
                             wordList.contains(spokenWord)) {
                           recognizedWordsList.add(spokenWord);
-                          // debugPrint("List: ${recognizedWordsList.toString()}");
                           _controller.incrementWordCount();
                         }
                       }
                       if (_controller.currentTrial.value == 2) {
-                        // _controller.saveData(wordList, recognizedWordsList);
                         Future.delayed(const Duration(seconds: 3), () {
                           alertdialog();
                         });
@@ -179,14 +178,13 @@ class MemoryTestScreenState extends State<MemoryTestScreen> {
                           speakWordList();
                         });
                       }
-                      // _controller.saveData(wordList, recognizedWordsList);
                     } else {
                       _controller.recognizedText.value = result.recognizedWords;
                     }
                   },
                 );
               } else {
-                debugPrint('Speech recognition is not available');
+                debugPrint('Pengenalan suara tidak tersedia');
               }
             }
           },
@@ -203,9 +201,9 @@ class MemoryTestScreenState extends State<MemoryTestScreen> {
           child: Obx(
             () => CircleAvatar(
               backgroundColor: _controller.starttest.value
-                  ? Colors.deepPurple
+                  ? Colors.blue
                   : _controller.isMicEnabled.value
-                      ? Colors.deepPurple
+                      ? Colors.blue
                       : Colors.grey,
               radius: 40,
               child: Icon(
@@ -222,11 +220,11 @@ class MemoryTestScreenState extends State<MemoryTestScreen> {
         ),
       ),
       appBar: AppBar(
-        title: const Text('Memory Test',
-            style: TextStyle(
+        title: Text('Tes Memori',
+            style: GoogleFonts.nunito(
               fontSize: 28,
               fontWeight: FontWeight.bold,
-              color: Colors.deepPurple,
+              color: Colors.blue,
             )),
       ),
       body: Padding(
@@ -237,19 +235,19 @@ class MemoryTestScreenState extends State<MemoryTestScreen> {
           children: [
             Obx(
               () => Text(
-                "Trial ${_controller.currentTrial.value} of 2",
+                "Uji Coba ${_controller.currentTrial.value} dari 2",
                 style:
-                    const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                    GoogleFonts.nunito(fontSize: 18, fontWeight: FontWeight.bold),
               ),
             ),
             SizedBox(height: height * 0.01),
-            const Text(
-              "This is a memory test. A list of words will be read to you that you will have to repeat and remember.",
-              style: TextStyle(fontSize: 18, color: Colors.deepPurple),
+            Text(
+              "Ini adalah tes memori. Daftar kata-kata akan dibacakan kepada Anda yang harus Anda ulangi dan ingat.",
+              style: GoogleFonts.nunito(fontSize: 18, color: Colors.blue),
             ),
             SizedBox(height: height * 0.01),
             const Divider(
-              color: Colors.deepPurple,
+              color: Colors.blue,
               thickness: 1,
               indent: 16,
               endIndent: 16,
@@ -262,18 +260,18 @@ class MemoryTestScreenState extends State<MemoryTestScreen> {
                 children: [
                   Obx(
                     () => Text(
-                      'Words Matched: ${_controller.wordCount.value}',
-                      style: const TextStyle(
+                      'Kata yang Cocok: ${_controller.wordCount.value}',
+                      style: GoogleFonts.nunito(
                           fontSize: 18, fontWeight: FontWeight.bold),
                     ),
                   ),
                   Obx(
                     () => Text(
                       '${_controller.remainingSeconds}',
-                      style: const TextStyle(
+                      style: GoogleFonts.nunito(
                         fontSize: 18,
                         fontWeight: FontWeight.bold,
-                        color: Colors.deepPurple,
+                        color: Colors.blue,
                       ),
                     ),
                   ),
@@ -284,14 +282,14 @@ class MemoryTestScreenState extends State<MemoryTestScreen> {
             Obx(
               () => Text(
                 _controller.starttest.value
-                    ? "Double tap the button to start test"
+                    ? "Ketuk dua kali tombol untuk memulai tes"
                     : _controller.isListening.value
                         ? _controller.recognizedText.value
                         : _controller.spokenSentence.value,
-                style: TextStyle(
+                style: GoogleFonts.nunito(
                   fontSize: 20,
                   color: _controller.isListening.value
-                      ? Colors.deepPurple
+                      ? Colors.blue
                       : Colors.black54,
                 ),
                 textAlign: TextAlign.center,

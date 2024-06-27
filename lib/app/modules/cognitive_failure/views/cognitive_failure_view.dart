@@ -24,7 +24,7 @@ class CognitiveFailureView extends GetView<CognitiveFailureController> {
               'Please rate the frequency of the following events in the past six months using the scale below:',
               style: TextStyle(
                   fontSize: screenWidth * 0.04,
-                  color: Colors.deepPurple,
+                  color: Colors.blue,
                   fontWeight: FontWeight.bold),
             ),
             SizedBox(height: screenHeight * 0.02),
@@ -75,8 +75,7 @@ class CognitiveFailureView extends GetView<CognitiveFailureController> {
                         Text(
                           '${i + 1}. ${controller.getQuestion(i)}',
                           style: TextStyle(
-                              fontSize: screenWidth * 0.04,
-                              color: Colors.deepPurple),
+                              fontSize: screenWidth * 0.04, color: Colors.blue),
                         ),
                         SizedBox(height: screenHeight * 0.01),
                         Obx(
@@ -109,7 +108,7 @@ class CognitiveFailureView extends GetView<CognitiveFailureController> {
                         height: screenHeight * 0.05,
                         child: ElevatedButton(
                           style: ElevatedButton.styleFrom(
-                            backgroundColor: Colors.deepPurple,
+                            backgroundColor: Colors.blue,
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(12),
                             ),

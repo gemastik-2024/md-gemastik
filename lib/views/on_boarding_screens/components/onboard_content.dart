@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class OnBoardingContents extends StatelessWidget {
   const OnBoardingContents({
@@ -26,7 +27,7 @@ class OnBoardingContents extends StatelessWidget {
           margin: const EdgeInsets.only(bottom: 25),
           decoration: const BoxDecoration(
             borderRadius: BorderRadius.all(Radius.circular(3)),
-            color: Colors.deepPurple,
+            color: Colors.blue,
           ),
         ),
         Image.asset(
@@ -39,8 +40,7 @@ class OnBoardingContents extends StatelessWidget {
         ),
         Text(
           text!,
-          style:
-              Theme.of(context).textTheme.titleMedium!.copyWith(fontSize: 15),
+          style: GoogleFonts.nunito(),
           textAlign: TextAlign.justify,
         ),
       ],

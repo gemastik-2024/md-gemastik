@@ -5,6 +5,7 @@ import 'package:synaptaid/views/test/verbalfluency_test_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:speech_to_text/speech_to_text.dart';
 import 'package:flutter_tts/flutter_tts.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import '../../controllers/sentencerepetition_controller.dart';
 
@@ -25,20 +26,20 @@ class SentenceRepetitionScreenState extends State<SentenceRepetitionScreen> {
   int score = 0;
   bool isTimerStarted = false;
   bool gotoNextSentence = false;
-  RxString spokenSentence = 'Hold the button and start speaking'.obs;
+  RxString spokenSentence = 'Tekan tombol dan mulai berbicara'.obs;
   var sentences = [
-    'I only know that John is the one to help today',
-    'The cat always hid under the couch when dogs were in the room',
+    'Saya hanya tahu bahwa John adalah orang yang membantu hari ini',
+    'Kucing selalu bersembunyi di bawah sofa ketika anjing ada di ruangan',
   ];
   int currentSentenceIndex = 0;
-  RxString recognizedText = 'Hold the button and start speaking'.obs;
+  RxString recognizedText = 'Tekan tombol dan mulai berbicara'.obs;
   RxBool secondSentence = true.obs;
   RxBool starttest = false.obs;
   bool gotoNextScreen = false;
   String sentence1 =
-      "A sentence will be read to you. Repeat it exactly as it is said.";
+      "Satu kalimat akan dibacakan kepada Anda. Ulangi persis seperti yang dikatakan.";
   String sentence2 =
-      "Now another sentence will be read to you. Repeat it exactly asit is said";
+      "Sekarang satu kalimat lain akan dibacakan kepada Anda. Ulangi persis seperti yang dikatakan.";
 
   @override
   void initState() {
@@ -93,7 +94,7 @@ class SentenceRepetitionScreenState extends State<SentenceRepetitionScreen> {
   Future<void> initializeSpeechToText() async {
     bool isAvailable = await speechToText.initialize();
     if (!isAvailable) {
-      debugPrint('Speech recognition is not available');
+      debugPrint('Pengenalan ucapan tidak tersedia');
     }
   }
 
@@ -112,7 +113,7 @@ class SentenceRepetitionScreenState extends State<SentenceRepetitionScreen> {
     gotoNextSentence = true;
     _countdownTimer();
     recognizedText.value = '';
-    spokenSentence.value = 'Hold the button and start speaking';
+    spokenSentence.value = 'Tekan tombol dan mulai berbicara';
     currentSentenceIndex++;
 
     if (secondSentence.value) {
@@ -128,14 +129,14 @@ class SentenceRepetitionScreenState extends State<SentenceRepetitionScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final height = MediaQuery.sizeOf(context).height;
+    final height = MediaQuery.of(context).size.height;
     return Scaffold(
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       floatingActionButton: AvatarGlow(
         animate: isListening.value,
         endRadius: 75,
         duration: const Duration(milliseconds: 2000),
-        glowColor: Colors.deepPurple,
+        glowColor: Colors.blue,
         repeatPauseDuration: const Duration(milliseconds: 100),
         repeat: true,
         showTwoGlows: true,
@@ -183,7 +184,7 @@ class SentenceRepetitionScreenState extends State<SentenceRepetitionScreen> {
                   },
                 );
               } else {
-                debugPrint('Speech recognition is not available');
+                debugPrint('Pengenalan ucapan tidak tersedia');
               }
             }
             _controller.updateScore(score);
@@ -201,9 +202,9 @@ class SentenceRepetitionScreenState extends State<SentenceRepetitionScreen> {
           child: Obx(
             () => CircleAvatar(
               backgroundColor: !starttest.value
-                  ? Colors.deepPurple
+                  ? Colors.blue
                   : _controller.isMicEnabled.value
-                      ? Colors.deepPurple
+                      ? Colors.blue
                       : Colors.grey,
               radius: 40,
               child: Obx(
@@ -218,9 +219,9 @@ class SentenceRepetitionScreenState extends State<SentenceRepetitionScreen> {
         ),
       ),
       appBar: AppBar(
-        title: const Text('Language Test',
+        title: const Text('Tes Bahasa',
             style: TextStyle(
-              color: Colors.deepPurple,
+              color: Colors.blue,
               fontSize: 18,
               fontWeight: FontWeight.bold,
             )),
@@ -233,7 +234,7 @@ class SentenceRepetitionScreenState extends State<SentenceRepetitionScreen> {
             const Padding(
               padding: EdgeInsets.only(left: 16, right: 16),
               child: Text(
-                'Sentence Repetition',
+                'Pengulangan Kalimat',
                 style: TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
@@ -245,27 +246,27 @@ class SentenceRepetitionScreenState extends State<SentenceRepetitionScreen> {
               child: Obx(
                 () => Text(
                   secondSentence.value ? sentence1 : sentence2,
-                  style: const TextStyle(
+                  style: GoogleFonts.nunito(
                     fontSize: 18,
-                    color: Colors.deepPurple,
+                    color: Colors.blue,
                   ),
                 ),
               ),
             ),
-            const Padding(
+            Padding(
               padding: EdgeInsets.only(left: 16, right: 16),
               child: Text(
-                "Try to speak clearly and slowly into the microphone",
-                style: TextStyle(
+                "Cobalah untuk berbicara dengan jelas dan pelan ke dalam mikrofon",
+                style: GoogleFonts.nunito(
                   fontSize: 18,
-                  color: Colors.deepPurple,
+                  color: Colors.blue,
                   fontWeight: FontWeight.bold,
                 ),
               ),
             ),
             SizedBox(height: height * 0.03),
             const Divider(
-              color: Colors.deepPurple,
+              color: Colors.blue,
               thickness: 1,
               indent: 16,
               endIndent: 16,
@@ -280,7 +281,7 @@ class SentenceRepetitionScreenState extends State<SentenceRepetitionScreen> {
                       _controller.remainingSeconds.value.toString(),
                       style: const TextStyle(
                           fontSize: 18,
-                          color: Colors.deepPurple,
+                          color: Colors.blue,
                           fontWeight: FontWeight.bold),
                     ),
                   ),
@@ -297,12 +298,10 @@ class SentenceRepetitionScreenState extends State<SentenceRepetitionScreen> {
                         ? isListening.value
                             ? recognizedText.value
                             : spokenSentence.value
-                        : "Double tap the button to start test",
-                    style: TextStyle(
+                        : "Ganda ketuk tombol untuk memulai tes",
+                    style: GoogleFonts.nunito(
                       fontSize: 18,
-                      color: isListening.value
-                          ? Colors.deepPurple
-                          : Colors.black54,
+                      color: isListening.value ? Colors.blue : Colors.black54,
                     ),
                     textAlign: TextAlign.center,
                   ),

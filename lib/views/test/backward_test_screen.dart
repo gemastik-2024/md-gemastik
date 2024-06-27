@@ -1,14 +1,19 @@
+
 import 'package:avatar_glow/avatar_glow.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:synaptaid/controllers/digitspan_controller.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:speech_to_text/speech_to_text.dart';
 import 'package:flutter_tts/flutter_tts.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:synaptaid/constants/constans.dart';
+
 import 'vigilance_test_screen.dart';
+import 'package:synaptaid/controllers/digitspan_controller.dart';
 
 class BackwardDigitSpan extends StatefulWidget {
-  int? ForwardScore;
+  final int? ForwardScore;
+
   BackwardDigitSpan({
     Key? key,
     this.ForwardScore,
@@ -25,17 +30,16 @@ class _BackDigitState extends State<BackwardDigitSpan> {
   final DigitSpanController _controller = Get.put(DigitSpanController());
   int score = 0;
   var numbers = ['7', '4', '2'];
-
   bool isTimerStarted = false;
   bool innNextScreen = false;
 
   @override
   void initState() {
     super.initState();
-    initalizeSharedPref();
+    initializeSharedPref();
   }
 
-  void initalizeSharedPref() async {
+  void initializeSharedPref() async {
     sf = await SharedPreferences.getInstance();
   }
 
@@ -44,7 +48,6 @@ class _BackDigitState extends State<BackwardDigitSpan> {
     _controller.timeDuration();
     _countdownTimer();
     _speakNumbers();
-    // disableMicButton();
   }
 
   void _countdownTimer() async {
@@ -53,7 +56,7 @@ class _BackDigitState extends State<BackwardDigitSpan> {
       _controller.decrementSeconds();
     }
     isTimerStarted = false;
-    if (innNextScreen == false) {
+    if (!innNextScreen) {
       nextTest();
     }
   }
@@ -75,7 +78,7 @@ class _BackDigitState extends State<BackwardDigitSpan> {
 
   Future<void> nextTest() async {
     int score = _controller.getScore();
-    score = score + widget.ForwardScore!;
+    score += widget.ForwardScore!;
 
     await _controller.updateScore(score);
     sf.setInt('nextGame', 8);
@@ -86,14 +89,14 @@ class _BackDigitState extends State<BackwardDigitSpan> {
 
   @override
   Widget build(BuildContext context) {
-    final double height = MediaQuery.sizeOf(context).height;
+    final double height = MediaQuery.of(context).size.height;
     return Scaffold(
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       floatingActionButton: AvatarGlow(
         animate: _controller.isListening.value,
         endRadius: 75,
         duration: const Duration(milliseconds: 2000),
-        glowColor: Colors.deepPurple,
+        glowColor: darkBlueColor,
         repeatPauseDuration: const Duration(milliseconds: 100),
         repeat: true,
         showTwoGlows: true,
@@ -139,10 +142,10 @@ class _BackDigitState extends State<BackwardDigitSpan> {
           child: Obx(
             () => CircleAvatar(
               backgroundColor: _controller.starttest.value
-                  ? Colors.deepPurple
+                  ? darkBlueColor
                   : _controller.isReading.value
                       ? Colors.grey
-                      : Colors.deepPurple,
+                      : darkBlueColor,
               radius: 40,
               child: Obx(
                 () => Icon(
@@ -158,12 +161,12 @@ class _BackDigitState extends State<BackwardDigitSpan> {
         ),
       ),
       appBar: AppBar(
-        title: const Text(
-          'Attention Test',
-          style: TextStyle(
+        title: Text(
+          'Tes Perhatian',
+          style: GoogleFonts.nunito(
             fontSize: 18,
             fontWeight: FontWeight.bold,
-            color: Colors.deepPurple,
+            color: darkBlueColor,
           ),
         ),
       ),
@@ -175,9 +178,9 @@ class _BackDigitState extends State<BackwardDigitSpan> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                const Text(
-                  'Backward Digit Span',
-                  style: TextStyle(
+                Text(
+                  'Rentang Mundur',
+                  style: GoogleFonts.nunito(
                     fontSize: 18,
                     fontWeight: FontWeight.bold,
                   ),
@@ -185,65 +188,33 @@ class _BackDigitState extends State<BackwardDigitSpan> {
                 Obx(
                   () => Text(
                     '${_controller.remainingSeconds}',
-                    style: const TextStyle(
+                    style:  GoogleFonts.nunito(
                       fontSize: 18,
                       fontWeight: FontWeight.bold,
-                      color: Colors.deepPurple,
+                      color: darkBlueColor,
                     ),
                   ),
                 ),
               ],
             ),
           ),
-          const Padding(
+          Padding(
             padding: EdgeInsets.only(
                 top: 5.0, left: 16.0, bottom: 16.0, right: 12.0),
             child: Text(
-              'Now another list of numbers will be read to you, but this time you must repeat them in the backwards order.',
-              style: TextStyle(
+              'Sekarang akan dibacakan daftar angka lain, tapi kali ini Anda harus mengulanginya dalam urutan terbalik.',
+              style: GoogleFonts.nunito(
                 fontSize: 18,
-                color: Colors.deepPurple,
+                color: darkBlueColor,
               ),
             ),
           ),
-          // Padding(
-          //   padding: const EdgeInsets.all(16.0),
-          //   child: Text(
-          //     'Score: $score',
-          //     style: const TextStyle(
-          //       fontSize: 18,
-          //       fontWeight: FontWeight.bold,
-          //     ),
-          //   ),
-          // ),
-          // Center(
-          //   child: SingleChildScrollView(
-          //     scrollDirection: Axis.horizontal,
-          //     child: Padding(
-          //       padding: const EdgeInsets.symmetric(horizontal: 16.0),
-          //       child: Row(
-          //         children: [
-          //           for (var number in numbers) ...[
-          //             const SizedBox(width: 8),
-          //             Chip(
-          //               label: Text(
-          //                 number,
-          //                 style: const TextStyle(
-          //                     fontSize: 18, color: Colors.deepPurple),
-          //               ),
-          //             ),
-          //           ],
-          //         ],
-          //       ),
-          //     ),
-          //   ),
-          // ),
           SizedBox(height: height * 0.02),
           const Divider(
             thickness: 1,
             indent: 16,
             endIndent: 16,
-            color: Colors.deepPurple,
+            color: darkBlueColor,
           ),
           SizedBox(height: height * 0.1),
           Padding(
@@ -260,12 +231,12 @@ class _BackDigitState extends State<BackwardDigitSpan> {
                 child: Obx(
                   () => Text(
                     _controller.starttest.value
-                        ? "Double tap the button to start test"
+                        ? "Ketuk dua kali tombol untuk memulai tes"
                         : _controller.text.value,
-                    style: TextStyle(
+                    style: GoogleFonts.nunito(
                       fontSize: 20,
                       color: _controller.isListening.value
-                          ? Colors.deepPurple
+                          ? darkBlueColor
                           : Colors.black54,
                     ),
                     textAlign: TextAlign.center,

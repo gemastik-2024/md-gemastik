@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:synaptaid/app/modules/on_boarding/controllers/on_boarding_controller.dart';
 import 'package:synaptaid/app/modules/on_boarding/views/widgets/animated_container.dart';
 import 'package:synaptaid/constants/constans.dart';
@@ -25,10 +26,11 @@ class OnBoardingView extends GetView<OnBoardingController> {
                   : Get.offAllNamed(Routes.SIGN_IN);
             },
             child: Text(
-              'Skip',
-              style: TextStyle(
+              'Lanjut',
+              style: GoogleFonts.sora(
                 color: darkBlueColor,
                 fontSize: 18,
+                fontWeight: FontWeight.bold
               ),
             ),
           ),

@@ -29,7 +29,7 @@ class _HomeScreenState extends State<HomeScreen> {
     Get.defaultDialog(
       title: 'About CogQuest',
       titleStyle: const TextStyle(
-        color: Colors.deepPurple,
+        color: Colors.blue,
         fontWeight: FontWeight.bold,
         fontSize: 18,
       ),
@@ -60,7 +60,7 @@ class _HomeScreenState extends State<HomeScreen> {
           title: const Text(
             'CogQuest',
             style: TextStyle(
-              color: Colors.deepPurple,
+              color: Colors.blue,
               fontWeight: FontWeight.bold,
               fontSize: 28,
             ),
@@ -74,7 +74,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   _showAlert();
                 },
                 icon: const Icon(Icons.info_outlined),
-                color: Colors.deepPurple,
+                color: Colors.blue,
               ),
             ),
             Padding(
@@ -85,7 +85,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   Get.offAll(() => const OnBoardingPage());
                 },
                 icon: const Icon(Icons.exit_to_app),
-                color: Colors.deepPurple,
+                color: Colors.blue,
               ),
             ),
           ],
@@ -160,7 +160,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           ),
                           boxShadow: [
                             BoxShadow(
-                              color: Colors.deepPurple.withOpacity(0.9),
+                              color: Colors.blue.withOpacity(0.9),
                               spreadRadius: 2,
                               blurRadius: 2,
                               offset: const Offset(

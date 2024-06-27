@@ -1,11 +1,15 @@
+
 import 'package:avatar_glow/avatar_glow.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:synaptaid/controllers/digitspan_controller.dart';
-import 'package:synaptaid/views/test/backward_test_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:speech_to_text/speech_to_text.dart';
 import 'package:flutter_tts/flutter_tts.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:synaptaid/constants/constans.dart';
+
+import 'package:synaptaid/controllers/digitspan_controller.dart';
+import 'package:synaptaid/views/test/backward_test_screen.dart';
 
 class ForwardDigitSpan extends StatefulWidget {
   const ForwardDigitSpan({Key? key}) : super(key: key);
@@ -27,7 +31,7 @@ class _ForwardDigitState extends State<ForwardDigitSpan> {
   @override
   void initState() {
     super.initState();
-    initalizeSharedPref();
+    initializeSharedPref();
   }
 
   void _startTest() {
@@ -35,10 +39,9 @@ class _ForwardDigitState extends State<ForwardDigitSpan> {
     _controller.timeDuration();
     _countdownTimer();
     _speakNumbers();
-    // disableMicButton();
   }
 
-  Future<void> initalizeSharedPref() async {
+  Future<void> initializeSharedPref() async {
     sf = await SharedPreferences.getInstance();
   }
 
@@ -48,7 +51,7 @@ class _ForwardDigitState extends State<ForwardDigitSpan> {
       _controller.decrementSeconds();
     }
     isTimerStarted = false;
-    if (innNextScreen == false) {
+    if (!innNextScreen) {
       nextTest();
     }
   }
@@ -78,14 +81,14 @@ class _ForwardDigitState extends State<ForwardDigitSpan> {
 
   @override
   Widget build(BuildContext context) {
-    final double height = MediaQuery.sizeOf(context).height;
+    final double height = MediaQuery.of(context).size.height;
     return Scaffold(
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       floatingActionButton: AvatarGlow(
         animate: _controller.isListening.value,
         endRadius: 75,
         duration: const Duration(milliseconds: 2000),
-        glowColor: Colors.deepPurple,
+        glowColor: Colors.orange,
         repeatPauseDuration: const Duration(milliseconds: 100),
         repeat: true,
         showTwoGlows: true,
@@ -131,10 +134,10 @@ class _ForwardDigitState extends State<ForwardDigitSpan> {
           child: Obx(
             () => CircleAvatar(
               backgroundColor: _controller.starttest.value
-                  ? Colors.deepPurple
+                  ? Colors.orange
                   : _controller.isReading.value
                       ? Colors.grey
-                      : Colors.deepPurple,
+                      : darkBlueColor,
               radius: 40,
               child: Obx(
                 () => Icon(
@@ -150,12 +153,12 @@ class _ForwardDigitState extends State<ForwardDigitSpan> {
         ),
       ),
       appBar: AppBar(
-        title: const Text(
-          'Attention Test',
-          style: TextStyle(
+        title: Text(
+          'Tes Perhatian',
+          style: GoogleFonts.nunito(
             fontSize: 18,
             fontWeight: FontWeight.bold,
-            color: Colors.deepPurple,
+            color: darkBlueColor,
           ),
         ),
       ),
@@ -167,9 +170,9 @@ class _ForwardDigitState extends State<ForwardDigitSpan> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                const Text(
-                  'Forward Digit Span',
-                  style: TextStyle(
+                Text(
+                  'Rentang Maju',
+                  style: GoogleFonts.nunito(
                     fontSize: 18,
                     fontWeight: FontWeight.bold,
                   ),
@@ -177,66 +180,33 @@ class _ForwardDigitState extends State<ForwardDigitSpan> {
                 Obx(
                   () => Text(
                     '${_controller.remainingSeconds}',
-                    style: const TextStyle(
+                    style: GoogleFonts.nunito(
                       fontSize: 18,
                       fontWeight: FontWeight.bold,
-                      color: Colors.deepPurple,
+                      color: darkBlueColor,
                     ),
                   ),
                 ),
               ],
             ),
           ),
-          const Padding(
+          Padding(
             padding: EdgeInsets.only(
                 top: 5.0, left: 16.0, bottom: 16.0, right: 12.0),
             child: Text(
-              'A list of numbers will be read to you. Please repeat them exactly in the same order',
-              style: TextStyle(
+              'Sebuah daftar angka akan dibacakan untuk Anda. Silakan ulangi angka-angka tersebut tepat dalam urutan yang sama',
+              style: GoogleFonts.nunito(
                 fontSize: 18,
-                color: Colors.deepPurple,
+                color: darkBlueColor,
               ),
             ),
           ),
-          // Padding(
-          //   padding: const EdgeInsets.all(16.0),
-          //   child: Text(
-          //     'Score: $score',
-          //     style: const TextStyle(
-          //       fontSize: 18,
-          //       fontWeight: FontWeight.bold,
-          //     ),
-          //   ),
-          // ),
-          // Center(
-          //   child: SingleChildScrollView(
-          //     scrollDirection: Axis.horizontal,
-          //     child: Padding(
-          //       padding: const EdgeInsets.symmetric(horizontal: 16.0),
-          //       child: Row(
-          //         children: [
-          //           for (var number in numbers) ...[
-          //             const SizedBox(width: 8),
-          //             Chip(
-          //               label: Text(
-          //                 number,
-          //                 style: const TextStyle(
-          //                     fontSize: 18, color: Colors.deepPurple),
-          //               ),
-          //             ),
-          //           ],
-          //         ],
-          //       ),
-          //     ),
-          //   ),
-          // ),
           SizedBox(height: height * 0.05),
-
           const Divider(
             thickness: 1,
             indent: 16,
             endIndent: 16,
-            color: Colors.deepPurple,
+            color: darkBlueColor,
           ),
           SizedBox(height: height * 0.1),
           Padding(
@@ -253,12 +223,12 @@ class _ForwardDigitState extends State<ForwardDigitSpan> {
                 child: Obx(
                   () => Text(
                     _controller.starttest.value
-                        ? "Double tap the button to start test"
+                        ? "Ketuk dua kali tombol untuk memulai tes"
                         : _controller.text.value,
-                    style: TextStyle(
+                    style: GoogleFonts.nunito(
                       fontSize: 20,
                       color: _controller.isListening.value
-                          ? Colors.deepPurple
+                          ? darkBlueColor
                           : Colors.black54,
                     ),
                     textAlign: TextAlign.center,

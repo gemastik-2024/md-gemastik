@@ -1,7 +1,9 @@
+
 import 'dart:ui' as ui;
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:synaptaid/views/test/visuospatial_clock_test_screen.dart';
 import 'package:flutter/foundation.dart';
 import 'package:image/image.dart' as img;
@@ -11,12 +13,12 @@ import 'package:path_provider/path_provider.dart';
 import '../../controllers/cube_drawing_controller.dart';
 
 class Classifier {
-  /// Instance of Interpreter
+  /// Instance dari Interpreter
   late Interpreter _interpreter;
 
   static const String modelFile = "assets/model_unquant.tflite";
 
-  /// Loads interpreter from asset
+  /// Memuat interpreter dari asset
   Future<void> loadModel({Interpreter? interpreter}) async {
     try {
       _interpreter = interpreter ??
@@ -27,20 +29,20 @@ class Classifier {
 
       _interpreter.allocateTensors();
     } catch (e) {
-      Get.snackbar('Error', "Error loading model",
+      Get.snackbar('Kesalahan', "Kesalahan memuat model",
           snackPosition: SnackPosition.BOTTOM,
           backgroundColor: Colors.red,
           colorText: Colors.white);
     }
   }
 
-  /// Gets the interpreter instance
+  /// Mendapatkan instance interpreter
   Interpreter get interpreter => _interpreter;
 
   predict(img.Image image) async {
     img.Image resizedImage = img.copyResize(image, width: 150, height: 150);
 
-    // Convert the resized image to a 1D Float32List.
+    // Mengonversi gambar yang diubah ukurannya menjadi Float32List 1D.
     Float32List inputBytes = Float32List(1 * 150 * 150 * 3);
     int pixelIndex = 0;
     for (int y = 0; y < resizedImage.height; y++) {
@@ -52,7 +54,7 @@ class Classifier {
       }
     }
 
-    // Reshape to input format specific for model. 1 item in list with pixels 150x150 and 3 layers for RGB
+    // Membentuk ulang ke format input spesifik untuk model. 1 item dalam daftar dengan piksel 150x150 dan 3 lapisan untuk RGB
     final input = inputBytes.reshape([1, 150, 150, 3]);
     final output = List.filled(1 * 2, 0).reshape([1, 2]);
     interpreter.run(input, output);
@@ -91,10 +93,10 @@ class _DrawingScreenState extends State<DrawingScreen> {
   String processResult(List<dynamic> outputs) {
     if (outputs[0][0] == 1) {
       _cubeController.saveScore(0);
-      return 'Not A Cube';
+      return 'Bukan Kubus';
     } else {
       _cubeController.saveScore(1);
-      return 'Cube';
+      return 'Kubus';
     }
   }
 
@@ -120,11 +122,11 @@ class _DrawingScreenState extends State<DrawingScreen> {
         double canvasWidth = context.size!.width;
         double canvasHeight = context.size!.height;
         double borderWidth =
-            20.0; // Adjust this value as needed for the size of the border
+            20.0; // Sesuaikan nilai ini sesuai kebutuhan untuk ukuran batas
         double drawingWidth = canvasWidth;
         double drawingHeight = canvasHeight;
 
-        // Create a new image with a white background
+        // Membuat gambar baru dengan latar belakang putih
         final ui.Image bgImage = await createBlankImage(
           drawingWidth.toInt(),
           drawingHeight.toInt(),
@@ -133,10 +135,10 @@ class _DrawingScreenState extends State<DrawingScreen> {
 
         Canvas canvas = Canvas(recorder);
 
-        // Draw the background image
+        // Menggambar gambar latar belakang
         canvas.drawImage(bgImage, Offset.zero, Paint());
 
-        // Translate the canvas to center the drawing within the border
+        // Mentranslasi kanvas untuk memusatkan gambar dalam batas
         canvas.translate(borderWidth, borderWidth);
 
         final paint = Paint()
@@ -144,12 +146,12 @@ class _DrawingScreenState extends State<DrawingScreen> {
           ..strokeWidth = 50.0
           ..strokeCap = StrokeCap.round;
 
-        // Draw the lines
+        // Menggambar garis-garis
         for (int i = 0; i < _points.length - 1; i++) {
           canvas.drawLine(_points[i], _points[i + 1], paint);
         }
 
-        // End the recording and get the image
+        // Mengakhiri perekaman dan mendapatkan gambar
         ui.Picture picture = recorder.endRecording();
         ui.Image image = await picture.toImage(
           drawingWidth.toInt(),
@@ -163,7 +165,7 @@ class _DrawingScreenState extends State<DrawingScreen> {
           if (!kIsWeb) {
             final directory = await getTemporaryDirectory();
             final imagePath =
-                '${directory.path}/drawing.png'; // Change the extension to .png
+                '${directory.path}/drawing.png'; // Ubah ekstensi menjadi .png
             final File file = File(imagePath);
             await file.writeAsBytes(byteData.buffer.asUint8List());
 
@@ -182,13 +184,13 @@ class _DrawingScreenState extends State<DrawingScreen> {
             //   ),
             // );
           } else {
-            // If you are using this for web, you can convert ByteData directly to Uint8List
+            // Jika Anda menggunakan ini untuk web, Anda dapat mengonversi ByteData langsung ke Uint8List
             final Uint8List bytes = byteData.buffer.asUint8List();
             const filePath = 'drawing.png';
           }
         }
       } catch (e) {
-        Get.snackbar('Error', "Error saving drawing",
+        Get.snackbar('Kesalahan', "Kesalahan menyimpan gambar",
             snackPosition: SnackPosition.BOTTOM,
             backgroundColor: Colors.red,
             colorText: Colors.white);
@@ -209,12 +211,10 @@ class _DrawingScreenState extends State<DrawingScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
-          'Drawing Test',
-          style: TextStyle(
-              color: Colors.deepPurple,
-              fontWeight: FontWeight.bold,
-              fontSize: 20),
+        title: Text(
+          'Tes Menggambar',
+          style: GoogleFonts.nunito(
+              color: Colors.blue, fontWeight: FontWeight.bold, fontSize: 20),
         ),
       ),
       body: Column(
@@ -227,17 +227,17 @@ class _DrawingScreenState extends State<DrawingScreen> {
               children: [
                 Container(
                   width: MediaQuery.of(context).size.width * 0.8,
-                  child: const Text(
-                    "Draw a Cube Below, and Don't lift your Finger while Drawing",
-                    style: TextStyle(
+                  child: Text(
+                    "Gambar Kubus di Bawah, dan Jangan Angkat Jari Anda saat Menggambar",
+                    style: GoogleFonts.nunito(
                         fontSize: 18,
                         fontWeight: FontWeight.bold,
-                        overflow: TextOverflow.visible),
+                        ),
                   ),
                 ),
                 // Text(
                 //   "60",
-                //   style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                //   style: GoogleFonts.nunito(fontSize: 18, fontWeight: FontWeight.bold),
                 // ),
               ],
             ),
@@ -275,7 +275,7 @@ class _DrawingScreenState extends State<DrawingScreen> {
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(10.0),
               ),
-              backgroundColor: Colors.deepPurple,
+              backgroundColor: Colors.blue,
               heroTag: 'btn2',
               onPressed: _saveDrawing,
               child: const Icon(Icons.arrow_forward,

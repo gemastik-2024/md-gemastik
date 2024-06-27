@@ -26,7 +26,7 @@ class _MedicalHistoryScreenState extends State<MedicalHistoryScreen> {
           style: TextStyle(
             fontSize: 28,
             fontWeight: FontWeight.bold,
-            color: Colors.deepPurple,
+            color: Colors.blue,
           ),
         )),
       ),
@@ -45,7 +45,7 @@ class _MedicalHistoryScreenState extends State<MedicalHistoryScreen> {
                   style: TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.bold,
-                    color: Colors.deepPurple,
+                    color: Colors.blue,
                   ),
                 ),
                 Column(
@@ -72,7 +72,7 @@ class _MedicalHistoryScreenState extends State<MedicalHistoryScreen> {
                           'Grains: bread, cereal, rice, pasta',
                           style: TextStyle(
                             fontSize: 18,
-                            color: Colors.deepPurple,
+                            color: Colors.blue,
                             fontWeight: FontWeight.w400,
                           ),
                         ),
@@ -100,7 +100,7 @@ class _MedicalHistoryScreenState extends State<MedicalHistoryScreen> {
                           'Dairy: milk, yoghurt, cheese',
                           style: TextStyle(
                             fontSize: 18,
-                            color: Colors.deepPurple,
+                            color: Colors.blue,
                             fontWeight: FontWeight.w400,
                           ),
                         ),
@@ -128,7 +128,7 @@ class _MedicalHistoryScreenState extends State<MedicalHistoryScreen> {
                           'Vegetables and fruits',
                           style: TextStyle(
                             fontSize: 18,
-                            color: Colors.deepPurple,
+                            color: Colors.blue,
                             fontWeight: FontWeight.w400,
                           ),
                         ),
@@ -156,7 +156,7 @@ class _MedicalHistoryScreenState extends State<MedicalHistoryScreen> {
                           'Fats, oils and sugars',
                           style: TextStyle(
                             fontSize: 18,
-                            color: Colors.deepPurple,
+                            color: Colors.blue,
                             fontWeight: FontWeight.w400,
                           ),
                         ),
@@ -188,7 +188,7 @@ class _MedicalHistoryScreenState extends State<MedicalHistoryScreen> {
                           'Red meat, poultry, fish,eggs, \nbeans',
                           style: TextStyle(
                             fontSize: 18,
-                            color: Colors.deepPurple,
+                            color: Colors.blue,
                             fontWeight: FontWeight.w400,
                           ),
                         ),
@@ -207,7 +207,7 @@ class _MedicalHistoryScreenState extends State<MedicalHistoryScreen> {
                   style: TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.bold,
-                    color: Colors.deepPurple,
+                    color: Colors.blue,
                   ),
                 ),
                 Column(
@@ -227,7 +227,7 @@ class _MedicalHistoryScreenState extends State<MedicalHistoryScreen> {
                           'Rarely to never',
                           style: TextStyle(
                             fontSize: 18,
-                            color: Colors.deepPurple,
+                            color: Colors.blue,
                             fontWeight: FontWeight.w400,
                           ),
                         ),
@@ -248,7 +248,7 @@ class _MedicalHistoryScreenState extends State<MedicalHistoryScreen> {
                           'Occasional, light to moderate \nactivity',
                           style: TextStyle(
                             fontSize: 18,
-                            color: Colors.deepPurple,
+                            color: Colors.blue,
                             fontWeight: FontWeight.w400,
                           ),
                         ),
@@ -269,7 +269,7 @@ class _MedicalHistoryScreenState extends State<MedicalHistoryScreen> {
                           'Regular, light to moderate activity',
                           style: TextStyle(
                             fontSize: 18,
-                            color: Colors.deepPurple,
+                            color: Colors.blue,
                             fontWeight: FontWeight.w400,
                           ),
                         ),
@@ -290,7 +290,7 @@ class _MedicalHistoryScreenState extends State<MedicalHistoryScreen> {
                           'Regular, vigorous activity',
                           style: TextStyle(
                             fontSize: 18,
-                            color: Colors.deepPurple,
+                            color: Colors.blue,
                             fontWeight: FontWeight.w400,
                           ),
                         ),
@@ -309,7 +309,7 @@ class _MedicalHistoryScreenState extends State<MedicalHistoryScreen> {
                   style: TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.bold,
-                    color: Colors.deepPurple,
+                    color: Colors.blue,
                   ),
                 ),
                 Row(
@@ -329,7 +329,7 @@ class _MedicalHistoryScreenState extends State<MedicalHistoryScreen> {
                           'Yes',
                           style: TextStyle(
                             fontSize: 18,
-                            color: Colors.deepPurple,
+                            color: Colors.blue,
                             fontWeight: FontWeight.w400,
                           ),
                         ),
@@ -350,7 +350,7 @@ class _MedicalHistoryScreenState extends State<MedicalHistoryScreen> {
                           'No',
                           style: TextStyle(
                             fontSize: 18,
-                            color: Colors.deepPurple,
+                            color: Colors.blue,
                             fontWeight: FontWeight.w400,
                           ),
                         ),
@@ -369,7 +369,7 @@ class _MedicalHistoryScreenState extends State<MedicalHistoryScreen> {
                   style: TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.bold,
-                    color: Colors.deepPurple,
+                    color: Colors.blue,
                   ),
                 ),
                 Row(
@@ -389,7 +389,7 @@ class _MedicalHistoryScreenState extends State<MedicalHistoryScreen> {
                           'Yes',
                           style: TextStyle(
                             fontSize: 18,
-                            color: Colors.deepPurple,
+                            color: Colors.blue,
                             fontWeight: FontWeight.w400,
                           ),
                         ),
@@ -410,7 +410,7 @@ class _MedicalHistoryScreenState extends State<MedicalHistoryScreen> {
                           'No',
                           style: TextStyle(
                             fontSize: 18,
-                            color: Colors.deepPurple,
+                            color: Colors.blue,
                             fontWeight: FontWeight.w400,
                           ),
                         ),
@@ -429,7 +429,7 @@ class _MedicalHistoryScreenState extends State<MedicalHistoryScreen> {
                   style: TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.bold,
-                    color: Colors.deepPurple,
+                    color: Colors.blue,
                   ),
                 ),
                 Column(
@@ -456,7 +456,7 @@ class _MedicalHistoryScreenState extends State<MedicalHistoryScreen> {
                           'High blood pressure',
                           style: TextStyle(
                             fontSize: 18,
-                            color: Colors.deepPurple,
+                            color: Colors.blue,
                             fontWeight: FontWeight.w400,
                           ),
                         ),
@@ -484,7 +484,7 @@ class _MedicalHistoryScreenState extends State<MedicalHistoryScreen> {
                           'Asthma',
                           style: TextStyle(
                             fontSize: 18,
-                            color: Colors.deepPurple,
+                            color: Colors.blue,
                             fontWeight: FontWeight.w400,
                           ),
                         ),
@@ -512,7 +512,7 @@ class _MedicalHistoryScreenState extends State<MedicalHistoryScreen> {
                           'Heart disease',
                           style: TextStyle(
                             fontSize: 18,
-                            color: Colors.deepPurple,
+                            color: Colors.blue,
                             fontWeight: FontWeight.w400,
                           ),
                         ),
@@ -540,7 +540,7 @@ class _MedicalHistoryScreenState extends State<MedicalHistoryScreen> {
                           'Mental health disorder',
                           style: TextStyle(
                             fontSize: 18,
-                            color: Colors.deepPurple,
+                            color: Colors.blue,
                             fontWeight: FontWeight.w400,
                           ),
                         ),
@@ -568,7 +568,7 @@ class _MedicalHistoryScreenState extends State<MedicalHistoryScreen> {
                           'Diabetes',
                           style: TextStyle(
                             fontSize: 18,
-                            color: Colors.deepPurple,
+                            color: Colors.blue,
                             fontWeight: FontWeight.w400,
                           ),
                         ),
@@ -596,7 +596,7 @@ class _MedicalHistoryScreenState extends State<MedicalHistoryScreen> {
                           'Obesity',
                           style: TextStyle(
                             fontSize: 18,
-                            color: Colors.deepPurple,
+                            color: Colors.blue,
                             fontWeight: FontWeight.w400,
                           ),
                         ),
@@ -624,7 +624,7 @@ class _MedicalHistoryScreenState extends State<MedicalHistoryScreen> {
                           'Kidney disease',
                           style: TextStyle(
                             fontSize: 18,
-                            color: Colors.deepPurple,
+                            color: Colors.blue,
                             fontWeight: FontWeight.w400,
                           ),
                         ),
@@ -652,7 +652,7 @@ class _MedicalHistoryScreenState extends State<MedicalHistoryScreen> {
                           'None',
                           style: TextStyle(
                             fontSize: 18,
-                            color: Colors.deepPurple,
+                            color: Colors.blue,
                             fontWeight: FontWeight.w400,
                           ),
                         ),
@@ -680,7 +680,7 @@ class _MedicalHistoryScreenState extends State<MedicalHistoryScreen> {
                           'Other',
                           style: TextStyle(
                             fontSize: 18,
-                            color: Colors.deepPurple,
+                            color: Colors.blue,
                             fontWeight: FontWeight.w400,
                           ),
                         ),
@@ -700,11 +700,11 @@ class _MedicalHistoryScreenState extends State<MedicalHistoryScreen> {
                     child: DecoratedBox(
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(12),
-                        color: Colors.deepPurple,
+                        color: Colors.blue,
                       ),
                       child: ElevatedButton(
                         style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.deepPurple,
+                          backgroundColor: Colors.blue,
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(12),
                           ),

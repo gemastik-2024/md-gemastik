@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 import '../../../../../constants/constans.dart';
 import '../../controllers/on_boarding_controller.dart';
 
@@ -21,9 +22,10 @@ class OnBoardingContent extends GetWidget<OnBoardingController> {
       children: <Widget>[
         Text(
           heading,
-          style: Theme.of(context).textTheme.titleLarge!.copyWith(
+          style: GoogleFonts.nunito(
                 fontSize: 32,
                 color: darkBlueColor,
+                fontWeight: FontWeight.bold
               ),
         ),
         Container(
@@ -45,10 +47,7 @@ class OnBoardingContent extends GetWidget<OnBoardingController> {
         ),
         Text(
           text,
-          style: Theme.of(context)
-              .textTheme
-              .titleMedium!
-              .copyWith(fontSize: 15, color: darkBlueColor),
+          style: GoogleFonts.nunito(fontSize: 15, color: darkBlueColor),
           textAlign: TextAlign.justify,
         ),
       ],

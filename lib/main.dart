@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
     //   debugShowCheckedModeBanner: false,
     //   title: 'CogQuest',
     //   theme: ThemeData(
-    //     colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+    //     colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
     //     useMaterial3: true,
     //   ),
     //   home: const HomeScreen(),
@@ -34,9 +34,9 @@ class MyApp extends StatelessWidget {
 
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'CogQuest',
+      title: 'Synaptaid',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
         useMaterial3: true,
       ),
       initialRoute: Routes.ON_BOARDING,

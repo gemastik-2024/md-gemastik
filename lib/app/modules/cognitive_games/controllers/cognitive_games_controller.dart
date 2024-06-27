@@ -78,8 +78,8 @@ class CognitiveGamesController extends GetxController {
       showDialog(
         context: context,
         builder: (context) => AlertDialog(
-          title: const Text('Game Locked'),
-          content: Text('You need to complete Game $unlockedGames  first.'),
+          title: const Text('Belum bisa dibuka'),
+          content: Text('Kamu harus selesaikan Game $unlockedGames  terlebih dahulu.'),
           actions: [
             TextButton(
               onPressed: () => Navigator.pop(context),
@@ -92,19 +92,21 @@ class CognitiveGamesController extends GetxController {
   }
 
   final gameNameList = [
-    'Connecting Dots',
-    'Drawing Test',
-    'Clock Test',
-    'Guess Animal Name',
-    'Memory Test',
-    'Forward Digit Span',
-    'Backward Digit Span',
-    'Vigilance',
-    'Serial 7',
-    'Sentence Repetition',
-    'Vocabulary Test',
-    'Abstraction',
-    'Delay Recall',
-    'Orientation',
-  ];
+  'Menghubungkan Titik',
+  'Tes Menggambar',
+  'Tes Jam',
+  'Tebak Nama Hewan',
+  'Tes Memori',
+  'Digit Maju',
+  'Digit Mundur',
+  'Kewaspadaan',
+  'Seri 7',
+  'Pengulangan Kalimat',
+  'Tes Kosa Kata',
+  'Abstraksi',
+  'Ingat Tertunda',
+  'Orientasi',
+];
+
 }
+

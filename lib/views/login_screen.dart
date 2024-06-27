@@ -31,7 +31,7 @@ class _LogInScreenState extends State<LogInScreen> {
                 style: TextStyle(
                   fontSize: 35,
                   fontWeight: FontWeight.bold,
-                  color: Colors.deepPurple,
+                  color: Colors.blue,
                 ),
               ),
               Image(
@@ -51,7 +51,7 @@ class _LogInScreenState extends State<LogInScreen> {
                         decoration: const InputDecoration(
                           prefixIcon: Icon(
                             Icons.email,
-                            color: Colors.deepPurple,
+                            color: Colors.blue,
                           ),
                           labelText: 'Enter Your Email',
                           border: OutlineInputBorder(
@@ -93,14 +93,14 @@ class _LogInScreenState extends State<LogInScreen> {
                         decoration: InputDecoration(
                           prefixIcon: const Icon(
                             Icons.fingerprint_outlined,
-                            color: Colors.deepPurple,
+                            color: Colors.blue,
                           ),
                           suffixIcon: IconButton(
                             icon: Icon(
                               _isPasswordVisible
                                   ? Icons.visibility
                                   : Icons.visibility_off,
-                              color: Colors.deepPurple,
+                              color: Colors.blue,
                             ),
                             onPressed: () {
                               setState(
@@ -149,7 +149,7 @@ class _LogInScreenState extends State<LogInScreen> {
                         height: Get.height * 0.06,
                         child: ElevatedButton(
                           style: ElevatedButton.styleFrom(
-                            backgroundColor: Colors.deepPurple,
+                            backgroundColor: Colors.blue,
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(12),
                             ),
@@ -245,7 +245,7 @@ class _LogInScreenState extends State<LogInScreen> {
                               "Sign Up",
                               style: TextStyle(
                                 fontSize: 18,
-                                color: Colors.deepPurple,
+                                color: Colors.blue,
                                 fontWeight: FontWeight.bold,
                               ),
                             ),

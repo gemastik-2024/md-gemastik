@@ -16,9 +16,8 @@ class AnimatedContainerWidget extends GetWidget<OnBoardingController> {
         height: 6,
         width: controller.currentPage.value == index ? 40 : 15,
         decoration: BoxDecoration(
-          color: controller.currentPage.value == index
-              ? Colors.deepPurple
-              : Colors.grey,
+          color:
+              controller.currentPage.value == index ? Colors.blue : Colors.grey,
           borderRadius: BorderRadius.circular(3),
         ),
       ),

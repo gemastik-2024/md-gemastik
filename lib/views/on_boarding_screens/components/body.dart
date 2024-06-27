@@ -85,7 +85,7 @@ class _BodyState extends State<Body> {
                           child: const Text(
                             'Skip',
                             style: TextStyle(
-                              color: Colors.deepPurple,
+                              color: Colors.blue,
                               fontWeight: FontWeight.w700,
                               fontSize: 22,
                             ),
@@ -156,7 +156,7 @@ class _BodyState extends State<Body> {
                                 child: Container(
                                   padding: const EdgeInsets.all(15),
                                   decoration: BoxDecoration(
-                                    color: Colors.deepPurple,
+                                    color: Colors.blue,
                                     borderRadius: BorderRadius.circular(50),
                                   ),
                                   child: const Icon(
@@ -188,7 +188,7 @@ class _BodyState extends State<Body> {
       height: 6,
       width: _currentPage == index ? 40 : 15,
       decoration: BoxDecoration(
-        color: _currentPage == index ? Colors.deepPurple : Colors.grey,
+        color: _currentPage == index ? Colors.blue : Colors.grey,
         borderRadius: BorderRadius.circular(3),
       ),
     );
